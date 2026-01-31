@@ -53,3 +53,12 @@ func pages_update():
 	pages_reset()
 	put_left(left)
 	put_right(right)
+	# (De)Activate buttons if at beginning/end
+	# XXX: this is very ugly
+	if cur + 1 == len(pages):
+		$Next.visible = false
+	elif cur == 0:
+		$Previous.visible = false
+	else:
+		$Previous.visible = true
+		$Next.visible = true

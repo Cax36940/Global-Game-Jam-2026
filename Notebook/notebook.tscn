@@ -130,6 +130,7 @@ offset_left = -349.0
 offset_top = 95.0
 offset_right = -232.0
 offset_bottom = 212.0
+text = "Prev"
 metadata/_edit_use_anchors_ = true
 
 [node name="Next" type="Button" parent="True_Notebook" unique_id=721157444]
@@ -137,6 +138,7 @@ offset_left = 223.0
 offset_top = 95.0
 offset_right = 340.0
 offset_bottom = 212.0
+text = "Next"
 metadata/_edit_use_anchors_ = true
 
 [node name="Close" type="Button" parent="True_Notebook" unique_id=1830436123]
