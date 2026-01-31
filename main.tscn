@@ -11,12 +11,14 @@
 
 [node name="Main" type="Node" unique_id=76370498]
 
-[node name="World" parent="." unique_id=1128306412 instance=ExtResource("3_1bvp3")]
+[node name="Game" type="Node" parent="." unique_id=1600338617]
 
-[node name="Sketch" parent="." unique_id=1484833825 instance=ExtResource("3_h2yge")]
+[node name="World" parent="Game" unique_id=1128306412 instance=ExtResource("3_1bvp3")]
+
+[node name="Sketch" parent="Game" unique_id=1484833825 instance=ExtResource("3_h2yge")]
 z_index = -4096
 
-[node name="Node" type="Node" parent="." unique_id=291516609]
+[node name="Node" type="Node" parent="Game" unique_id=291516609]
 script = ExtResource("4_1bvp3")
 
 [node name="Menu" type="Control" parent="." unique_id=1469880246]
