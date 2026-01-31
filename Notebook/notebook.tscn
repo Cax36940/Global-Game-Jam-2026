@@ -49,56 +49,46 @@ shape = SubResource("RectangleShape2D_n8bdy")
 
 [node name="True_Notebook" type="Node2D" parent="." unique_id=503205974]
 z_index = 50
+position = Vector2(606, 354)
 script = ExtResource("2_gvrn8")
 
 [node name="Notebook_Cover_Book" type="Sprite2D" parent="True_Notebook" unique_id=2042473880]
-position = Vector2(675, 362)
 texture = SubResource("GradientTexture2D_i8w2w")
 
 [node name="Notebook_Pages" type="Sprite2D" parent="True_Notebook" unique_id=621199988]
-position = Vector2(678, 361)
 scale = Vector2(11.875001, 7.28125)
 texture = SubResource("GradientTexture2D_n8bdy")
 
 [node name="Textbox" type="Button" parent="True_Notebook" unique_id=1972768909]
-offset_left = 507.0
-offset_top = 192.0
-offset_right = 862.0
-offset_bottom = 227.0
-
-[node name="LeftPage" type="Button" parent="True_Notebook" unique_id=771929759]
-offset_left = 298.0
-offset_top = 128.0
-offset_right = 670.0
-offset_bottom = 594.0
+offset_left = -182.0
+offset_top = -169.0
+offset_right = 173.0
+offset_bottom = -134.0
 disabled = true
-
-[node name="RightPage" type="Button" parent="True_Notebook" unique_id=976799227]
-offset_left = 686.0
-offset_top = 128.0
-offset_right = 1058.0
-offset_bottom = 594.0
-disabled = true
+metadata/_edit_use_anchors_ = true
 
 [node name="Previous" type="Button" parent="True_Notebook" unique_id=1335210770]
-offset_left = 389.0
-offset_top = 434.0
-offset_right = 506.0
-offset_bottom = 551.0
+offset_left = -349.0
+offset_top = 95.0
+offset_right = -232.0
+offset_bottom = 212.0
+metadata/_edit_use_anchors_ = true
 
 [node name="Next" type="Button" parent="True_Notebook" unique_id=721157444]
-offset_left = 851.0
-offset_top = 434.0
-offset_right = 968.0
-offset_bottom = 551.0
+offset_left = 223.0
+offset_top = 95.0
+offset_right = 340.0
+offset_bottom = 212.0
+metadata/_edit_use_anchors_ = true
 
 [node name="Close" type="Button" parent="True_Notebook" unique_id=1830436123]
-offset_left = 984.0
-offset_top = 112.0
-offset_right = 1075.0
-offset_bottom = 196.0
+offset_left = 309.0
+offset_top = -250.0
+offset_right = 400.0
+offset_bottom = -166.0
 text = "X"
 script = ExtResource("3_hf82m")
+metadata/_edit_use_anchors_ = true
 
 [node name="Back_Notebook" parent="True_Notebook" unique_id=1899871840 instance=ExtResource("3_gvrn8")]
 visible = false
