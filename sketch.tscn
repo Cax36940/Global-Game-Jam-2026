@@ -110,13 +110,7 @@ skew = 0.2617994
 texture = SubResource("GradientTexture2D_dwbse")
 
 [node name="Ceiling" type="Sprite2D" parent="." unique_id=277729410]
-position = Vector2(654.642, 32.5)
-scale = Vector2(0.999, 1)
+position = Vector2(594.286, 32.5)
+scale = Vector2(4.7151904, 1)
 skew = 0.40491638
-texture = SubResource("GradientTexture2D_gbfbk")
-
-[node name="Ceiling2" type="Sprite2D" parent="." unique_id=799307549]
-position = Vector2(545.358, 32.5)
-scale = Vector2(0.999, 1)
-skew = -0.40491638
 texture = SubResource("GradientTexture2D_gbfbk")

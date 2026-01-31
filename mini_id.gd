@@ -1,29 +1,26 @@
 extends Node2D
 
 
-
 var is_in : bool = false
 var is_pressed_out : bool = false
 var is_pressed_in : bool = false
-var is_shown : bool = false
-var Actual_Color = Color(1, 1, 1, 1)
 
 
 #Actions au démarrage------------------------------------------------------------------------------
 func _ready() -> void:
-	modulate = Actual_Color
+	modulate = Color(1, 1, 1, 1)
+	visible = true
 
 
 #Déclencheurs--------------------------------------------------------------------------------------
-func _on_area_checklist_mouse_entered() -> void:
+func _on_area_2d_mouse_entered() -> void:
 	is_in = true
-	if not is_shown:
-		modulate = Color(0.478, 0.331, 0.0, 0.502)
+	modulate = Color(0.0, 0.0, 0.705, 0.502)
 
 
-func _on_area_checklist_mouse_exited() -> void:
+func _on_area_2d_mouse_exited() -> void:
 	is_in = false
-	modulate = Actual_Color
+	modulate = Color(1, 1, 1, 1)
 
 
 func _input(event):
@@ -42,14 +39,7 @@ func _input(event):
 		else:
 			if is_in:
 				if is_pressed_in:
-					if is_shown:
-						is_shown = false
-						SignalBus.checklist_show.emit(1)
-						Actual_Color = Color(1, 1, 1, 1)
-					else:
-						is_shown = true
-						SignalBus.checklist_show.emit(0)
-						Actual_Color = Color(1, 1, 1, 0)
-			modulate = Actual_Color
+					SignalBus.ID_show.emit(0)
+					visible = false
 			is_pressed_in = false
 			is_pressed_out = false

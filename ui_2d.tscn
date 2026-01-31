@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://b035td654d8fn" path="res://checklist.tscn" id="4_nngme"]
 [ext_resource type="PackedScene" uid="uid://cqr3vlbkgwvfw" path="res://notebook.tscn" id="5_y6d2w"]
 [ext_resource type="PackedScene" uid="uid://cai23abja2vk2" path="res://id_card.tscn" id="6_k61qh"]
-[ext_resource type="PackedScene" uid="uid://c01xneve2v2sv" path="res://Buttons/button.tscn" id="8_aoyq8"]
+[ext_resource type="PackedScene" uid="uid://bql8avy4llevf" path="res://look_closer.tscn" id="7_yplp6"]
 
 [node name="UI2D" type="Node2D" unique_id=423729008]
 
@@ -24,9 +24,10 @@ position = Vector2(405.99994, 568.00006)
 
 [node name="Checklist" parent="." unique_id=560789416 instance=ExtResource("4_nngme")]
 
-[node name="Notebook" parent="." unique_id=226718852 instance=ExtResource("5_y6d2w")]
+[node name="LookCloser" parent="." unique_id=2000302642 instance=ExtResource("7_yplp6")]
+position = Vector2(754, 505)
+rotation = 0.52185345
 
 [node name="ID_Card" parent="." unique_id=31413314 instance=ExtResource("6_k61qh")]
 
-[node name="Look_Closer" parent="." unique_id=1448350442 instance=ExtResource("8_aoyq8")]
-script = null
+[node name="Notebook" parent="." unique_id=226718852 instance=ExtResource("5_y6d2w")]

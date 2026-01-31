@@ -45,6 +45,7 @@ shape = SubResource("RectangleShape2D_pkg7o")
 
 [node name="True_Checklist" type="Node2D" parent="." unique_id=1283458076]
 visible = false
+z_index = 50
 script = ExtResource("2_sgols")
 
 [node name="Checklist" type="Sprite2D" parent="True_Checklist" unique_id=173666421]
