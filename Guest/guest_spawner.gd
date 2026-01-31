@@ -12,6 +12,7 @@ var current_mask : int = -1
 var current_color : int = -1
 var current_eye : int = -1
 
+var is_entered : bool = false
 
 @onready var move_node : Node2D = $MoveNode
 
@@ -46,6 +47,8 @@ func _process(delta):
 	if move_state == 1:
 		move_node.position.x = move_toward(move_node.position.x, middle_position_node.position.x, delta * SPEED)
 		move_node.position.y = move_toward(move_node.position.y, middle_position_node.position.y, delta * SPEED)
+		if (move_node.position - middle_position_node.position).length() < 10 :
+			is_entered = true
 	if move_state == 2:
 		move_node.position.x = move_toward(move_node.position.x, end_position_node.position.x, delta * SPEED)
 		move_node.position.y = move_toward(move_node.position.y, end_position_node.position.y, delta * SPEED)
@@ -64,13 +67,18 @@ func spawn_guest():
 	current_guest = guest
 	move_node.position = start_position_node.position
 	move_state = 1
+	is_entered = false
 	move_node.add_child(guest)
 
 func valid_guest():
+	if !is_entered :
+		return
 	move_state = 2
 	pass
 
 func reject_guest():
+	if !is_entered :
+		return
 	move_state = 0
 	pass
 
