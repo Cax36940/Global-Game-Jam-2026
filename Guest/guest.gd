@@ -16,7 +16,7 @@ func _ready():
 	if masks_list.size() > 0:
 		var mask_scene : PackedScene = masks_list.pick_random()
 		var mask : Mask = mask_scene.instantiate()
-		mask.z_index = 10
+		mask.z_index = 0
 		if colors_list.size() > 0:
 			mask.modulate = colors_list.pick_random()
 		else :
