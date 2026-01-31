@@ -47,7 +47,7 @@ func _input(event):
 						SignalBus.checklist_show.emit(1)
 						Actual_Color = Color(1, 1, 1, 1)
 					else:
-						if not Triple.Triple_show:
+						if not Global.Triple_show:
 							is_shown = true
 							SignalBus.checklist_show.emit(0)
 							Actual_Color = Color(1, 1, 1, 0)

@@ -39,7 +39,7 @@ func _input(event):
 		else:
 			if is_in:
 				if is_pressed_in:
-					if not Triple.Triple_show:
+					if not Global.Triple_show:
 						SignalBus.ID_show.emit(0)
 						visible = false
 			is_pressed_in = false

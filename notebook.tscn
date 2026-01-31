@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://drryyidaiulws" path="res://mini_notebook.gd" id="1_dxuyj"]
 [ext_resource type="Script" uid="uid://jqeu14ke0p1l" path="res://true_notebook.gd" id="2_gvrn8"]
-[ext_resource type="PackedScene" path="res://back_notebook.tscn" id="3_gvrn8"]
 
 [sub_resource type="Gradient" id="Gradient_i8w2w"]
 offsets = PackedFloat32Array(1)
@@ -59,7 +58,7 @@ position = Vector2(678, 361)
 scale = Vector2(11.875001, 7.28125)
 texture = SubResource("GradientTexture2D_n8bdy")
 
-[node name="Back_Notebook" parent="True_Notebook" unique_id=1899871840 instance=ExtResource("3_gvrn8")]
+[node name="Back_Notebook" parent="True_Notebook" unique_id=1899871840]
 position = Vector2(1040, 147)
 
 [node name="Previous" type="Button" parent="True_Notebook" unique_id=1335210770]

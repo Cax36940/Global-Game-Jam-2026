@@ -15,9 +15,9 @@ func _ready() -> void:
 #Déclencheurs--------------------------------------------------------------------------------------
 func signal_handler(value : int) -> void :
 	if value == 0:
-		Triple.Triple_show = true
+		Global.Triple_show = true
 	else:
-		Triple.Triple_show = false
+		Global.Triple_show = false
 
 
 func _on_area_2d_mouse_entered() -> void:
@@ -46,7 +46,7 @@ func _input(event):
 		else:
 			if is_in:
 				if is_pressed_in:
-					if not Triple.Triple_show:
+					if not Global.Triple_show:
 						SignalBus.Notebook_show.emit(0)
 						visible = false
 			is_pressed_in = false
