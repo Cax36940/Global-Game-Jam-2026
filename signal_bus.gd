@@ -15,20 +15,38 @@ extends Node
 
 @warning_ignore('unused_signal')
 signal test_signal(value : int)
+
+@warning_ignore('unused_signal')
 signal checklist_show(value : int)
+
+@warning_ignore('unused_signal')
 signal ID_show(value : int)
+
+@warning_ignore('unused_signal')
 signal Notebook_show(value : int)
+
+@warning_ignore('unused_signal')
 signal Mistake_test(value : bool)
+
+@warning_ignore('unused_signal')
 signal End_game()
 
 
 # Guests signals
+@warning_ignore('unused_signal')
 signal spawn_guest()
+
+@warning_ignore('unused_signal')
 signal valid_guest()
+
+@warning_ignore('unused_signal')
 signal reject_guest()
 
 
+@warning_ignore('unused_signal')
 signal write_constrain()
+
+@warning_ignore('unused_signal')
 signal update_notebook()
 #player
 #_ready

@@ -63,7 +63,7 @@ func show_mini():
 	SignalBus.checklist_show.emit(1)
 	visible = true
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if visible:
 		if Input.is_action_just_pressed("rshift"):
 			if not Global.Triple_show:

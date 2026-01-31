@@ -12,10 +12,6 @@ func Mistake_handler(value : bool) -> void :
 		Global.Mistakes_count += 1
 	print("Correct: ", Global.Total_count - Global.Mistakes_count, " out of ", Global.Total_count)
 
-func End_handler(value : bool) -> void :	
+func End_handler(_value : bool) -> void :	
 	print(Global.Total_count)
 	print(Global.Mistakes_count)
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
