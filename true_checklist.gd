@@ -15,5 +15,5 @@ func signal_handler(value : int) -> void :
 		Global.Triple_show = false
 
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	pass
