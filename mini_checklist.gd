@@ -43,9 +43,9 @@ func _input(event):
 					print("Checklist")
 					if is_shown:
 						is_shown = false
-						SignalBus.test_signal.emit(1)
+						SignalBus.checklist_show.emit(1)
 					else:
 						is_shown = true
-						SignalBus.test_signal.emit(0)
+						SignalBus.checklist_show.emit(0)
 			is_pressed_in = false
 			is_pressed_out = false

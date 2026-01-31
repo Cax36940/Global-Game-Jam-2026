@@ -9,7 +9,6 @@ script = ExtResource("1_venu5")
 [node name="Face" type="Sprite2D" parent="." unique_id=638863953]
 modulate = Color(18.892157, 18.892157, 18.892157, 1)
 self_modulate = Color(0.2901961, 0.21176471, 0.39607844, 1)
-position = Vector2(144, 144)
 texture = ExtResource("2_kig64")
 
 [node name="Seconds" type="Sprite2D" parent="Face" unique_id=1295007026]

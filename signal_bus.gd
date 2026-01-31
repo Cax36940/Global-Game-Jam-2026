@@ -15,6 +15,7 @@ extends Node
 
 @warning_ignore('unused_signal')
 signal test_signal(value : int)
+signal checklist_show(value : int)
 
 
 #player

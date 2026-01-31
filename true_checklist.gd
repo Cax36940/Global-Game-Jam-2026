@@ -3,7 +3,7 @@ extends Node2D
 
 func _ready() -> void:
 	modulate = Color(1, 1, 1, 0)
-	SignalBus.test_signal.connect(signal_handler)
+	SignalBus.checklist_show.connect(signal_handler)
 
 
 func signal_handler(value : int) -> void :

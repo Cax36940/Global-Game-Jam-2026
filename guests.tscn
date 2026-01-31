@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://bakb3yc52brgt"]
+
+[node name="Guests" type="Node2D" unique_id=1750283726]
+
+[node name="Shapes" type="Node2D" parent="." unique_id=1084251792]
+
+[node name="Masks" type="Node2D" parent="." unique_id=2107911655]

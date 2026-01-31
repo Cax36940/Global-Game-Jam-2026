@@ -1,0 +1,122 @@
+[gd_scene format=3 uid="uid://dcmgdb1ncffg0"]
+
+[ext_resource type="PackedScene" uid="uid://bfhckh8llopeh" path="res://Clock/clock.tscn" id="1_3uucr"]
+[ext_resource type="Script" uid="uid://dsl3i5b2pmox7" path="res://accept.gd" id="2_yplp6"]
+[ext_resource type="Texture2D" uid="uid://vh18g1m163l5" path="res://Assets/icon.svg" id="3_aoyq8"]
+[ext_resource type="Script" uid="uid://c4bq1dfaf7t7b" path="res://refuse.gd" id="4_nngme"]
+[ext_resource type="Script" uid="uid://cnn004a8iu2e0" path="res://mini_checklist.gd" id="5_y6d2w"]
+[ext_resource type="Script" uid="uid://8pnn8yjswavy" path="res://true_checklist.gd" id="6_k61qh"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_dwbse"]
+radius = 163.56357
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_036b0"]
+radius = 135.41643
+
+[sub_resource type="Gradient" id="Gradient_aqk2v"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0.5856639, 0.39514944, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_036b0"]
+gradient = SubResource("Gradient_aqk2v")
+width = 100
+height = 100
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pkg7o"]
+size = Vector2(99.99991, 100.00003)
+
+[sub_resource type="Gradient" id="Gradient_036b0"]
+offsets = PackedFloat32Array(1)
+colors = PackedColorArray(1, 1, 0.8156863, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_dwbse"]
+gradient = SubResource("Gradient_036b0")
+width = 420
+height = 594
+
+[node name="UI2D" type="Node2D" unique_id=423729008]
+
+[node name="Clock" parent="." unique_id=485727779 instance=ExtResource("1_3uucr")]
+
+[node name="Accept" type="Node2D" parent="." unique_id=873590649]
+script = ExtResource("2_yplp6")
+
+[node name="Sprite_Accept" type="Sprite2D" parent="Accept" unique_id=2098816138]
+modulate = Color(0.5882353, 1, 0.5882353, 1)
+position = Vector2(381, 659)
+rotation = 0.17453292
+scale = Vector2(0.65, 0.65)
+skew = 0.17453292
+texture = ExtResource("3_aoyq8")
+
+[node name="Area_Accept" type="Area2D" parent="Accept/Sprite_Accept" unique_id=1501433958]
+rotation = 0.17453292
+scale = Vector2(0.65, 0.65)
+skew = 0.17453292
+
+[node name="CollisionShape_Accept" type="CollisionShape2D" parent="Accept/Sprite_Accept/Area_Accept" unique_id=1518862145]
+rotation = 0.17453292
+scale = Vector2(0.65, 0.65)
+skew = 0.17453292
+shape = SubResource("CircleShape2D_dwbse")
+
+[node name="Refuse" type="Node2D" parent="." unique_id=1924277313]
+position = Vector2(405.99994, 568.00006)
+rotation = 0.08726646
+scale = Vector2(0.7, 0.7)
+skew = 0.08726646
+script = ExtResource("4_nngme")
+
+[node name="Sprite_Refuse" type="Sprite2D" parent="Refuse" unique_id=128873508]
+modulate = Color(1, 0.5882353, 0.5882353, 1)
+rotation = 0.08726646
+scale = Vector2(0.7, 0.7)
+skew = 0.08726646
+texture = ExtResource("3_aoyq8")
+
+[node name="Area_Refuse" type="Area2D" parent="Refuse/Sprite_Refuse" unique_id=220699068]
+rotation = 0.08726646
+scale = Vector2(0.7, 0.7)
+skew = 0.08726646
+
+[node name="CollisionShape_Refuse" type="CollisionShape2D" parent="Refuse/Sprite_Refuse/Area_Refuse" unique_id=1427494784]
+rotation = 0.08726646
+scale = Vector2(0.7, 0.7)
+skew = 0.08726646
+shape = SubResource("CircleShape2D_036b0")
+
+[node name="Checklist" type="Node2D" parent="." unique_id=391515021]
+
+[node name="Mini_Checklist" type="Node2D" parent="Checklist" unique_id=1654896191]
+script = ExtResource("5_y6d2w")
+
+[node name="Sprite_Checklist" type="Sprite2D" parent="Checklist/Mini_Checklist" unique_id=1433171432]
+position = Vector2(892, 371)
+scale = Vector2(0.9200004, 1)
+texture = SubResource("GradientTexture2D_036b0")
+
+[node name="Area_Checklist" type="Area2D" parent="Checklist/Mini_Checklist/Sprite_Checklist" unique_id=588980580]
+
+[node name="CollisionShape_Checklist" type="CollisionShape2D" parent="Checklist/Mini_Checklist/Sprite_Checklist/Area_Checklist" unique_id=1904757598]
+scale = Vector2(0.9999999, 0.9999999)
+shape = SubResource("RectangleShape2D_pkg7o")
+
+[node name="True_Checklist" type="Node2D" parent="Checklist" unique_id=187840682]
+script = ExtResource("6_k61qh")
+
+[node name="Checklist" type="Sprite2D" parent="Checklist/True_Checklist" unique_id=583154463]
+position = Vector2(600, 360)
+texture = SubResource("GradientTexture2D_dwbse")
+
+[node name="Notebook" type="Node2D" parent="." unique_id=728666171]
+
+[node name="ID_Card" type="Node2D" parent="." unique_id=1686309847]
+
+[node name="Look_Closer" type="Node2D" parent="." unique_id=1064778144]
+
+[connection signal="mouse_entered" from="Accept/Sprite_Accept/Area_Accept" to="Accept" method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Accept/Sprite_Accept/Area_Accept" to="Accept" method="_on_area_2d_mouse_exited"]
+[connection signal="mouse_entered" from="Refuse/Sprite_Refuse/Area_Refuse" to="Refuse" method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Refuse/Sprite_Refuse/Area_Refuse" to="Refuse" method="_on_area_2d_mouse_exited"]
+[connection signal="mouse_entered" from="Checklist/Mini_Checklist/Sprite_Checklist/Area_Checklist" to="Checklist/Mini_Checklist" method="_on_area_checklist_mouse_entered"]
+[connection signal="mouse_exited" from="Checklist/Mini_Checklist/Sprite_Checklist/Area_Checklist" to="Checklist/Mini_Checklist" method="_on_area_checklist_mouse_exited"]
