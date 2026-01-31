@@ -8,6 +8,14 @@
 [ext_resource type="PackedScene" uid="uid://cai23abja2vk2" path="res://id_card.tscn" id="6_k61qh"]
 [ext_resource type="PackedScene" uid="uid://bql8avy4llevf" path="res://look_closer.tscn" id="7_yplp6"]
 
+[sub_resource type="Gradient" id="Gradient_036b0"]
+colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_yplp6"]
+gradient = SubResource("Gradient_036b0")
+width = 60
+height = 100
+
 [node name="UI2D" type="Node2D" unique_id=423729008]
 
 [node name="Clock" parent="." unique_id=485727779 instance=ExtResource("1_3uucr")]
@@ -29,5 +37,23 @@ position = Vector2(754, 505)
 rotation = 0.52185345
 
 [node name="ID_Card" parent="." unique_id=31413314 instance=ExtResource("6_k61qh")]
+
+[node name="Overlays_Elements" type="Node2D" parent="." unique_id=2094237019]
+
+[node name="Notebook_Holder" type="Sprite2D" parent="Overlays_Elements" unique_id=60177588]
+z_index = 10
+position = Vector2(919.9348, 389.76456)
+rotation = -0.2617994
+scale = Vector2(0.99999994, 0.99999994)
+skew = 0.26179934
+texture = SubResource("GradientTexture2D_yplp6")
+
+[node name="Notebook_Holder2" type="Sprite2D" parent="Overlays_Elements" unique_id=974312376]
+z_index = 10
+position = Vector2(861.9778, 389.76456)
+rotation = 0.2617994
+scale = Vector2(0.99999994, 0.99999994)
+skew = -0.26179945
+texture = SubResource("GradientTexture2D_yplp6")
 
 [node name="Notebook" parent="." unique_id=226718852 instance=ExtResource("5_y6d2w")]

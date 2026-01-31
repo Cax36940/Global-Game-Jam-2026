@@ -28,6 +28,8 @@ signal valid_guest()
 signal reject_guest()
 
 
+signal write_constrain()
+signal update_notebook()
 #player
 #_ready
 #epee.signal_name.connect(signal_handler)
