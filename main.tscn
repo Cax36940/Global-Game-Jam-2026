@@ -39,6 +39,8 @@ offset_left = 571.0
 offset_top = 208.0
 offset_right = 641.0
 offset_bottom = 239.0
+focus_neighbor_top = NodePath(".")
+focus_neighbor_bottom = NodePath("../Exit")
 text = "Resume"
 
 [node name="Exit" type="Button" parent="Menu/PauseMenu" unique_id=1716701454]

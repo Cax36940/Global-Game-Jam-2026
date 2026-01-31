@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cou4r0diu1euy"]
 
-[ext_resource type="Script" uid="uid://cutt0ecko4vrq" path="res://MainMenu/main_menu.gd" id="1_3w4mj"]
+[ext_resource type="Script" uid="uid://cutt0ecko4vrq" path="res://Menu/main_menu.gd" id="1_3w4mj"]
 
 [node name="MainMenu" type="Control" unique_id=2067887264]
 layout_mode = 3
@@ -17,6 +17,7 @@ offset_left = 470.0
 offset_top = 275.0
 offset_right = 566.0
 offset_bottom = 306.0
+focus_neighbor_bottom = NodePath("../Exit")
 text = "Start Game"
 
 [node name="Exit" type="Button" parent="." unique_id=217473286]
@@ -25,4 +26,5 @@ offset_left = 503.0
 offset_top = 333.0
 offset_right = 540.0
 offset_bottom = 364.0
+focus_neighbor_top = NodePath("../Start")
 text = "Exit"

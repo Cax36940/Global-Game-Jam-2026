@@ -10,6 +10,7 @@ func _ready() -> void:
 	$Exit.pressed.connect(_on_exit_button_pressed)
 	get_tree().paused = true
 	show()
+	$Start.grab_focus.call_deferred()
 
 func _on_exit_button_pressed() -> void:
 	get_tree().quit()

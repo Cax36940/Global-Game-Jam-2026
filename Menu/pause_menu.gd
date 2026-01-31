@@ -16,6 +16,8 @@ func toggle_pause():
 	paused = !paused
 	visible = paused
 	get_tree().paused = paused
+	if paused:
+		$Resume.grab_focus.call_deferred()
 
 func _input(event):
 	if event.is_action_pressed("ui_close_dialog"):
