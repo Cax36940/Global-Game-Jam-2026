@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://cqr3vlbkgwvfw"]
 
-[ext_resource type="Script" path="res://mini_notebook.gd" id="1_dxuyj"]
+[ext_resource type="Script" uid="uid://d26wtjwc2pi7t" path="res://mini_notebook.gd" id="1_dxuyj"]
 [ext_resource type="Script" uid="uid://bubxrbaudghs" path="res://true_notebook.gd" id="2_gvrn8"]
-[ext_resource type="Script" path="res://back_notebook.gd" id="2_i8w2w"]
+[ext_resource type="PackedScene" uid="uid://c8nlyhs8063fj" path="res://back_notebook.tscn" id="3_gvrn8"]
 
 [sub_resource type="Gradient" id="Gradient_i8w2w"]
 offsets = PackedFloat32Array(1)
@@ -61,26 +61,6 @@ texture = SubResource("GradientTexture2D_n8bdy")
 
 [node name="Back_Notebook" parent="True_Notebook" unique_id=1899871840 instance=ExtResource("3_gvrn8")]
 position = Vector2(1040, 147)
-
-[node name="Next" type="Button" parent="True_Notebook" unique_id=1814644446]
-offset_left = 917.0
-offset_top = 480.0
-offset_right = 1010.0
-offset_bottom = 573.0
-
-[node name="TextContainer" type="Button" parent="True_Notebook" unique_id=110963010]
-offset_left = 516.0
-offset_top = 230.0
-offset_right = 840.0
-offset_bottom = 424.0
-disabled = true
-text = "blabla"
-
-[node name="Previous" type="Button" parent="True_Notebook" unique_id=1728036704]
-offset_left = 358.0
-offset_top = 472.0
-offset_right = 451.0
-offset_bottom = 565.0
 
 [connection signal="mouse_entered" from="Mini_Notebook/Sprite2D/Area2D" to="Mini_Notebook" method="_on_area_2d_mouse_entered"]
 [connection signal="mouse_exited" from="Mini_Notebook/Sprite2D/Area2D" to="Mini_Notebook" method="_on_area_2d_mouse_exited"]
