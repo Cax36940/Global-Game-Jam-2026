@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://bv0rv0q12dep3"]
+
+[ext_resource type="Texture2D" uid="uid://vh18g1m163l5" path="res://Assets/icon.svg" id="1_f3sb7"]
+[ext_resource type="PackedScene" uid="uid://bfhckh8llopeh" path="res://Clock/clock.tscn" id="2_fj7yv"]
+
+[node name="World" type="Node2D" unique_id=1484833825]
+
+[node name="Window" type="Sprite2D" parent="." unique_id=2038000307]
+position = Vector2(637, 208.875)
+scale = Vector2(3.75, 3.2363281)
+texture = ExtResource("1_f3sb7")
+
+[node name="Window2" type="Sprite2D" parent="." unique_id=682182928]
+self_modulate = Color(0.080567755, 0.07343573, 0.1637746, 0.5647059)
+position = Vector2(1076.9999, 353.00003)
+scale = Vector2(3.2734373, 5.5)
+texture = ExtResource("1_f3sb7")
+
+[node name="Window4" type="Sprite2D" parent="." unique_id=93489769]
+self_modulate = Color(0.080567755, 0.07343573, 0.1637746, 0.5647059)
+position = Vector2(212.99976, 354)
+scale = Vector2(3.2734373, 5.5)
+texture = ExtResource("1_f3sb7")
+
+[node name="Clock" parent="." unique_id=485727779 instance=ExtResource("2_fj7yv")]
+position = Vector2(70, 70)
+
+[node name="Node2D" type="Node2D" parent="." unique_id=1895694042]
+position = Vector2(-6, -3)
+
+[node name="Sprite2D2" type="Sprite2D" parent="Node2D" unique_id=3315218]
+position = Vector2(747, 558)
+scale = Vector2(2.9327722, 2.693678)
+skew = -0.6387905
+texture = ExtResource("1_f3sb7")
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D" unique_id=342080888]
+position = Vector2(549, 559)
+scale = Vector2(2.635792, 2.5719054)
+skew = 0.49392807
+texture = ExtResource("1_f3sb7")
