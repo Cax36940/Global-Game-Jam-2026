@@ -1,7 +1,7 @@
 extends Node2D
 
 var cur = 0
-var pages = [0,1,2,3,4,5,6]
+var pages = [0,1,2,3,4,5]
 
 var sprites: Array
 
@@ -18,8 +18,8 @@ func _ready() -> void:
 			Color(float(i)/len(pages), 0, float(i)/len(pages))
 		]
 		var texture = GradientTexture2D.new()
-		texture.width = 64
-		texture.height = 64
+		texture.width = 100
+		texture.height = 141
 		texture.gradient = gradient
 		node.texture = texture
 		node.visible = false
@@ -41,7 +41,7 @@ func signal_handler(value : int) -> void :
 		$"../Mini_Notebook".visible = true
 
 func next():
-	if cur < len(pages):
+	if cur < len(pages) - 1:
 		cur += 1
 		pages_update()
 	# TODO: else: deactivate button
@@ -52,13 +52,21 @@ func previous():
 		pages_update()
 	# TODO: else: deactivate button
 
+func pages_reset():
+	for sprite in sprites:
+		sprite.visible = false
+		sprite.position = Vector2(0,0)
+
+
+func put_left(sprite):
+	sprite.position = Vector2(-200, 0)
+	sprite.visible = true
+func put_right(sprite):
+	sprite.position = Vector2(200, 0)
+	sprite.visible = true
+
 func pages_update():
 	$Textbox.text = "cur = {cur}".format($".")
-	var left = sprites[cur]
-	left.visible = true
-	#left.position = Vector2(400, 300)
-
-func _process(delta: float) -> void:
-	pass
-
- 
+	pages_reset()
+	put_left(sprites[2*cur])
+	put_right(sprites[2*cur+1])
