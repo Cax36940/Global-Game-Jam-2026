@@ -3,6 +3,7 @@ class_name Guest
 
 @export var shapes_list : Array[PackedScene]
 @export var masks_list : Array[PackedScene]
+@export var eyes_list : Array[PackedScene]
 @export var colors_list : Array[Color]
 
 func _ready():
@@ -16,7 +17,7 @@ func _ready():
 	if masks_list.size() > 0:
 		var mask_scene : PackedScene = masks_list.pick_random()
 		var mask : Mask = mask_scene.instantiate()
-		mask.z_index = 0
+		#mask.z_index = 0
 		if colors_list.size() > 0:
 			mask.modulate = colors_list.pick_random()
 		else :
@@ -24,3 +25,12 @@ func _ready():
 		add_child(mask)
 	else :
 		push_error("There is no mask in the masks_list of the guest scene")
+		
+	if eyes_list.size() > 0:
+		var eye_scene : PackedScene = eyes_list.pick_random()
+		var eye_l : Eye = eye_scene.instantiate()
+		$EyeL.add_child(eye_l)
+		var eye_r : Eye = eye_scene.instantiate()
+		$EyeR.add_child(eye_r)
+	else :
+		push_error("There is no shape in the shape_list of the guest scene")

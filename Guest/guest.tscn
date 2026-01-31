@@ -5,9 +5,29 @@
 [ext_resource type="PackedScene" uid="uid://28caiieo3yqb" path="res://Guest/Shapes/shape2.tscn" id="3_srp40"]
 [ext_resource type="PackedScene" uid="uid://buej6jr4enf6f" path="res://Guest/Masks/mask1.tscn" id="4_bsd6c"]
 [ext_resource type="PackedScene" uid="uid://use5h1nr2uwf" path="res://Guest/Masks/mask2.tscn" id="5_pfqv4"]
+[ext_resource type="PackedScene" uid="uid://c73jt55mc8d66" path="res://Guest/Eye/eye_circle.tscn" id="6_dd4ut"]
+[ext_resource type="PackedScene" uid="uid://blvxow7rtllcq" path="res://Guest/Eye/eye_diamond.tscn" id="7_dqge3"]
+[ext_resource type="PackedScene" uid="uid://dbjodjhtf3mt7" path="res://Guest/Eye/eye_ellipse.tscn" id="8_7r8l5"]
+[ext_resource type="PackedScene" uid="uid://df3vgv2edc7pr" path="res://Guest/Eye/eye_hearth.tscn" id="9_e2wpb"]
+[ext_resource type="PackedScene" uid="uid://vv1lmkn58bwk" path="res://Guest/Eye/eye_moon.tscn" id="10_bb2pg"]
+[ext_resource type="PackedScene" uid="uid://bjlmsambltsis" path="res://Guest/Eye/eye_star.tscn" id="11_c24me"]
+[ext_resource type="PackedScene" uid="uid://qb2dkmr72von" path="res://Guest/Eye/eye_x.tscn" id="12_71euk"]
 
 [node name="Guests" type="Node2D" unique_id=1750283726]
 script = ExtResource("1_q4ytt")
 shapes_list = Array[PackedScene]([ExtResource("2_dd4ut"), ExtResource("3_srp40")])
 masks_list = Array[PackedScene]([ExtResource("4_bsd6c"), ExtResource("5_pfqv4")])
+eyes_list = Array[PackedScene]([ExtResource("6_dd4ut"), ExtResource("7_dqge3"), ExtResource("8_7r8l5"), ExtResource("9_e2wpb"), ExtResource("10_bb2pg"), ExtResource("11_c24me"), ExtResource("12_71euk")])
 colors_list = Array[Color]([Color(1, 0, 0, 1), Color(0, 1, 0, 1), Color(0, 0, 1, 1)])
+
+[node name="EyeL" type="Node2D" parent="." unique_id=715878694]
+modulate = Color(0, 0, 0, 1)
+z_index = 1
+position = Vector2(-35, -13)
+scale = Vector2(-0.5, 0.5)
+
+[node name="EyeR" type="Node2D" parent="." unique_id=1370186712]
+modulate = Color(0, 0, 0, 1)
+z_index = 1
+position = Vector2(35, -13)
+scale = Vector2(0.5, 0.5)

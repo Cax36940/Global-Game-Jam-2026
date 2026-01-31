@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://c73jt55mc8d66"]
+
+[ext_resource type="Script" uid="uid://cgth1im4o36yw" path="res://Guest/Eye/eye.gd" id="1_3oico"]
+[ext_resource type="Shader" uid="uid://c5n5q21lwc10q" path="res://Guest/Eye/eye_circle.gdshader" id="2_jx0b2"]
+[ext_resource type="Texture2D" uid="uid://vh18g1m163l5" path="res://Assets/icon.svg" id="3_ujqq3"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_k135u"]
+shader = ExtResource("2_jx0b2")
+shader_parameter/radius = 0.5
+
+[node name="EyeCircle" type="Node2D" unique_id=1328330833]
+script = ExtResource("1_3oico")
+
+[node name="Icon" type="Sprite2D" parent="." unique_id=675967797]
+material = SubResource("ShaderMaterial_k135u")
+texture = ExtResource("3_ujqq3")
