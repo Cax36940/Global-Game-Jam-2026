@@ -1,5 +1,5 @@
 extends Node2D
-
+class_name CustomButton
 
 
 var is_in : bool = false
@@ -15,7 +15,7 @@ func _ready() -> void:
 #Déclencheurs--------------------------------------------------------------------------------------
 func _on_area_2d_mouse_entered() -> void:
 	is_in = true
-	modulate = Color(1.0, 0.0, 0.0, 0.5)
+	on_mouse_overing()
 
 
 func _on_area_2d_mouse_exited() -> void:
@@ -39,6 +39,15 @@ func _input(event):
 		else:
 			if is_in:
 				if is_pressed_in:
-					SignalBus.checklist_show.emit(1)
+					#SignalBus.checklist_show.emit(1)
+					#$"../../Mini_Checklist".is_shown = false
+					#print("Look Closer")
+					on_button_pressed()
 			is_pressed_in = false
 			is_pressed_out = false
+
+func on_button_pressed():
+	pass
+
+func on_mouse_overing():
+	pass

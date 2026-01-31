@@ -11,7 +11,6 @@ var is_shown : bool = false
 #Actions au démarrage------------------------------------------------------------------------------
 func _ready() -> void:
 	modulate = Color(1, 1, 1, 1)
-	SignalBus.checklist_show.connect(signal_handler)
 
 
 #Déclencheurs--------------------------------------------------------------------------------------
@@ -24,12 +23,6 @@ func _on_area_checklist_mouse_exited() -> void:
 	is_in = false
 	modulate = Color(1, 1, 1, 1)
 
-
-func signal_handler(value : int) -> void :
-	if value == 0:
-		is_shown = true
-	else:
-		is_shown = false
 
 func _input(event):
 	if event is InputEventMouseButton:

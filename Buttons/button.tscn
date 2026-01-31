@@ -14,7 +14,7 @@ height = 100
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k4xuo"]
 size = Vector2(100, 100)
 
-[node name="Button" type="Node2D" unique_id=1448350442]
+[node name="LookCloser" type="Node2D" unique_id=1448350442]
 script = ExtResource("1_cowp3")
 
 [node name="Icon" type="Sprite2D" parent="." unique_id=337179095]

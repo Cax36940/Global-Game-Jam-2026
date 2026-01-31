@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://8pnn8yjswavy" path="res://true_checklist.gd" id="2_sgols"]
 [ext_resource type="PackedScene" uid="uid://cat7bh3g2lwh0" path="res://checkbox.tscn" id="3_jppvq"]
 [ext_resource type="PackedScene" uid="uid://c01xneve2v2sv" path="res://Buttons/button.tscn" id="4_wwp3p"]
+[ext_resource type="Script" uid="uid://bu7q0mtovaebe" path="res://Buttons/back.gd" id="5_sgols"]
 
 [sub_resource type="Gradient" id="Gradient_aqk2v"]
 offsets = PackedFloat32Array(0)
@@ -50,7 +51,7 @@ script = ExtResource("2_sgols")
 position = Vector2(600, 360)
 texture = SubResource("GradientTexture2D_dwbse")
 
-[node name="Checkbox" parent="True_Checklist" unique_id=2123857673 instance=ExtResource("3_jppvq")]
+[node name="Checkbox1" parent="True_Checklist" unique_id=2123857673 instance=ExtResource("3_jppvq")]
 position = Vector2(752, 615)
 scale = Vector2(1.7, 1.7)
 
@@ -98,9 +99,10 @@ scale = Vector2(1.7, 1.7)
 position = Vector2(682, 265)
 scale = Vector2(1.7, 1.7)
 
-[node name="Button" parent="True_Checklist" unique_id=1448350442 instance=ExtResource("4_wwp3p")]
+[node name="Back" parent="True_Checklist" unique_id=1448350442 instance=ExtResource("4_wwp3p")]
 position = Vector2(780, 93)
 scale = Vector2(0.4, 0.4)
+script = ExtResource("5_sgols")
 
 [connection signal="mouse_entered" from="Mini_Checklist/Sprite_Checklist/Area_Checklist" to="Mini_Checklist" method="_on_area_checklist_mouse_entered"]
 [connection signal="mouse_exited" from="Mini_Checklist/Sprite_Checklist/Area_Checklist" to="Mini_Checklist" method="_on_area_checklist_mouse_exited"]
