@@ -1,8 +1,9 @@
-[gd_scene format=3 uid="uid://6yd4m72x5ymt"]
+[gd_scene format=3 uid="uid://cou4r0diu1euy"]
 
-[ext_resource type="Script" uid="uid://c27ydpxreajnm" path="res://GUI/exit.gd" id="1_3w8el"]
+[ext_resource type="Script" uid="uid://bhult81rrgmdm" path="res://MainMenu/start.gd" id="1_3w4mj"]
+[ext_resource type="Script" uid="uid://c27ydpxreajnm" path="res://MainMenu/exit.gd" id="1_nhkf3"]
 
-[node name="GUI" type="Control" unique_id=2067887264]
+[node name="MainMenu" type="Control" unique_id=2067887264]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -17,6 +18,7 @@ offset_top = 275.0
 offset_right = 566.0
 offset_bottom = 306.0
 text = "Start Game"
+script = ExtResource("1_3w4mj")
 
 [node name="Exit" type="Button" parent="." unique_id=217473286]
 layout_mode = 0
@@ -25,4 +27,4 @@ offset_top = 333.0
 offset_right = 540.0
 offset_bottom = 364.0
 text = "Exit"
-script = ExtResource("1_3w8el")
+script = ExtResource("1_nhkf3")
