@@ -17,14 +17,12 @@ height = 120
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n8bdy"]
 size = Vector2(80, 120)
 
-[sub_resource type="Gradient" id="Gradient_dxuyj"]
-offsets = PackedFloat32Array(1)
-colors = PackedColorArray(0.40392157, 0.09803922, 0.05882353, 1)
-
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_i8w2w"]
-gradient = SubResource("Gradient_dxuyj")
 width = 800
 height = 500
+fill_from = Vector2(1, 0)
+fill_to = Vector2(0, 0)
+metadata/_snap_enabled = true
 
 [sub_resource type="Gradient" id="Gradient_gvrn8"]
 offsets = PackedFloat32Array(1)
@@ -32,6 +30,41 @@ colors = PackedColorArray(0.82732785, 0.40559742, 0.26062348, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_n8bdy"]
 gradient = SubResource("Gradient_gvrn8")
+
+[sub_resource type="Gradient" id="Gradient_hf82m"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_vcsgt"]
+gradient = SubResource("Gradient_hf82m")
+
+[sub_resource type="Gradient" id="Gradient_vcsgt"]
+offsets = PackedFloat32Array(0.28629032, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_mvqau"]
+gradient = SubResource("Gradient_vcsgt")
+fill_from = Vector2(0.42151162, 0.4738372)
+
+[sub_resource type="Gradient" id="Gradient_78epq"]
+offsets = PackedFloat32Array(0.43951613, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_36afp"]
+gradient = SubResource("Gradient_78epq")
+
+[sub_resource type="Gradient" id="Gradient_lbn8f"]
+offsets = PackedFloat32Array(0.55241936, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_qtrjj"]
+gradient = SubResource("Gradient_lbn8f")
+fill_to = Vector2(0.2761628, 0.28197673)
+
+[sub_resource type="Gradient" id="Gradient_jrije"]
+offsets = PackedFloat32Array(0.75403225, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_hu0nd"]
+gradient = SubResource("Gradient_jrije")
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_5cm84"]
+gradient = SubResource("Gradient_hf82m")
+fill_from = Vector2(0.9563953, 0)
 
 [node name="Notebook" type="Node2D" unique_id=226718852]
 
@@ -48,6 +81,7 @@ texture = SubResource("GradientTexture2D_gvrn8")
 shape = SubResource("RectangleShape2D_n8bdy")
 
 [node name="True_Notebook" type="Node2D" parent="." unique_id=503205974]
+visible = false
 z_index = 50
 position = Vector2(606, 354)
 script = ExtResource("2_gvrn8")
@@ -61,7 +95,35 @@ texture = SubResource("GradientTexture2D_n8bdy")
 
 [node name="Sprites" type="Node2D" parent="True_Notebook" unique_id=1434157550]
 
-[node name="page1" type="Sprite2D" parent="True_Notebook/Sprites" unique_id=12934570]
+[node name="page1" type="Sprite2D" parent="True_Notebook/Sprites" unique_id=505265125]
+position = Vector2(14.499996, -2.0000076)
+scale = Vector2(4.3906264, 7.046875)
+texture = SubResource("GradientTexture2D_vcsgt")
+
+[node name="page2" type="Sprite2D" parent="True_Notebook/Sprites" unique_id=2134315632]
+position = Vector2(14.499996, -2.0000076)
+scale = Vector2(4.3906264, 7.046875)
+texture = SubResource("GradientTexture2D_mvqau")
+
+[node name="page3" type="Sprite2D" parent="True_Notebook/Sprites" unique_id=1801287696]
+position = Vector2(14.499996, -2.0000076)
+scale = Vector2(4.3906264, 7.046875)
+texture = SubResource("GradientTexture2D_36afp")
+
+[node name="page4" type="Sprite2D" parent="True_Notebook/Sprites" unique_id=1306357113]
+position = Vector2(14.499996, -2.0000076)
+scale = Vector2(4.3906264, 7.046875)
+texture = SubResource("GradientTexture2D_qtrjj")
+
+[node name="page5" type="Sprite2D" parent="True_Notebook/Sprites" unique_id=1435535523]
+position = Vector2(14.499996, -2.0000076)
+scale = Vector2(4.3906264, 7.046875)
+texture = SubResource("GradientTexture2D_hu0nd")
+
+[node name="page6" type="Sprite2D" parent="True_Notebook/Sprites" unique_id=863990685]
+position = Vector2(14.499996, -2.0000076)
+scale = Vector2(4.3906264, 7.046875)
+texture = SubResource("GradientTexture2D_5cm84")
 
 [node name="Textbox" type="Button" parent="True_Notebook" unique_id=1972768909]
 offset_left = -182.0
