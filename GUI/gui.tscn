@@ -1,5 +1,7 @@
 [gd_scene format=3 uid="uid://6yd4m72x5ymt"]
 
+[ext_resource type="Script" uid="uid://c27ydpxreajnm" path="res://GUI/exit.gd" id="1_3w8el"]
+
 [node name="GUI" type="Control" unique_id=2067887264]
 layout_mode = 3
 anchors_preset = 15
@@ -7,3 +9,20 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="Start" type="Button" parent="." unique_id=1518564439]
+layout_mode = 0
+offset_left = 470.0
+offset_top = 275.0
+offset_right = 566.0
+offset_bottom = 306.0
+text = "Start Game"
+
+[node name="Exit" type="Button" parent="." unique_id=217473286]
+layout_mode = 0
+offset_left = 503.0
+offset_top = 333.0
+offset_right = 540.0
+offset_bottom = 364.0
+text = "Exit"
+script = ExtResource("1_3w8el")
