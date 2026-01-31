@@ -27,6 +27,7 @@ signal spawn_guest()
 signal valid_guest()
 signal reject_guest()
 
+
 #player
 #_ready
 #epee.signal_name.connect(signal_handler)

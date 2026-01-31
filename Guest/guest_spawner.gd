@@ -8,6 +8,10 @@ class_name GuestSpawner
 @export var end_position_node : Node2D
 
 var current_guest : Guest = null
+var current_mask : int = -1
+var current_color : int = -1
+var current_eye : int = -1
+
 
 @onready var move_node : Node2D = $MoveNode
 
