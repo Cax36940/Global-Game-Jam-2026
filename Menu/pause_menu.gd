@@ -1,4 +1,4 @@
-extends Control
+extends VBoxContainer
 
 var paused = false
 
@@ -6,6 +6,7 @@ func _ready() -> void:
 	process_mode = Node.PROCESS_MODE_ALWAYS
 	$Resume.pressed.connect(_on_resume_button_pressed)
 	$Exit.pressed.connect(_on_exit_button_pressed)
+
 	hide()
 
 func _on_game_start():
@@ -16,6 +17,8 @@ func toggle_pause():
 	paused = !paused
 	visible = paused
 	get_tree().paused = paused
+	
+	# https://docs.godotengine.org/en/stable/tutorials/ui/gui_navigation.html
 	if paused:
 		$Resume.grab_focus.call_deferred()
 
