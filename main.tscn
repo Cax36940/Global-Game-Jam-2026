@@ -11,8 +11,10 @@
 [node name="Main" type="Node" unique_id=76370498]
 
 [node name="World" parent="." unique_id=1128306412 instance=ExtResource("3_1bvp3")]
+visible = false
 
 [node name="Sketch" parent="." unique_id=1484833825 instance=ExtResource("3_h2yge")]
+visible = false
 z_index = -4096
 
 [node name="Node" type="Node" parent="." unique_id=291516609]
@@ -29,6 +31,7 @@ mouse_filter = 2
 script = ExtResource("4_7mycd")
 
 [node name="PauseButton" type="Button" parent="Menu" unique_id=1910178568]
+visible = false
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
@@ -42,6 +45,7 @@ grow_vertical = 0
 text = "Pause"
 
 [node name="PauseMenu" type="VBoxContainer" parent="Menu" unique_id=1068046758]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -119,4 +123,31 @@ TODO: add controls"
 [node name="Exit" type="Button" parent="Menu/MainMenu" unique_id=217473286]
 layout_mode = 2
 focus_neighbor_top = NodePath("../Controls/Button")
+text = "Exit"
+
+[node name="GameOver" type="VBoxContainer" parent="Menu" unique_id=2091551017]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -43.5
+offset_top = -23.5
+offset_right = 43.5
+offset_bottom = 23.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Menu/GameOver" unique_id=1948066001]
+layout_mode = 2
+text = "Game Over"
+horizontal_alignment = 1
+
+[node name="Try again" type="Button" parent="Menu/GameOver" unique_id=913894922]
+layout_mode = 2
+text = "Try again"
+
+[node name="Exit" type="Button" parent="Menu/GameOver" unique_id=505699332]
+layout_mode = 2
 text = "Exit"
