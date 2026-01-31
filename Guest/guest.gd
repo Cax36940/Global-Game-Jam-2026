@@ -17,12 +17,12 @@ func _ready():
 	if masks_list.size() > 0:
 		var mask_scene : PackedScene = masks_list.pick_random()
 		var mask : Mask = mask_scene.instantiate()
-		#mask.z_index = 0
 		if colors_list.size() > 0:
 			mask.modulate = colors_list.pick_random()
 		else :
 			push_error("There is no color in the colors_list of the guest scene")
 		add_child(mask)
+		mask.z_index = -1
 	else :
 		push_error("There is no mask in the masks_list of the guest scene")
 		

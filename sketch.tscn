@@ -58,6 +58,7 @@ rotation = 1.5707964
 texture = SubResource("GradientTexture2D_fj7yv")
 
 [node name="GuestSpawner" parent="." unique_id=468613996 node_paths=PackedStringArray("start_position_node", "middle_position_node", "end_position_node") instance=ExtResource("2_kqinb")]
+z_index = -500
 start_position_node = NodePath("StartPosition")
 middle_position_node = NodePath("MiddlePosition")
 end_position_node = NodePath("EndPosition")
@@ -73,43 +74,51 @@ position = Vector2(971, 350)
 
 [node name="Background" type="Sprite2D" parent="." unique_id=715174391]
 self_modulate = Color(18.892157, 18.892157, 18.892157, 1)
+z_index = 500
 position = Vector2(200, 360)
 scale = Vector2(0.3125, 1)
 texture = SubResource("GradientTexture2D_tlwt5")
 
 [node name="Background2" type="Sprite2D" parent="." unique_id=448284441]
 self_modulate = Color(18.892157, 18.892157, 18.892157, 1)
+z_index = 500
 position = Vector2(1040, 360)
 scale = Vector2(0.37499997, 1)
 texture = SubResource("GradientTexture2D_tlwt5")
 
 [node name="Clock" type="Sprite2D" parent="." unique_id=866045281]
+z_index = 500
 position = Vector2(144, 144)
 texture = ExtResource("1_f3sb7")
 
 [node name="Desk" type="Sprite2D" parent="." unique_id=1720808497]
+z_index = 500
 position = Vector2(654.642, 592.5018)
 scale = Vector2(1, 0.9908243)
 skew = -0.40491638
 texture = SubResource("GradientTexture2D_aqk2v")
 
 [node name="Desk2" type="Sprite2D" parent="." unique_id=1012390065]
+z_index = 500
 position = Vector2(545.358, 592.5018)
 scale = Vector2(1, 0.9908243)
 skew = 0.40491638
 texture = SubResource("GradientTexture2D_aqk2v")
 
 [node name="Rug" type="Sprite2D" parent="." unique_id=955774267]
+z_index = 500
 position = Vector2(650, 620)
 skew = -0.2617994
 texture = SubResource("GradientTexture2D_dwbse")
 
 [node name="Rug2" type="Sprite2D" parent="." unique_id=1701448652]
+z_index = 500
 position = Vector2(550, 620)
 skew = 0.2617994
 texture = SubResource("GradientTexture2D_dwbse")
 
 [node name="Ceiling" type="Sprite2D" parent="." unique_id=277729410]
+z_index = 500
 position = Vector2(594.286, 32.5)
 scale = Vector2(4.7151904, 1)
 skew = 0.40491638
