@@ -23,6 +23,7 @@ config/icon="res://Assets/icon.svg"
 
 SignalBus="*res://signal_bus.gd"
 Global="*uid://s5tttijt2m7a"
+Triple="*uid://lvjc8du3rvnd"
 
 [display]
 

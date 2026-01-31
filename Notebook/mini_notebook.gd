@@ -4,12 +4,10 @@ extends Node2D
 var is_in : bool = false
 var is_pressed_out : bool = false
 var is_pressed_in : bool = false
-var Triple_show : bool = false
 
 
 #Actions au démarrage------------------------------------------------------------------------------
 func _ready() -> void:
-	SignalBus.Triple_show.connect(signal_handler)
 	modulate = Color(1, 1, 1, 1)
 	visible = true
 
@@ -17,9 +15,9 @@ func _ready() -> void:
 #Déclencheurs--------------------------------------------------------------------------------------
 func signal_handler(value : int) -> void :
 	if value == 0:
-		Triple_show = true
+		Triple.Triple_show = true
 	else:
-		Triple_show = false
+		Triple.Triple_show = false
 
 
 func _on_area_2d_mouse_entered() -> void:
@@ -48,7 +46,7 @@ func _input(event):
 		else:
 			if is_in:
 				if is_pressed_in:
-					if not Triple_show:
+					if not Triple.Triple_show:
 						SignalBus.Notebook_show.emit(0)
 						visible = false
 			is_pressed_in = false
