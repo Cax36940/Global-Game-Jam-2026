@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://dmnklbijhhd7q" path="res://mini_id.gd" id="1_8peyj"]
 [ext_resource type="Script" uid="uid://bomhw3gjpgiou" path="res://true_id.gd" id="2_8yarp"]
-[ext_resource type="PackedScene" uid="uid://dllg1thn21jxc" path="res://id_back.tscn" id="3_qfcvv"]
 
 [sub_resource type="Gradient" id="Gradient_8yarp"]
 offsets = PackedFloat32Array(1)
@@ -55,9 +54,6 @@ texture = SubResource("GradientTexture2D_0lckl")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TrueID/Sprite_TrueID/Area2D" unique_id=762365757]
 shape = SubResource("RectangleShape2D_aueru")
-
-[node name="ID_Back" parent="TrueID" unique_id=801966938 instance=ExtResource("3_qfcvv")]
-position = Vector2(850, 248)
 
 [connection signal="mouse_entered" from="MiniID/Sprite_MiniID/Area2D" to="MiniID" method="_on_area_2d_mouse_entered"]
 [connection signal="mouse_exited" from="MiniID/Sprite_MiniID/Area2D" to="MiniID" method="_on_area_2d_mouse_exited"]

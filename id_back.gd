@@ -5,3 +5,7 @@ func on_mouse_overing():
 	
 func on_button_pressed():
 	SignalBus.ID_show.emit(1)
+
+func _process(delta: float) -> void:
+	if Input.is_action_pressed("any"):
+		SignalBus.ID_show.emit(1)

@@ -44,3 +44,19 @@ func _input(event):
 						visible = false
 			is_pressed_in = false
 			is_pressed_out = false
+
+func hide_mini():
+	SignalBus.ID_show.emit(0)
+	visible = false
+
+func show_mini():
+	SignalBus.ID_show.emit(1)
+	visible = true
+
+func _process(delta: float) -> void:
+	if visible:
+		if Input.is_action_just_pressed("ui_down"):
+			if not Global.Triple_show:
+				hide_mini.call_deferred()
+	elif Input.is_action_just_pressed("any"):
+		show_mini.call_deferred()

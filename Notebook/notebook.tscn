@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://d26wtjwc2pi7t" path="res://Notebook/mini_notebook.gd" id="1_dxuyj"]
 [ext_resource type="Script" uid="uid://bubxrbaudghs" path="res://Notebook/true_notebook.gd" id="2_gvrn8"]
 [ext_resource type="PackedScene" uid="uid://c8nlyhs8063fj" path="res://Notebook/back_notebook.tscn" id="3_gvrn8"]
-[ext_resource type="Script" uid="uid://b13y82tlw56gv" path="res://Notebook/close.gd" id="3_hf82m"]
+[ext_resource type="Script" path="res://Notebook/close.gd" id="3_hf82m"]
 
 [sub_resource type="Gradient" id="Gradient_i8w2w"]
 offsets = PackedFloat32Array(1)
@@ -17,7 +17,12 @@ height = 120
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n8bdy"]
 size = Vector2(80, 120)
 
+[sub_resource type="Gradient" id="Gradient_dxuyj"]
+offsets = PackedFloat32Array(1)
+colors = PackedColorArray(0.40392157, 0.09803922, 0.05882353, 1)
+
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_i8w2w"]
+gradient = SubResource("Gradient_dxuyj")
 width = 800
 height = 500
 fill_from = Vector2(1, 0)

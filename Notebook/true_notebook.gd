@@ -5,6 +5,8 @@ var pages = [0,1,2]
 
 var sprites: Array
 
+
+
 func _ready() -> void:
 	sprites = $Sprites.get_children()
 	SignalBus.Notebook_show.connect(signal_handler)
@@ -12,6 +14,8 @@ func _ready() -> void:
 	$Previous.pressed.connect(previous)
 	$Next.pressed.connect(next)
 	pages_update()
+
+
 
 func signal_handler(value : int) -> void :
 	if value == 0:
@@ -21,6 +25,8 @@ func signal_handler(value : int) -> void :
 		visible = false
 		Global.Triple_show = false
 		$"../Mini_Notebook".visible = true
+
+
 
 func next():
 	if cur < len(pages) - 1:

@@ -14,7 +14,3 @@ func signal_handler(value : int) -> void :
 		visible = false
 		Global.Triple_show = false
 		$"../MiniID".visible = true
-
-
-func _process(delta: float) -> void:
-	pass

@@ -54,3 +54,19 @@ func _input(event):
 			modulate = Actual_Color
 			is_pressed_in = false
 			is_pressed_out = false
+
+func hide_mini():
+	SignalBus.checklist_show.emit(0)
+	visible = false
+
+func show_mini():
+	SignalBus.checklist_show.emit(1)
+	visible = true
+
+func _process(delta: float) -> void:
+	if visible:
+		if Input.is_action_just_pressed("rshift"):
+			if not Global.Triple_show:
+				hide_mini.call_deferred()
+	elif Input.is_action_just_pressed("any"):
+		show_mini.call_deferred()
