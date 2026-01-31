@@ -31,23 +31,25 @@ middle_position_node = NodePath("MiddlePosition")
 end_position_node = NodePath("EndPosition")
 
 [node name="StartPosition" type="Node2D" parent="GuestSpawner" unique_id=528695478]
-position = Vector2(145, 394)
+position = Vector2(150, 320)
 
 [node name="MiddlePosition" type="Node2D" parent="GuestSpawner" unique_id=356926868]
-position = Vector2(594, 317)
+position = Vector2(610, 320)
 
 [node name="EndPosition" type="Node2D" parent="GuestSpawner" unique_id=1393742207]
-position = Vector2(971, 350)
+position = Vector2(1070, 320)
+
+[node name="Foreground" type="Sprite2D" parent="." unique_id=220635906]
+z_index = 500
+position = Vector2(643, 362)
+texture = ExtResource("3_x4f2i")
 
 [node name="Clock" type="Sprite2D" parent="." unique_id=866045281]
 z_index = 500
 position = Vector2(144, 144)
 texture = ExtResource("1_f3sb7")
 
-[node name="Foreground" type="Sprite2D" parent="." unique_id=220635906]
-position = Vector2(643, 362)
-texture = ExtResource("3_x4f2i")
-
 [node name="Curtain" type="Sprite2D" parent="." unique_id=513760793]
+z_index = 500
 position = Vector2(643, 361)
 texture = ExtResource("4_i6m4m")
