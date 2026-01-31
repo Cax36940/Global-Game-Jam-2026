@@ -62,5 +62,23 @@ texture = SubResource("GradientTexture2D_n8bdy")
 [node name="Back_Notebook" parent="True_Notebook" unique_id=1899871840 instance=ExtResource("3_gvrn8")]
 position = Vector2(1040, 147)
 
+[node name="Previous" type="Button" parent="True_Notebook" unique_id=1335210770]
+offset_left = 389.0
+offset_top = 434.0
+offset_right = 506.0
+offset_bottom = 551.0
+
+[node name="Next" type="Button" parent="True_Notebook" unique_id=721157444]
+offset_left = 851.0
+offset_top = 434.0
+offset_right = 968.0
+offset_bottom = 551.0
+
+[node name="Textbox" type="Button" parent="True_Notebook" unique_id=1972768909]
+offset_left = 507.0
+offset_top = 192.0
+offset_right = 862.0
+offset_bottom = 374.0
+
 [connection signal="mouse_entered" from="Mini_Notebook/Sprite2D/Area2D" to="Mini_Notebook" method="_on_area_2d_mouse_entered"]
 [connection signal="mouse_exited" from="Mini_Notebook/Sprite2D/Area2D" to="Mini_Notebook" method="_on_area_2d_mouse_exited"]

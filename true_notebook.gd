@@ -22,18 +22,18 @@ func signal_handler(value : int) -> void :
 
 func next():
 	if cur + 2 < len(pages):
-		cur += 2
+		cur += 1
 		textbox_update()
 	# TODO: else: deactivate button
 
 func previous():
 	if cur > 1:
-		cur -= 2
+		cur -= 1
 		textbox_update()
 	# TODO: else: deactivate button
 
 func textbox_update():
-	$TextContainer.text = pages[cur] + "+" + pages[cur+1]
+	$Textbox.text = pages[cur] + "+" + pages[cur+1]
 
 func _process(delta: float) -> void:
 	pass
