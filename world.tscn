@@ -1,97 +1,84 @@
-[gd_scene format=3 uid="uid://bv0rv0q12dep3"]
+[gd_scene format=3 uid="uid://bt3dfl76eeddb"]
 
-[ext_resource type="Texture2D" uid="uid://vh18g1m163l5" path="res://Assets/icon.svg" id="1_f3sb7"]
+[ext_resource type="PackedScene" uid="uid://bfhckh8llopeh" path="res://Clock/clock.tscn" id="1_f3sb7"]
+[ext_resource type="Script" uid="uid://dsl3i5b2pmox7" path="res://accept.gd" id="2_aqk2v"]
+[ext_resource type="Script" uid="uid://c4bq1dfaf7t7b" path="res://refuse.gd" id="2_tlwt5"]
+[ext_resource type="Texture2D" uid="uid://vh18g1m163l5" path="res://Assets/icon.svg" id="3_aqk2v"]
 
-[sub_resource type="Gradient" id="Gradient_f3sb7"]
-colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1)
+[sub_resource type="CircleShape2D" id="CircleShape2D_dwbse"]
+radius = 63.03174
 
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_tlwt5"]
-gradient = SubResource("Gradient_f3sb7")
-width = 1280
-height = 720
-fill_from = Vector2(0.21965317, 0.39563265)
-fill_to = Vector2(0.82080925, 0.4624278)
+[sub_resource type="CircleShape2D" id="CircleShape2D_036b0"]
+radius = 64.0
 
-[sub_resource type="Gradient" id="Gradient_fj7yv"]
-colors = PackedColorArray(1, 0, 0, 1, 1, 0, 0, 1)
+[node name="World" type="Node2D" unique_id=1128306412]
 
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_fj7yv"]
-gradient = SubResource("Gradient_fj7yv")
-width = 400
-height = 400
-fill_from = Vector2(1, 0)
-fill_to = Vector2(0, 0)
+[node name="UI2D" type="Node2D" parent="." unique_id=418499570]
 
-[sub_resource type="Gradient" id="Gradient_tlwt5"]
-colors = PackedColorArray(0.43529412, 0.078431375, 0, 1, 0.43333593, 0.07937088, 7.219613e-08, 1)
+[node name="ID_Card" type="Node2D" parent="UI2D" unique_id=569151463]
 
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_aqk2v"]
-gradient = SubResource("Gradient_tlwt5")
-width = 400
-height = 280
+[node name="Checklist" type="Node2D" parent="UI2D" unique_id=1710125240]
 
-[sub_resource type="Gradient" id="Gradient_036b0"]
-colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 1)
+[node name="Notebook" type="Node2D" parent="UI2D" unique_id=2097063390]
 
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_dwbse"]
-gradient = SubResource("Gradient_036b0")
-width = 175
-height = 150
+[node name="Clock" parent="UI2D" unique_id=485727779 instance=ExtResource("1_f3sb7")]
 
-[sub_resource type="Gradient" id="Gradient_pkg7o"]
-colors = PackedColorArray(0.13333334, 0.007843138, 0, 1, 0.13333334, 0.007843138, 0, 1)
+[node name="Look_Closer" type="Node2D" parent="UI2D" unique_id=739269203]
 
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_gbfbk"]
-gradient = SubResource("Gradient_pkg7o")
-width = 319
-height = 71
+[node name="Accept" type="Node2D" parent="UI2D" unique_id=168635666]
+script = ExtResource("2_aqk2v")
 
-[node name="World" type="Node2D" unique_id=1484833825]
+[node name="Sprite2D" type="Sprite2D" parent="UI2D/Accept" unique_id=1198385341]
+modulate = Color(0.5882353, 1, 0.5882353, 1)
+position = Vector2(381, 659)
+rotation = 0.17453292
+scale = Vector2(0.65, 0.65)
+skew = 0.17453292
+texture = ExtResource("3_aqk2v")
 
-[node name="Background" type="Sprite2D" parent="." unique_id=715174391]
-self_modulate = Color(18.892157, 18.892157, 18.892157, 1)
-z_index = -4096
-position = Vector2(640, 360)
-texture = SubResource("GradientTexture2D_tlwt5")
+[node name="Area2D" type="Area2D" parent="UI2D/Accept/Sprite2D" unique_id=85975276]
+rotation = 0.17453292
+scale = Vector2(0.65, 0.65)
+skew = 0.17453292
 
-[node name="Clock" type="Sprite2D" parent="." unique_id=866045281]
-position = Vector2(144, 144)
-texture = ExtResource("1_f3sb7")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="UI2D/Accept/Sprite2D/Area2D" unique_id=561569598]
+rotation = 0.17453292
+scale = Vector2(0.65, 0.65)
+skew = 0.17453292
+shape = SubResource("CircleShape2D_dwbse")
 
-[node name="Window" type="Sprite2D" parent="." unique_id=570471808]
-position = Vector2(600, 265)
-texture = SubResource("GradientTexture2D_fj7yv")
+[node name="Refuse" type="Node2D" parent="UI2D" unique_id=1096447424]
+position = Vector2(405.99994, 568.00006)
+rotation = 0.08726646
+scale = Vector2(0.7, 0.7)
+skew = 0.08726646
+script = ExtResource("2_tlwt5")
 
-[node name="Desk" type="Sprite2D" parent="." unique_id=1720808497]
-position = Vector2(654.642, 592.5018)
-scale = Vector2(1, 0.9908243)
-skew = -0.40491638
-texture = SubResource("GradientTexture2D_aqk2v")
+[node name="Sprite2D" type="Sprite2D" parent="UI2D/Refuse" unique_id=1033150613]
+modulate = Color(1, 0.5882353, 0.5882353, 1)
+rotation = 0.08726646
+scale = Vector2(0.7, 0.7)
+skew = 0.08726646
+texture = ExtResource("3_aqk2v")
 
-[node name="Desk2" type="Sprite2D" parent="." unique_id=1012390065]
-position = Vector2(545.358, 592.5018)
-scale = Vector2(1, 0.9908243)
-skew = 0.40491638
-texture = SubResource("GradientTexture2D_aqk2v")
+[node name="Area2D" type="Area2D" parent="UI2D/Refuse/Sprite2D" unique_id=156234941]
+rotation = 0.08726646
+scale = Vector2(0.7, 0.7)
+skew = 0.08726646
 
-[node name="Rug" type="Sprite2D" parent="." unique_id=955774267]
-position = Vector2(650, 620)
-skew = -0.2617994
-texture = SubResource("GradientTexture2D_dwbse")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="UI2D/Refuse/Sprite2D/Area2D" unique_id=1556063063]
+rotation = 0.08726646
+scale = Vector2(0.7, 0.7)
+skew = 0.08726646
+shape = SubResource("CircleShape2D_036b0")
 
-[node name="Rug2" type="Sprite2D" parent="." unique_id=1701448652]
-position = Vector2(550, 620)
-skew = 0.2617994
-texture = SubResource("GradientTexture2D_dwbse")
+[node name="Guests" type="Node2D" parent="." unique_id=1842837066]
 
-[node name="Ceiling" type="Sprite2D" parent="." unique_id=277729410]
-position = Vector2(654.642, 32.5)
-scale = Vector2(0.999, 1)
-skew = 0.40491638
-texture = SubResource("GradientTexture2D_gbfbk")
+[node name="Shapes" type="Node2D" parent="Guests" unique_id=963886946]
 
-[node name="Ceiling2" type="Sprite2D" parent="." unique_id=799307549]
-position = Vector2(545.358, 32.5)
-scale = Vector2(0.999, 1)
-skew = -0.40491638
-texture = SubResource("GradientTexture2D_gbfbk")
+[node name="Masks" type="Node2D" parent="Guests" unique_id=89022402]
+
+[connection signal="mouse_entered" from="UI2D/Accept/Sprite2D/Area2D" to="UI2D/Accept" method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="UI2D/Accept/Sprite2D/Area2D" to="UI2D/Accept" method="_on_area_2d_mouse_exited"]
+[connection signal="mouse_entered" from="UI2D/Refuse/Sprite2D/Area2D" to="UI2D/Refuse" method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="UI2D/Refuse/Sprite2D/Area2D" to="UI2D/Refuse" method="_on_area_2d_mouse_exited"]

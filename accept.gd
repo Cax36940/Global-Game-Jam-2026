@@ -15,7 +15,7 @@ func _ready() -> void:
 #Déclencheurs--------------------------------------------------------------------------------------
 func _on_area_2d_mouse_entered() -> void:
 	is_in = true
-	modulate = Color(1.0, 0.0, 0.0, 0.5)
+	modulate = Color(0.0, 1.0, 0.0, 0.502)
 
 
 func _on_area_2d_mouse_exited() -> void:
@@ -39,7 +39,7 @@ func _input(event):
 		else:
 			if is_in:
 				if is_pressed_in:
-					print("Refused !")
+					print("Accepted !")
 					modulate = Color(0, 0, 0, 1)
 			is_pressed_in = false
 			is_pressed_out = false

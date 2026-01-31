@@ -15,7 +15,7 @@ func _ready() -> void:
 #Déclencheurs--------------------------------------------------------------------------------------
 func _on_area_2d_mouse_entered() -> void:
 	is_in = true
-	modulate = Color(1.0, 0.0, 0.0, 0.5)
+	modulate = Color(1.0, 0.0, 0.0, 0.502)
 
 
 func _on_area_2d_mouse_exited() -> void:
