@@ -3,7 +3,9 @@
 [ext_resource type="PackedScene" uid="uid://bt3dfl76eeddb" path="res://world.tscn" id="3_1bvp3"]
 [ext_resource type="PackedScene" uid="uid://bv0rv0q12dep3" path="res://sketch.tscn" id="3_h2yge"]
 [ext_resource type="Script" uid="uid://dbxpr14o8226f" path="res://node.gd" id="4_1bvp3"]
-[ext_resource type="PackedScene" uid="uid://cou4r0diu1euy" path="res://MainMenu/main_menu.tscn" id="4_lquwl"]
+[ext_resource type="Script" uid="uid://cdoua2lnxoabv" path="res://Menu/menu.gd" id="4_7mycd"]
+[ext_resource type="PackedScene" uid="uid://cou4r0diu1euy" path="res://Menu/main_menu.tscn" id="4_lquwl"]
+[ext_resource type="Script" uid="uid://dhhd5aeh3y0lc" path="res://Menu/pause_menu.gd" id="5_lquwl"]
 
 [node name="Main" type="Node" unique_id=76370498]
 
@@ -15,4 +17,34 @@ z_index = -4096
 [node name="Node" type="Node" parent="." unique_id=291516609]
 script = ExtResource("4_1bvp3")
 
-[node name="MainMenu" parent="." unique_id=2067887264 instance=ExtResource("4_lquwl")]
+[node name="Menu" type="Control" parent="." unique_id=1469880246]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("4_7mycd")
+
+[node name="MainMenu" parent="Menu" unique_id=2067887264 instance=ExtResource("4_lquwl")]
+layout_mode = 1
+
+[node name="PauseMenu" type="Control" parent="Menu" unique_id=1489862780]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("5_lquwl")
+
+[node name="Resume" type="Button" parent="Menu/PauseMenu" unique_id=1461862858]
+layout_mode = 0
+offset_left = 571.0
+offset_top = 208.0
+offset_right = 641.0
+offset_bottom = 239.0
+text = "Resume"
+
+[node name="Exit" type="Button" parent="Menu/PauseMenu" unique_id=1716701454]
+layout_mode = 0
+offset_left = 624.0
+offset_top = 283.0
+offset_right = 661.0
+offset_bottom = 314.0
+text = "Exit"

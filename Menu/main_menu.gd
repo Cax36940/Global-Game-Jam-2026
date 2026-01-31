@@ -2,6 +2,8 @@
 # https://docs.godotengine.org/en/stable/tutorials/scripting/pausing_games.html
 extends Control
 
+signal start_game
+
 func _ready() -> void:
 	process_mode = Node.PROCESS_MODE_WHEN_PAUSED
 	$Start.pressed.connect(_on_start_button_pressed)
@@ -13,5 +15,4 @@ func _on_exit_button_pressed() -> void:
 	get_tree().quit()
 
 func _on_start_button_pressed():
-	hide()
-	get_tree().paused = false
+	start_game.emit()
