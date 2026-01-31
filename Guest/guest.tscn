@@ -18,7 +18,7 @@ script = ExtResource("1_q4ytt")
 shapes_list = Array[PackedScene]([ExtResource("2_dd4ut"), ExtResource("3_srp40")])
 masks_list = Array[PackedScene]([ExtResource("4_bsd6c"), ExtResource("5_pfqv4")])
 eyes_list = Array[PackedScene]([ExtResource("6_dd4ut"), ExtResource("7_dqge3"), ExtResource("8_7r8l5"), ExtResource("9_e2wpb"), ExtResource("10_bb2pg"), ExtResource("11_c24me"), ExtResource("12_71euk")])
-colors_list = Array[Color]([Color(1, 0, 0, 1), Color(0, 1, 0, 1), Color(0, 0, 1, 1)])
+colors_list = Array[Color]([Color(0.9647059, 0, 0, 1), Color(1, 0.54901963, 0, 1), Color(1, 0.93333334, 0, 1), Color(0.3019608, 0.9137255, 0.29803923, 1), Color(0.21568628, 0.5137255, 1, 1), Color(0.6108052, 0.13755152, 0.8282306, 1), Color(1, 1, 1, 1)])
 
 [node name="EyeL" type="Node2D" parent="." unique_id=715878694]
 modulate = Color(0, 0, 0, 1)
