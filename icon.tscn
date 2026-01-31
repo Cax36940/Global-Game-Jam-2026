@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://c0wtoe804f4xh"]
+
+[ext_resource type="Texture2D" uid="uid://vh18g1m163l5" path="res://Assets/icon.svg" id="1_tr34o"]
+[ext_resource type="Script" uid="uid://dhkeo37fddncj" path="res://icon.gd" id="2_hqyvl"]
+
+[node name="Icon" type="Sprite2D" unique_id=20388740]
+modulate = Color(1, 1, 0, 1)
+texture = ExtResource("1_tr34o")
+script = ExtResource("2_hqyvl")
+
+[node name="Icon2" type="Sprite2D" parent="." unique_id=2021325769]
+modulate = Color(1, 0, 1, 1)
+position = Vector2(324.9854, 243.75397)
+scale = Vector2(1.4, 1.4)
+texture = ExtResource("1_tr34o")

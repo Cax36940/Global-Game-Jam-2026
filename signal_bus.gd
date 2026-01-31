@@ -15,3 +15,13 @@ extends Node
 
 @warning_ignore('unused_signal')
 signal test_signal(value : int)
+
+
+#player
+#_ready
+#epee.signal_name.connect(signal_handler)
+#func signal_handler(ennemis);
+#	print(ennemis)
+#epee
+#process
+#signal_name.emit(ennemis)

@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://c01xneve2v2sv"]
+
+[ext_resource type="Script" uid="uid://bq3u6eg861w21" path="res://Buttons/button.gd" id="1_cowp3"]
+[ext_resource type="Texture2D" uid="uid://vh18g1m163l5" path="res://Assets/icon.svg" id="2_k4xuo"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_h2ksn"]
+radius = 62.008064
+
+[node name="Button" type="Node2D" unique_id=1448350442]
+script = ExtResource("1_cowp3")
+
+[node name="Icon" type="Sprite2D" parent="." unique_id=337179095]
+position = Vector2(302, 212)
+texture = ExtResource("2_k4xuo")
+
+[node name="Area2D" type="Area2D" parent="Icon" unique_id=802759165]
+position = Vector2(-2, 2)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Icon/Area2D" unique_id=1464098167]
+shape = SubResource("CircleShape2D_h2ksn")
+
+[connection signal="mouse_entered" from="Icon/Area2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Icon/Area2D" to="." method="_on_area_2d_mouse_exited"]
