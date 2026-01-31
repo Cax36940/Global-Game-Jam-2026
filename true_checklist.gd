@@ -7,6 +7,7 @@ func _ready() -> void:
 
 
 func signal_handler(value : int) -> void :
+	SignalBus.Triple_show.emit(value)
 	if value == 0:
 		visible = true
 	else:

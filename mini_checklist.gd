@@ -1,20 +1,27 @@
 extends Node2D
 
 
-
 var is_in : bool = false
 var is_pressed_out : bool = false
 var is_pressed_in : bool = false
 var is_shown : bool = false
 var Actual_Color = Color(1, 1, 1, 1)
+var Triple_show : bool = false
 
 
 #Actions au démarrage------------------------------------------------------------------------------
 func _ready() -> void:
+	SignalBus.Triple_show.connect(signal_handler)
 	modulate = Actual_Color
 
 
 #Déclencheurs--------------------------------------------------------------------------------------
+func signal_handler(value : int) -> void :
+	if value == 0:
+		Triple_show = true
+	else:
+		Triple_show = false
+
 func _on_area_checklist_mouse_entered() -> void:
 	is_in = true
 	if not is_shown:
@@ -47,9 +54,10 @@ func _input(event):
 						SignalBus.checklist_show.emit(1)
 						Actual_Color = Color(1, 1, 1, 1)
 					else:
-						is_shown = true
-						SignalBus.checklist_show.emit(0)
-						Actual_Color = Color(1, 1, 1, 0)
+						if not Triple_show:
+							is_shown = true
+							SignalBus.checklist_show.emit(0)
+							Actual_Color = Color(1, 1, 1, 0)
 			modulate = Actual_Color
 			is_pressed_in = false
 			is_pressed_out = false
