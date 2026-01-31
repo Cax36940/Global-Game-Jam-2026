@@ -7,14 +7,13 @@
 [ext_resource type="Script" uid="uid://cutt0ecko4vrq" path="res://Menu/main_menu.gd" id="5_7mycd"]
 [ext_resource type="Script" uid="uid://dhhd5aeh3y0lc" path="res://Menu/pause_menu.gd" id="5_lquwl"]
 [ext_resource type="Script" uid="uid://cdut5tv23yujj" path="res://Menu/controls.gd" id="6_272bh"]
+[ext_resource type="Script" uid="uid://dwy4s6pgcr1p7" path="res://Menu/game_over.gd" id="8_5vw27"]
 
 [node name="Main" type="Node" unique_id=76370498]
 
 [node name="World" parent="." unique_id=1128306412 instance=ExtResource("3_1bvp3")]
-visible = false
 
 [node name="Sketch" parent="." unique_id=1484833825 instance=ExtResource("3_h2yge")]
-visible = false
 z_index = -4096
 
 [node name="Node" type="Node" parent="." unique_id=291516609]
@@ -76,7 +75,6 @@ layout_mode = 2
 text = "Exit"
 
 [node name="MainMenu" type="VBoxContainer" parent="Menu" unique_id=2067887264]
-visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -126,6 +124,7 @@ focus_neighbor_top = NodePath("../Controls/Button")
 text = "Exit"
 
 [node name="GameOver" type="VBoxContainer" parent="Menu" unique_id=2091551017]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -138,6 +137,7 @@ offset_right = 43.5
 offset_bottom = 23.5
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("8_5vw27")
 
 [node name="Label" type="Label" parent="Menu/GameOver" unique_id=1948066001]
 layout_mode = 2
