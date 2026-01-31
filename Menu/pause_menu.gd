@@ -1,5 +1,8 @@
 extends VBoxContainer
 
+
+signal pause_game(ispaused: bool)
+
 var paused = false
 
 func _ready() -> void:
@@ -15,9 +18,9 @@ func _on_game_start():
 
 func toggle_pause():
 	paused = !paused
-	visible = paused
-	get_tree().paused = paused
 	
+	pause_game.emit(paused)
+
 	# https://docs.godotengine.org/en/stable/tutorials/ui/gui_navigation.html
 	if paused:
 		$Resume.grab_focus.call_deferred()
