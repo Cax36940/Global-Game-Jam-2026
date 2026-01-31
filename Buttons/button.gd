@@ -6,10 +6,12 @@ var is_in : bool = false
 var is_pressed_out : bool = false
 var is_pressed_in : bool = false
 
+var data = ["page 1", "page2", "page3"]
 
 #Actions au démarrage------------------------------------------------------------------------------
 func _ready() -> void:
 	modulate = Color(1, 1, 1, 1)
+	pass
 
 
 #Déclencheurs--------------------------------------------------------------------------------------
