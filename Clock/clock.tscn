@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bfhckh8llopeh"]
 
-[ext_resource type="Script" uid="uid://ccuaavxceujd6" path="res://clock.gd" id="1_venu5"]
+[ext_resource type="Script" uid="uid://ccuaavxceujd6" path="res://Clock/clock.gd" id="1_venu5"]
 [ext_resource type="Texture2D" uid="uid://vh18g1m163l5" path="res://Assets/icon.svg" id="2_kig64"]
 
 [node name="Clock" type="Node2D" unique_id=485727779]
