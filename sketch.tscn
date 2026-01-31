@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bv0rv0q12dep3"]
 
 [ext_resource type="Texture2D" uid="uid://vh18g1m163l5" path="res://Assets/icon.svg" id="1_f3sb7"]
+[ext_resource type="PackedScene" uid="uid://c2d4df8lqlj2i" path="res://Guest/guest_spawner.tscn" id="2_kqinb"]
 
 [sub_resource type="Gradient" id="Gradient_f3sb7"]
 colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1)
@@ -97,3 +98,17 @@ position = Vector2(545.358, 32.5)
 scale = Vector2(0.999, 1)
 skew = -0.40491638
 texture = SubResource("GradientTexture2D_gbfbk")
+
+[node name="GuestSpawner" parent="." unique_id=468613996 node_paths=PackedStringArray("start_position_node", "middle_position_node", "end_position_node") instance=ExtResource("2_kqinb")]
+start_position_node = NodePath("StartPosition")
+middle_position_node = NodePath("MiddlePosition")
+end_position_node = NodePath("EndPosition")
+
+[node name="StartPosition" type="Node2D" parent="GuestSpawner" unique_id=528695478]
+position = Vector2(258, 370)
+
+[node name="MiddlePosition" type="Node2D" parent="GuestSpawner" unique_id=356926868]
+position = Vector2(594, 317)
+
+[node name="EndPosition" type="Node2D" parent="GuestSpawner" unique_id=1393742207]
+position = Vector2(971, 350)

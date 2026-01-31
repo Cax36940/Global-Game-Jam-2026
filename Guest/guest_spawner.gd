@@ -17,28 +17,29 @@ func _ready():
 	SignalBus.spawn_guest.connect(spawn_guest)
 	SignalBus.valid_guest.connect(valid_guest)
 	SignalBus.reject_guest.connect(reject_guest)
-	
+
 	if not start_position_node :
-		printerr("There is no start position node in the GuestSpawner")
+		push_error("There is no start position node in the GuestSpawner")
 	if not middle_position_node :
-		printerr("There is no middle position node in the GuestSpawner")
+		push_error("There is no middle position node in the GuestSpawner")
 	if not end_position_node :
-		printerr("There is no end position node in the GuestSpawner")
+		push_error("There is no end position node in the GuestSpawner")
+	SignalBus.spawn_guest.emit()
 
 func _process(delta):
 	if move_state == 0:
-		position.x = move_toward(position.x, start_position_node.position.x, delta * SPEED)
-		position.y = move_toward(position.y, start_position_node.position.y, delta * SPEED)
+		move_node.position.x = move_toward(position.x, start_position_node.position.x, delta * SPEED)
+		move_node.position.y = move_toward(position.y, start_position_node.position.y, delta * SPEED)
 	if move_state == 1:
-		position.x = move_toward(position.x, middle_position_node.position.x, delta * SPEED)
-		position.y = move_toward(position.y, middle_position_node.position.y, delta * SPEED)
+		move_node.position.x = move_toward(position.x, middle_position_node.position.x, delta * SPEED)
+		move_node.position.y = move_toward(position.y, middle_position_node.position.y, delta * SPEED)
 	if move_state == 2:
-		position.x = move_toward(position.x, end_position_node.position.x, delta * SPEED)
-		position.y = move_toward(position.y, end_position_node.position.y, delta * SPEED)
+		move_node.position.x = move_toward(position.x, end_position_node.position.x, delta * SPEED)
+		move_node.position.y = move_toward(position.y, end_position_node.position.y, delta * SPEED)
 
 func spawn_guest():
 	if current_guest :
-		printerr("Trying to spawn a guest when the current one is still present")
+		push_error("Trying to spawn a guest when the current one is still present")
 		move_node.remove_child(current_guest)
 		current_guest.queue_free()
 	
