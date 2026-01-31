@@ -18,6 +18,11 @@ signal test_signal(value : int)
 signal checklist_show(value : int)
 
 
+# Guests signals
+signal spawn_guest()
+signal valid_guest()
+signal reject_guest()
+
 #player
 #_ready
 #epee.signal_name.connect(signal_handler)

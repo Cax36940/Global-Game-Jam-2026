@@ -18,6 +18,7 @@ height = 100
 visible = false
 
 [node name="World" parent="." unique_id=1128306412 instance=ExtResource("3_1bvp3")]
+visible = false
 
 [node name="Sketch" parent="." unique_id=1484833825 instance=ExtResource("3_h2yge")]
 z_index = -4096

@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://use5h1nr2uwf"]
+
+[ext_resource type="Script" uid="uid://k3dilur23q5u" path="res://Guest/Masks/mask.gd" id="1_yrvfm"]
+[ext_resource type="Texture2D" uid="uid://vh18g1m163l5" path="res://Assets/icon.svg" id="2_uqb6b"]
+
+[node name="Mask2" type="Node2D" unique_id=1574458513]
+script = ExtResource("1_yrvfm")
+
+[node name="Icon" type="Sprite2D" parent="." unique_id=95653512]
+modulate = Color(18.892157, 18.892157, 18.892157, 1)
+position = Vector2(-25, -13)
+scale = Vector2(0.25, 0.38671875)
+texture = ExtResource("2_uqb6b")
+
+[node name="Icon3" type="Sprite2D" parent="." unique_id=1564990715]
+modulate = Color(18.892157, 18.892157, 18.892157, 1)
+position = Vector2(0, -10)
+scale = Vector2(0.15625, 0.0859375)
+texture = ExtResource("2_uqb6b")
+
+[node name="Icon4" type="Sprite2D" parent="." unique_id=1754687801]
+modulate = Color(18.892157, 18.892157, 18.892157, 1)
+position = Vector2(52, -10)
+scale = Vector2(0.1875, 0.0859375)
+texture = ExtResource("2_uqb6b")
+
+[node name="Icon5" type="Sprite2D" parent="." unique_id=969191548]
+modulate = Color(18.892157, 18.892157, 18.892157, 1)
+position = Vector2(-52, -10)
+scale = Vector2(0.1875, 0.0859375)
+texture = ExtResource("2_uqb6b")
+
+[node name="Icon2" type="Sprite2D" parent="." unique_id=2066030046]
+modulate = Color(18.892157, 18.892157, 18.892157, 1)
+position = Vector2(25, -13)
+scale = Vector2(0.25, 0.38671875)
+texture = ExtResource("2_uqb6b")

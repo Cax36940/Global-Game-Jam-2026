@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://bakb3yc52brgt"]
+
+[ext_resource type="Script" uid="uid://dwyd1vo3gr4sm" path="res://Guest/guest.gd" id="1_q4ytt"]
+[ext_resource type="PackedScene" uid="uid://chrdrmeschmgj" path="res://Guest/Shapes/shape1.tscn" id="2_dd4ut"]
+[ext_resource type="PackedScene" uid="uid://28caiieo3yqb" path="res://Guest/Shapes/shape2.tscn" id="3_srp40"]
+[ext_resource type="PackedScene" uid="uid://buej6jr4enf6f" path="res://Guest/Masks/mask1.tscn" id="4_bsd6c"]
+[ext_resource type="PackedScene" uid="uid://use5h1nr2uwf" path="res://Guest/Masks/mask2.tscn" id="5_pfqv4"]
+
+[node name="Guests" type="Node2D" unique_id=1750283726]
+script = ExtResource("1_q4ytt")
+shapes_list = Array[PackedScene]([ExtResource("2_dd4ut"), ExtResource("3_srp40")])
+masks_list = Array[PackedScene]([ExtResource("4_bsd6c"), ExtResource("5_pfqv4")])
+colors_list = Array[Color]([Color(1, 0, 0, 1), Color(0, 1, 0, 1), Color(0, 0, 1, 1)])

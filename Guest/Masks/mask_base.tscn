@@ -2,5 +2,5 @@
 
 [ext_resource type="Script" uid="uid://k3dilur23q5u" path="res://Guest/Masks/mask.gd" id="1_jr1r0"]
 
-[node name="Mask" type="Node2D" unique_id=1574458513]
+[node name="MaskBase" type="Node2D" unique_id=1574458513]
 script = ExtResource("1_jr1r0")
