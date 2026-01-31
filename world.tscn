@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bt3dfl76eeddb"]
 
 [ext_resource type="PackedScene" uid="uid://dcmgdb1ncffg0" path="res://ui_2d.tscn" id="1_fj7yv"]
-[ext_resource type="PackedScene" uid="uid://bakb3yc52brgt" path="res://guests.tscn" id="2_tlwt5"]
+[ext_resource type="PackedScene" uid="uid://bakb3yc52brgt" path="res://Guest/guests.tscn" id="2_tlwt5"]
 
 [node name="World" type="Node2D" unique_id=1128306412]
 
