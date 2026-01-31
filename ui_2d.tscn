@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://cnn004a8iu2e0" path="res://mini_checklist.gd" id="5_y6d2w"]
 [ext_resource type="Script" uid="uid://8pnn8yjswavy" path="res://true_checklist.gd" id="6_k61qh"]
 [ext_resource type="PackedScene" uid="uid://cat7bh3g2lwh0" path="res://checkbox.tscn" id="7_yplp6"]
+[ext_resource type="PackedScene" uid="uid://c01xneve2v2sv" path="res://Buttons/button.tscn" id="8_aoyq8"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_dwbse"]
 radius = 163.56357
@@ -112,51 +113,55 @@ texture = SubResource("GradientTexture2D_dwbse")
 
 [node name="Checkbox" parent="Checklist/True_Checklist" unique_id=2123857673 instance=ExtResource("7_yplp6")]
 position = Vector2(752, 615)
-scale = Vector2(1.5, 1.5)
+scale = Vector2(1.7, 1.7)
 
 [node name="Checkbox2" parent="Checklist/True_Checklist" unique_id=1371308105 instance=ExtResource("7_yplp6")]
 position = Vector2(682, 615)
-scale = Vector2(1.5, 1.5)
+scale = Vector2(1.7, 1.7)
 
 [node name="Checkbox3" parent="Checklist/True_Checklist" unique_id=1536157333 instance=ExtResource("7_yplp6")]
 position = Vector2(752, 545)
-scale = Vector2(1.5, 1.5)
+scale = Vector2(1.7, 1.7)
 
 [node name="Checkbox4" parent="Checklist/True_Checklist" unique_id=1121997238 instance=ExtResource("7_yplp6")]
 position = Vector2(682, 545)
-scale = Vector2(1.5, 1.5)
+scale = Vector2(1.7, 1.7)
 
 [node name="Checkbox5" parent="Checklist/True_Checklist" unique_id=2022257331 instance=ExtResource("7_yplp6")]
 position = Vector2(752, 475)
-scale = Vector2(1.5, 1.5)
+scale = Vector2(1.7, 1.7)
 
 [node name="Checkbox6" parent="Checklist/True_Checklist" unique_id=1260170552 instance=ExtResource("7_yplp6")]
 position = Vector2(682, 475)
-scale = Vector2(1.5, 1.5)
+scale = Vector2(1.7, 1.7)
 
 [node name="Checkbox7" parent="Checklist/True_Checklist" unique_id=1140744187 instance=ExtResource("7_yplp6")]
 position = Vector2(752, 405)
-scale = Vector2(1.5, 1.5)
+scale = Vector2(1.7, 1.7)
 
 [node name="Checkbox8" parent="Checklist/True_Checklist" unique_id=1194320051 instance=ExtResource("7_yplp6")]
 position = Vector2(682, 405)
-scale = Vector2(1.5, 1.5)
+scale = Vector2(1.7, 1.7)
 
 [node name="Checkbox9" parent="Checklist/True_Checklist" unique_id=1162187532 instance=ExtResource("7_yplp6")]
 position = Vector2(752, 335)
-scale = Vector2(1.5, 1.5)
+scale = Vector2(1.7, 1.7)
 
 [node name="Checkbox10" parent="Checklist/True_Checklist" unique_id=1159904095 instance=ExtResource("7_yplp6")]
 position = Vector2(682, 335)
-scale = Vector2(1.5, 1.5)
+scale = Vector2(1.7, 1.7)
 
 [node name="Checkbox11" parent="Checklist/True_Checklist" unique_id=215647314 instance=ExtResource("7_yplp6")]
 position = Vector2(752, 265)
-scale = Vector2(1.5, 1.5)
+scale = Vector2(1.7, 1.7)
 
 [node name="Checkbox12" parent="Checklist/True_Checklist" unique_id=995715946 instance=ExtResource("7_yplp6")]
 position = Vector2(682, 265)
-scale = Vector2(1.5, 1.5)
+scale = Vector2(1.7, 1.7)
+
+[node name="Button" parent="Checklist/True_Checklist" unique_id=1448350442 instance=ExtResource("8_aoyq8")]
+position = Vector2(780, 93)
+scale = Vector2(0.4, 0.4)
 
 [node name="Notebook" type="Node2D" parent="." unique_id=728666171]
 

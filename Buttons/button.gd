@@ -39,7 +39,7 @@ func _input(event):
 		else:
 			if is_in:
 				if is_pressed_in:
-					print("Refused !")
+					print("Button pressed")
 					modulate = Color(0, 0, 0, 1)
 			is_pressed_in = false
 			is_pressed_out = false
