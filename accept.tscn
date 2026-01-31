@@ -4,29 +4,19 @@
 [ext_resource type="Texture2D" uid="uid://vh18g1m163l5" path="res://Assets/icon.svg" id="2_pd1wq"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_dwbse"]
-radius = 163.56357
+radius = 63.0
 
 [node name="Accept" type="Node2D" unique_id=2047118973]
 script = ExtResource("1_gms83")
 
 [node name="Sprite_Accept" type="Sprite2D" parent="." unique_id=728891142]
 modulate = Color(0.5882353, 1, 0.5882353, 1)
-position = Vector2(381, 659)
-rotation = 0.17453292
-scale = Vector2(0.65, 0.65)
-skew = 0.17453292
 texture = ExtResource("2_pd1wq")
 
-[node name="Area_Accept" type="Area2D" parent="Sprite_Accept" unique_id=1838939576]
-rotation = 0.17453292
-scale = Vector2(0.65, 0.65)
-skew = 0.17453292
+[node name="Area_Accept" type="Area2D" parent="." unique_id=1838939576]
 
-[node name="CollisionShape_Accept" type="CollisionShape2D" parent="Sprite_Accept/Area_Accept" unique_id=1751806674]
-rotation = 0.17453292
-scale = Vector2(0.65, 0.65)
-skew = 0.17453292
+[node name="CollisionShape_Accept" type="CollisionShape2D" parent="Area_Accept" unique_id=1751806674]
 shape = SubResource("CircleShape2D_dwbse")
 
-[connection signal="mouse_entered" from="Sprite_Accept/Area_Accept" to="." method="_on_area_2d_mouse_entered"]
-[connection signal="mouse_exited" from="Sprite_Accept/Area_Accept" to="." method="_on_area_2d_mouse_exited"]
+[connection signal="mouse_entered" from="Area_Accept" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Area_Accept" to="." method="_on_area_2d_mouse_exited"]

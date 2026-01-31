@@ -24,19 +24,25 @@ func _ready():
 		push_error("There is no middle position node in the GuestSpawner")
 	if not end_position_node :
 		push_error("There is no end position node in the GuestSpawner")
-	SignalBus.spawn_guest.emit()
+	spawn_guest()
 
 func _process(delta):
 	if move_state == 0:
 		move_node.position.x = move_toward(move_node.position.x, start_position_node.position.x, delta * SPEED)
 		move_node.position.y = move_toward(move_node.position.y, start_position_node.position.y, delta * SPEED)
+		if (move_node.position - start_position_node.position).length() < 10 :
+			remove_guest()
+			spawn_guest()
 	if move_state == 1:
 		move_node.position.x = move_toward(move_node.position.x, middle_position_node.position.x, delta * SPEED)
 		move_node.position.y = move_toward(move_node.position.y, middle_position_node.position.y, delta * SPEED)
 	if move_state == 2:
 		move_node.position.x = move_toward(move_node.position.x, end_position_node.position.x, delta * SPEED)
 		move_node.position.y = move_toward(move_node.position.y, end_position_node.position.y, delta * SPEED)
-
+		if (move_node.position - end_position_node.position).length() < 10 :
+			remove_guest()
+			spawn_guest()
+			
 func spawn_guest():
 	if current_guest :
 		push_error("Trying to spawn a guest when the current one is still present")
@@ -56,3 +62,12 @@ func valid_guest():
 func reject_guest():
 	move_state = 0
 	pass
+
+func remove_guest():
+	if !current_guest :
+		push_error("Trying to remove a guest when none are still present")
+	else:
+		move_node.remove_child(current_guest)
+		current_guest.queue_free()
+		current_guest = null
+		

@@ -4,8 +4,8 @@
 [ext_resource type="PackedScene" uid="uid://c2d4df8lqlj2i" path="res://Guest/guest_spawner.tscn" id="2_kqinb"]
 
 [sub_resource type="Gradient" id="Gradient_fj7yv"]
-offsets = PackedFloat32Array(0)
-colors = PackedColorArray(0, 1, 0, 1)
+offsets = PackedFloat32Array(0, 0.16013072, 0.87908494, 1)
+colors = PackedColorArray(0.35906908, 0.35906908, 0.35906908, 1, 0.510617, 0, 0, 1, 1, 0, 0, 1, 1, 0.49560964, 0, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_fj7yv"]
 gradient = SubResource("Gradient_fj7yv")
@@ -54,6 +54,7 @@ height = 71
 [node name="Window" type="Sprite2D" parent="." unique_id=570471808]
 z_index = -1000
 position = Vector2(600, 265)
+rotation = 1.5707964
 texture = SubResource("GradientTexture2D_fj7yv")
 
 [node name="GuestSpawner" parent="." unique_id=468613996 node_paths=PackedStringArray("start_position_node", "middle_position_node", "end_position_node") instance=ExtResource("2_kqinb")]
