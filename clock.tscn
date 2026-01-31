@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://bfhckh8llopeh"]
+
+[ext_resource type="Script" uid="uid://ccuaavxceujd6" path="res://clock.gd" id="1_venu5"]
+[ext_resource type="Texture2D" uid="uid://vh18g1m163l5" path="res://Assets/icon.svg" id="2_kig64"]
+
+[node name="Clock" type="Node2D" unique_id=485727779]
+script = ExtResource("1_venu5")
+
+[node name="Face" type="Sprite2D" parent="." unique_id=638863953]
+self_modulate = Color(0.2901961, 0.21176471, 0.39607844, 1)
+texture = ExtResource("2_kig64")
+
+[node name="Seconds" type="Sprite2D" parent="Face" unique_id=1295007026]
+self_modulate = Color(1, 0.07058824, 0.10980392, 1)
+position = Vector2(0.00014803911, 0.02498379)
+rotation = -0.0059301085
+scale = Vector2(0.063619375, 0.49206197)
+texture = ExtResource("2_kig64")
+offset = Vector2(0, -64.503944)
+
+[node name="Minutes" type="Sprite2D" parent="Face" unique_id=1108947882]
+position = Vector2(-0.00039063807, -0.065852806)
+scale = Vector2(0.063619375, 0.3118006)
+texture = ExtResource("2_kig64")
+offset = Vector2(0, -64.503944)
+
+[node name="TimerOfSeconds" type="Timer" parent="." unique_id=1706064722]
+autostart = true
+
+[node name="TimerOfMinutes" type="Timer" parent="." unique_id=290257690]
+wait_time = 60.0
+autostart = true
+
+[connection signal="timeout" from="TimerOfSeconds" to="." method="_on_timer_of_seconds_timeout"]
+[connection signal="timeout" from="TimerOfMinutes" to="." method="_on_timer_of_minutes_timeout"]
