@@ -9,5 +9,5 @@ func _on_start_game():
 	$MainMenu.hide()
 	$MainMenu.process_mode = Node.PROCESS_MODE_DISABLED
 	$PauseMenu.process_mode = Node.PROCESS_MODE_ALWAYS
-	
+
 	get_tree().paused = false

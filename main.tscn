@@ -6,7 +6,7 @@
 [ext_resource type="Script" uid="uid://cdoua2lnxoabv" path="res://Menu/menu.gd" id="4_7mycd"]
 [ext_resource type="Script" uid="uid://cutt0ecko4vrq" path="res://Menu/main_menu.gd" id="5_7mycd"]
 [ext_resource type="Script" uid="uid://dhhd5aeh3y0lc" path="res://Menu/pause_menu.gd" id="5_lquwl"]
-[ext_resource type="Script" uid="uid://dnjxo1dkpgwht" path="res://Menu/help.gd" id="6_272bh"]
+[ext_resource type="Script" uid="uid://cdut5tv23yujj" path="res://Menu/controls.gd" id="6_272bh"]
 
 [node name="Main" type="Node" unique_id=76370498]
 
@@ -49,6 +49,7 @@ script = ExtResource("5_7mycd")
 [node name="Label" type="Label" parent="Menu/MainMenu" unique_id=518528668]
 layout_mode = 2
 text = "Vigilance Maskimum"
+horizontal_alignment = 1
 
 [node name="Start" type="Button" parent="Menu/MainMenu" unique_id=1518564439]
 layout_mode = 2
@@ -57,13 +58,21 @@ text = "Start Game"
 
 [node name="Controls" type="VBoxContainer" parent="Menu/MainMenu" unique_id=1946298209]
 layout_mode = 2
+script = ExtResource("6_272bh")
 
 [node name="Button" type="Button" parent="Menu/MainMenu/Controls" unique_id=426468012]
 layout_mode = 2
 focus_neighbor_top = NodePath("../../Start")
 focus_neighbor_bottom = NodePath("../../Exit")
+toggle_mode = true
 text = "Controls"
-script = ExtResource("6_272bh")
+
+[node name="Label" type="Label" parent="Menu/MainMenu/Controls" unique_id=1339610785]
+visible = false
+layout_mode = 2
+text = "Shift = Do A
+Space = Do B
+TODO: add controls"
 
 [node name="Exit" type="Button" parent="Menu/MainMenu" unique_id=217473286]
 layout_mode = 2
@@ -85,6 +94,11 @@ offset_bottom = 33.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("5_lquwl")
+
+[node name="Label" type="Label" parent="Menu/PauseMenu" unique_id=942334447]
+layout_mode = 2
+text = "Pause"
+horizontal_alignment = 1
 
 [node name="Resume" type="Button" parent="Menu/PauseMenu" unique_id=1461862858]
 layout_mode = 2
