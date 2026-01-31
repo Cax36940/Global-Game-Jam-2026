@@ -1,9 +1,70 @@
 [gd_scene format=3 uid="uid://bt3dfl76eeddb"]
 
+[ext_resource type="Script" uid="uid://cj7tlfpuuixed" path="res://checklist.gd" id="1_036b0"]
 [ext_resource type="PackedScene" uid="uid://bfhckh8llopeh" path="res://Clock/clock.tscn" id="1_f3sb7"]
 [ext_resource type="Script" uid="uid://dsl3i5b2pmox7" path="res://accept.gd" id="2_aqk2v"]
 [ext_resource type="Script" uid="uid://c4bq1dfaf7t7b" path="res://refuse.gd" id="2_tlwt5"]
 [ext_resource type="Texture2D" uid="uid://vh18g1m163l5" path="res://Assets/icon.svg" id="3_aqk2v"]
+
+[sub_resource type="Gradient" id="Gradient_aqk2v"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0.5856639, 0.39514944, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_036b0"]
+gradient = SubResource("Gradient_aqk2v")
+width = 100
+height = 100
+
+[sub_resource type="GDScript" id="GDScript_dwbse"]
+script/source = "extends Node2D
+
+
+
+var is_in : bool = false
+var is_pressed_out : bool = false
+var is_pressed_in : bool = false
+
+
+#Actions au démarrage------------------------------------------------------------------------------
+func _ready() -> void:
+	modulate = Color(1, 1, 1, 1)
+
+
+#Déclencheurs--------------------------------------------------------------------------------------
+func _on_area_2d_mouse_entered() -> void:
+	is_in = true
+	modulate = Color(0.478, 0.331, 0.0, 0.502)
+
+
+func _on_area_2d_mouse_exited() -> void:
+	is_in = false
+	modulate = Color(1, 1, 1, 1)
+
+
+func _input(event):
+	if event is InputEventMouseButton:
+		if event.pressed:
+			if is_in:
+				if is_pressed_out:
+					is_pressed_in = false
+				else:
+					is_pressed_in = true
+			else:
+				if is_pressed_in:
+					is_pressed_out = false
+				else:
+					is_pressed_out = true
+		else:
+			if is_in:
+				if is_pressed_in:
+					print(\"Accepted !\")
+					modulate = Color(0, 0, 0, 1)
+			is_pressed_in = false
+			is_pressed_out = false
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pkg7o"]
+size = Vector2(99.99991, 100.00003)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_dwbse"]
 radius = 63.03174
@@ -18,6 +79,19 @@ radius = 64.0
 [node name="ID_Card" type="Node2D" parent="UI2D" unique_id=569151463]
 
 [node name="Checklist" type="Node2D" parent="UI2D" unique_id=1710125240]
+script = ExtResource("1_036b0")
+
+[node name="Sprite2D" type="Sprite2D" parent="UI2D/Checklist" unique_id=2063861463]
+position = Vector2(892, 371)
+scale = Vector2(0.9200004, 1)
+texture = SubResource("GradientTexture2D_036b0")
+script = SubResource("GDScript_dwbse")
+
+[node name="Area2D" type="Area2D" parent="UI2D/Checklist/Sprite2D" unique_id=1312449628]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="UI2D/Checklist/Sprite2D/Area2D" unique_id=2104909867]
+scale = Vector2(0.9999999, 0.9999999)
+shape = SubResource("RectangleShape2D_pkg7o")
 
 [node name="Notebook" type="Node2D" parent="UI2D" unique_id=2097063390]
 
@@ -78,6 +152,8 @@ shape = SubResource("CircleShape2D_036b0")
 
 [node name="Masks" type="Node2D" parent="Guests" unique_id=89022402]
 
+[connection signal="mouse_entered" from="UI2D/Checklist/Sprite2D/Area2D" to="UI2D/Checklist" method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="UI2D/Checklist/Sprite2D/Area2D" to="UI2D/Checklist" method="_on_area_2d_mouse_exited"]
 [connection signal="mouse_entered" from="UI2D/Accept/Sprite2D/Area2D" to="UI2D/Accept" method="_on_area_2d_mouse_entered"]
 [connection signal="mouse_exited" from="UI2D/Accept/Sprite2D/Area2D" to="UI2D/Accept" method="_on_area_2d_mouse_exited"]
 [connection signal="mouse_entered" from="UI2D/Refuse/Sprite2D/Area2D" to="UI2D/Refuse" method="_on_area_2d_mouse_entered"]
