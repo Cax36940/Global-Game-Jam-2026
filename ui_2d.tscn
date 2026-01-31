@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://ch3lo0f11rnu7" path="res://accept.tscn" id="2_yplp6"]
 [ext_resource type="PackedScene" uid="uid://bdjk536uwqjq1" path="res://refuse.tscn" id="3_aoyq8"]
 [ext_resource type="PackedScene" uid="uid://b035td654d8fn" path="res://checklist.tscn" id="4_nngme"]
-[ext_resource type="PackedScene" uid="uid://cqr3vlbkgwvfw" path="res://notebook.tscn" id="5_y6d2w"]
+[ext_resource type="PackedScene" uid="uid://cqr3vlbkgwvfw" path="res://Notebook/notebook.tscn" id="5_y6d2w"]
 [ext_resource type="PackedScene" uid="uid://cai23abja2vk2" path="res://id_card.tscn" id="6_k61qh"]
 [ext_resource type="PackedScene" uid="uid://bql8avy4llevf" path="res://look_closer.tscn" id="7_yplp6"]
 

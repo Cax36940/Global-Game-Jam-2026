@@ -7,11 +7,12 @@ func _ready() -> void:
 
 
 func signal_handler(value : int) -> void :
-	SignalBus.Triple_show.emit(value)
 	if value == 0:
 		visible = true
+		Global.Triple_show = true
 	else:
 		visible = false
+		Global.Triple_show = false
 		$"../MiniID".visible = true
 
 
