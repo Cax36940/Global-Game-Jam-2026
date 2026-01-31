@@ -12,7 +12,7 @@ var current_guest : Guest = null
 @onready var move_node : Node2D = $MoveNode
 
 var move_state : int = 0
-const SPEED : float = 100.0
+const SPEED : float = 1000.0
 func _ready():
 	SignalBus.spawn_guest.connect(spawn_guest)
 	SignalBus.valid_guest.connect(valid_guest)
@@ -28,14 +28,14 @@ func _ready():
 
 func _process(delta):
 	if move_state == 0:
-		move_node.position.x = move_toward(position.x, start_position_node.position.x, delta * SPEED)
-		move_node.position.y = move_toward(position.y, start_position_node.position.y, delta * SPEED)
+		move_node.position.x = move_toward(move_node.position.x, start_position_node.position.x, delta * SPEED)
+		move_node.position.y = move_toward(move_node.position.y, start_position_node.position.y, delta * SPEED)
 	if move_state == 1:
-		move_node.position.x = move_toward(position.x, middle_position_node.position.x, delta * SPEED)
-		move_node.position.y = move_toward(position.y, middle_position_node.position.y, delta * SPEED)
+		move_node.position.x = move_toward(move_node.position.x, middle_position_node.position.x, delta * SPEED)
+		move_node.position.y = move_toward(move_node.position.y, middle_position_node.position.y, delta * SPEED)
 	if move_state == 2:
-		move_node.position.x = move_toward(position.x, end_position_node.position.x, delta * SPEED)
-		move_node.position.y = move_toward(position.y, end_position_node.position.y, delta * SPEED)
+		move_node.position.x = move_toward(move_node.position.x, end_position_node.position.x, delta * SPEED)
+		move_node.position.y = move_toward(move_node.position.y, end_position_node.position.y, delta * SPEED)
 
 func spawn_guest():
 	if current_guest :
@@ -45,7 +45,7 @@ func spawn_guest():
 	
 	var guest : Guest = guest_scene.instantiate()
 	current_guest = guest
-	move_node.position = Vector2.ZERO
+	move_node.position = start_position_node.position
 	move_state = 1
 	move_node.add_child(guest)
 
