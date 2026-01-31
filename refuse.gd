@@ -5,5 +5,6 @@ func on_mouse_overing():
 
 func on_button_pressed():
 	if not Global.Triple_show:
-		SignalBus.reject_guest.emit()
+		SignalBus.Mistake_test.emit(Global.is_guest_valid)
 		modulate = Color(0, 0, 0, 1)
+		SignalBus.reject_guest.emit()

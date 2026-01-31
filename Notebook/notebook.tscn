@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://d26wtjwc2pi7t" path="res://Notebook/mini_notebook.gd" id="1_dxuyj"]
 [ext_resource type="Script" uid="uid://bubxrbaudghs" path="res://Notebook/true_notebook.gd" id="2_gvrn8"]
 [ext_resource type="PackedScene" uid="uid://c8nlyhs8063fj" path="res://Notebook/back_notebook.tscn" id="3_gvrn8"]
-[ext_resource type="Script" uid="uid://b13y82tlw56gv" path="res://Notebook/close.gd" id="3_hf82m"]
+[ext_resource type="Script" path="res://Notebook/close.gd" id="3_hf82m"]
 
 [sub_resource type="Gradient" id="Gradient_i8w2w"]
 offsets = PackedFloat32Array(1)
