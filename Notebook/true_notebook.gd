@@ -6,6 +6,7 @@ var pages = [0,1,2]
 var sprites: Array
 
 func _ready() -> void:
+	visible = false
 	sprites = $Sprites.get_children()
 	SignalBus.Notebook_show.connect(signal_handler)
 
