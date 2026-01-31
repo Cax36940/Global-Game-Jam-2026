@@ -8,8 +8,12 @@ var delta = Time.get_ticks_msec()
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	print(delta)
-	
+	SignalBus.start_game.connect(signal_handler)
+	delta = Time.get_ticks_msec()
+
+func signal_handler() -> void :
+	delta = Time.get_ticks_msec()
+
 func _process(nope) -> void:
 	var d = PI*(Time.get_ticks_msec()-delta)/360000
 	$Face/Minutes.look_at($Face/Minutes.offset + 10000*Vector2(cos(d),sin(d)))
