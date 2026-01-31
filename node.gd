@@ -10,6 +10,7 @@ func Mistake_handler(value : bool) -> void :
 	Global.Total_count += 1
 	if not value	:
 		Global.Mistakes_count += 1
+	print("Correct: ", Global.Total_count - Global.Mistakes_count, " out of ", Global.Total_count)
 
 func End_handler(value : bool) -> void :	
 	print(Global.Total_count)

@@ -28,7 +28,12 @@ func _ready():
 		push_error("There is no middle position node in the GuestSpawner")
 	if not end_position_node :
 		push_error("There is no end position node in the GuestSpawner")
+	
 	spawn_guest()
+	Global.mask_list = current_guest.masks_list
+	Global.eye_list = current_guest.eyes_list
+	Global.color_list = current_guest.colors_list
+	Global.setup_invalid()
 
 func _process(delta):
 	if move_state == 0:
@@ -36,6 +41,7 @@ func _process(delta):
 		move_node.position.y = move_toward(move_node.position.y, start_position_node.position.y, delta * SPEED)
 		if (move_node.position - start_position_node.position).length() < 10 :
 			remove_guest()
+			SignalBus.Mistake_test.emit(!Global.check_guest(current_mask, current_eye, current_color))
 			spawn_guest()
 	if move_state == 1:
 		move_node.position.x = move_toward(move_node.position.x, middle_position_node.position.x, delta * SPEED)
@@ -45,6 +51,7 @@ func _process(delta):
 		move_node.position.y = move_toward(move_node.position.y, end_position_node.position.y, delta * SPEED)
 		if (move_node.position - end_position_node.position).length() < 10 :
 			remove_guest()
+			SignalBus.Mistake_test.emit(Global.check_guest(current_mask, current_eye, current_color))
 			spawn_guest()
 			
 func spawn_guest():
