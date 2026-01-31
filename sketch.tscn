@@ -2,52 +2,19 @@
 
 [ext_resource type="Texture2D" uid="uid://vh18g1m163l5" path="res://Assets/icon.svg" id="1_f3sb7"]
 [ext_resource type="PackedScene" uid="uid://c2d4df8lqlj2i" path="res://Guest/guest_spawner.tscn" id="2_kqinb"]
+[ext_resource type="Texture2D" uid="uid://d27cxtmpb8cnh" path="res://Assets/foreground.png" id="3_x4f2i"]
+[ext_resource type="Texture2D" uid="uid://d4ggafssd1obi" path="res://Assets/curtain.png" id="4_i6m4m"]
 
 [sub_resource type="Gradient" id="Gradient_fj7yv"]
-offsets = PackedFloat32Array(0, 0.16013072, 0.87908494, 1)
-colors = PackedColorArray(0.35906908, 0.35906908, 0.35906908, 1, 0.510617, 0, 0, 1, 1, 0, 0, 1, 1, 0.49560964, 0, 1)
+offsets = PackedFloat32Array(0, 0.45424837, 1)
+colors = PackedColorArray(1, 0, 0, 1, 0.55455405, 0.554554, 0.5545539, 1, 0.87455684, 0, 0, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_fj7yv"]
 gradient = SubResource("Gradient_fj7yv")
 width = 400
 height = 400
-fill_from = Vector2(1, 0)
-fill_to = Vector2(0, 0)
-
-[sub_resource type="Gradient" id="Gradient_f3sb7"]
-colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_tlwt5"]
-gradient = SubResource("Gradient_f3sb7")
-width = 1280
-height = 720
-fill_from = Vector2(0.21965317, 0.39563265)
-fill_to = Vector2(0.82080925, 0.4624278)
-
-[sub_resource type="Gradient" id="Gradient_tlwt5"]
-offsets = PackedFloat32Array(0)
-colors = PackedColorArray(0.6307713, 0.31855083, 0, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_aqk2v"]
-gradient = SubResource("Gradient_tlwt5")
-width = 400
-height = 280
-
-[sub_resource type="Gradient" id="Gradient_u7ag7"]
-colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_dwbse"]
-gradient = SubResource("Gradient_u7ag7")
-width = 200
-height = 130
-
-[sub_resource type="Gradient" id="Gradient_pkg7o"]
-colors = PackedColorArray(0.13333334, 0.007843138, 0, 1, 0.13333334, 0.007843138, 0, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_gbfbk"]
-gradient = SubResource("Gradient_pkg7o")
-width = 319
-height = 71
+fill_from = Vector2(0.6030043, 0.0021459227)
+fill_to = Vector2(0.5772532, 1)
 
 [node name="Sketch" type="Node2D" unique_id=1484833825]
 
@@ -72,54 +39,15 @@ position = Vector2(594, 317)
 [node name="EndPosition" type="Node2D" parent="GuestSpawner" unique_id=1393742207]
 position = Vector2(971, 350)
 
-[node name="Background" type="Sprite2D" parent="." unique_id=715174391]
-self_modulate = Color(18.892157, 18.892157, 18.892157, 1)
-z_index = 500
-position = Vector2(200, 360)
-scale = Vector2(0.3125, 1)
-texture = SubResource("GradientTexture2D_tlwt5")
-
-[node name="Background2" type="Sprite2D" parent="." unique_id=448284441]
-self_modulate = Color(18.892157, 18.892157, 18.892157, 1)
-z_index = 500
-position = Vector2(1040, 360)
-scale = Vector2(0.37499997, 1)
-texture = SubResource("GradientTexture2D_tlwt5")
-
 [node name="Clock" type="Sprite2D" parent="." unique_id=866045281]
 z_index = 500
 position = Vector2(144, 144)
 texture = ExtResource("1_f3sb7")
 
-[node name="Desk" type="Sprite2D" parent="." unique_id=1720808497]
-z_index = 500
-position = Vector2(654.642, 592.5018)
-scale = Vector2(1, 0.9908243)
-skew = -0.40491638
-texture = SubResource("GradientTexture2D_aqk2v")
+[node name="Foreground" type="Sprite2D" parent="." unique_id=220635906]
+position = Vector2(643, 362)
+texture = ExtResource("3_x4f2i")
 
-[node name="Desk2" type="Sprite2D" parent="." unique_id=1012390065]
-z_index = 500
-position = Vector2(545.358, 592.5018)
-scale = Vector2(1, 0.9908243)
-skew = 0.40491638
-texture = SubResource("GradientTexture2D_aqk2v")
-
-[node name="Rug" type="Sprite2D" parent="." unique_id=955774267]
-z_index = 500
-position = Vector2(650, 620)
-skew = -0.2617994
-texture = SubResource("GradientTexture2D_dwbse")
-
-[node name="Rug2" type="Sprite2D" parent="." unique_id=1701448652]
-z_index = 500
-position = Vector2(550, 620)
-skew = 0.2617994
-texture = SubResource("GradientTexture2D_dwbse")
-
-[node name="Ceiling" type="Sprite2D" parent="." unique_id=277729410]
-z_index = 500
-position = Vector2(594.286, 32.5)
-scale = Vector2(4.7151904, 1)
-skew = 0.40491638
-texture = SubResource("GradientTexture2D_gbfbk")
+[node name="Curtain" type="Sprite2D" parent="." unique_id=513760793]
+position = Vector2(643, 361)
+texture = ExtResource("4_i6m4m")
