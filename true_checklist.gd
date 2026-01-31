@@ -8,8 +8,10 @@ func _ready() -> void:
 
 func signal_handler(value : int) -> void :
 	if value == 0:
+		visible = true
 		modulate = Color(1, 1, 1, 1)
 	else:
+		visible = false
 		modulate = Color(1, 1, 1, 0)
 
 
