@@ -31,6 +31,8 @@ signal Mistake_test(value : bool)
 @warning_ignore('unused_signal')
 signal End_game()
 
+signal start_game()
+
 
 # Guests signals
 @warning_ignore('unused_signal')

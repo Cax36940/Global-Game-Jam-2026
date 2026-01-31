@@ -8,6 +8,7 @@ func _ready():
 	$PauseButton.pressed.connect(_on_pause_button_pressed)
 	$PauseButton.hide()
 
+
 func _on_pause_button_pressed() -> void:
 	$PauseMenu.toggle_pause()
 
@@ -23,3 +24,6 @@ func _on_start_game():
 	$PauseButton.show()
 
 	get_tree().paused = false
+
+	# Fixes issue with ingame clock
+	SignalBus.start_game.emit()
