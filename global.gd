@@ -13,6 +13,9 @@ var invalid_mask : Array[int] = []
 var invalid_eye : Array[int] = []
 var invalid_color : Array[int] = []
 
+
+
+
 func random_sublist(size : int, input_list : Array) -> Array[int]:
 	var pool : Array = range(input_list.size())
 	if size >= input_list.size():
@@ -27,6 +30,8 @@ func setup_invalid():
 	invalid_color = random_sublist(3, color_list)
 	invalid_mask = random_sublist(1, mask_list)
 	invalid_eye = random_sublist(3, eye_list)
+	SignalBus.write_constrain.emit()
+	
 
 func check_guest(mask_index : int, eye_index : int, color_index : int):
 	var is_color_invalid : bool = invalid_color.find(color_index) == -1

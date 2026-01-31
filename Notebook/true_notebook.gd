@@ -1,17 +1,21 @@
 extends Node2D
 
 var cur = 0
-var pages = [0,1,2]
+var pages = [0,1]
 
 var sprites: Array
 
 func _ready() -> void:
 	visible = false
-	sprites = $Sprites.get_children()
 	SignalBus.Notebook_show.connect(signal_handler)
 
 	$Previous.pressed.connect(previous)
 	$Next.pressed.connect(next)
+	SignalBus.update_notebook.connect(update_page_position)
+
+func update_page_position():
+	cur = 0
+	sprites = $Pages.get_children()
 	pages_update()
 
 func signal_handler(value : int) -> void :

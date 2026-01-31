@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://344bm1ddwxtr"]
+
+[ext_resource type="Script" uid="uid://c6ms6gxufqqgt" path="res://Notebook/pages.gd" id="1_h21ap"]
+[ext_resource type="PackedScene" uid="uid://cd01q2tcml2dl" path="res://page.tscn" id="2_a7bbj"]
+
+[node name="Pages" type="Node2D" unique_id=1602385378]
+script = ExtResource("1_h21ap")
+page_scene = ExtResource("2_a7bbj")
