@@ -6,7 +6,8 @@
 [ext_resource type="Script" uid="uid://cdoua2lnxoabv" path="res://Menu/menu.gd" id="4_7mycd"]
 [ext_resource type="Script" uid="uid://cutt0ecko4vrq" path="res://Menu/main_menu.gd" id="5_7mycd"]
 [ext_resource type="Script" uid="uid://dhhd5aeh3y0lc" path="res://Menu/pause_menu.gd" id="5_lquwl"]
-[ext_resource type="Script" path="res://Menu/controls.gd" id="6_272bh"]
+[ext_resource type="Script" uid="uid://cdut5tv23yujj" path="res://Menu/controls.gd" id="6_272bh"]
+[ext_resource type="Script" uid="uid://dwy4s6pgcr1p7" path="res://Menu/game_over.gd" id="8_5vw27"]
 
 [node name="Main" type="Node" unique_id=76370498]
 
@@ -29,6 +30,7 @@ mouse_filter = 2
 script = ExtResource("4_7mycd")
 
 [node name="PauseButton" type="Button" parent="Menu" unique_id=1910178568]
+visible = false
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
@@ -42,6 +44,7 @@ grow_vertical = 0
 text = "Pause"
 
 [node name="PauseMenu" type="VBoxContainer" parent="Menu" unique_id=1068046758]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -72,7 +75,6 @@ layout_mode = 2
 text = "Exit"
 
 [node name="MainMenu" type="VBoxContainer" parent="Menu" unique_id=2067887264]
-visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -119,4 +121,33 @@ TODO: add controls"
 [node name="Exit" type="Button" parent="Menu/MainMenu" unique_id=217473286]
 layout_mode = 2
 focus_neighbor_top = NodePath("../Controls/Button")
+text = "Exit"
+
+[node name="GameOver" type="VBoxContainer" parent="Menu" unique_id=2091551017]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -43.5
+offset_top = -23.5
+offset_right = 43.5
+offset_bottom = 23.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("8_5vw27")
+
+[node name="Label" type="Label" parent="Menu/GameOver" unique_id=1948066001]
+layout_mode = 2
+text = "Game Over"
+horizontal_alignment = 1
+
+[node name="Try again" type="Button" parent="Menu/GameOver" unique_id=913894922]
+layout_mode = 2
+text = "Try again"
+
+[node name="Exit" type="Button" parent="Menu/GameOver" unique_id=505699332]
+layout_mode = 2
 text = "Exit"
