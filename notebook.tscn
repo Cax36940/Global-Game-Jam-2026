@@ -1,3 +1,89 @@
 [gd_scene format=3 uid="uid://cqr3vlbkgwvfw"]
 
+[ext_resource type="Script" uid="uid://d26wtjwc2pi7t" path="res://mini_notebook.gd" id="1_dxuyj"]
+[ext_resource type="Script" uid="uid://bubxrbaudghs" path="res://true_notebook.gd" id="2_gvrn8"]
+[ext_resource type="Script" uid="uid://cfu3misyey8vw" path="res://back_notebook.gd" id="2_i8w2w"]
+
+[sub_resource type="Gradient" id="Gradient_i8w2w"]
+offsets = PackedFloat32Array(1)
+colors = PackedColorArray(0.40216267, 0.09844365, 0.060333624, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_gvrn8"]
+gradient = SubResource("Gradient_i8w2w")
+width = 80
+height = 120
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n8bdy"]
+size = Vector2(80, 120)
+
+[sub_resource type="Gradient" id="Gradient_dxuyj"]
+offsets = PackedFloat32Array(1)
+colors = PackedColorArray(0.40392157, 0.09803922, 0.05882353, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_i8w2w"]
+gradient = SubResource("Gradient_dxuyj")
+width = 800
+height = 500
+
+[sub_resource type="Gradient" id="Gradient_gvrn8"]
+offsets = PackedFloat32Array(1)
+colors = PackedColorArray(0.82732785, 0.40559742, 0.26062348, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_n8bdy"]
+gradient = SubResource("Gradient_gvrn8")
+
+[sub_resource type="Gradient" id="Gradient_g5l6w"]
+offsets = PackedFloat32Array(1)
+colors = PackedColorArray(1, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_2wy0l"]
+gradient = SubResource("Gradient_g5l6w")
+width = 70
+height = 70
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x3ymf"]
+size = Vector2(70, 70)
+
 [node name="Notebook" type="Node2D" unique_id=226718852]
+
+[node name="Mini_Notebook" type="Node2D" parent="." unique_id=40062110]
+script = ExtResource("1_dxuyj")
+
+[node name="Sprite2D" type="Sprite2D" parent="Mini_Notebook" unique_id=295973453]
+position = Vector2(785, 630)
+texture = SubResource("GradientTexture2D_gvrn8")
+
+[node name="Area2D" type="Area2D" parent="Mini_Notebook/Sprite2D" unique_id=273665863]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Mini_Notebook/Sprite2D/Area2D" unique_id=840701309]
+shape = SubResource("RectangleShape2D_n8bdy")
+
+[node name="True_Notebook" type="Node2D" parent="." unique_id=503205974]
+z_index = 50
+script = ExtResource("2_gvrn8")
+
+[node name="Notebook_Cover_Book" type="Sprite2D" parent="True_Notebook" unique_id=2042473880]
+position = Vector2(675, 362)
+texture = SubResource("GradientTexture2D_i8w2w")
+
+[node name="Notebook_Pages" type="Sprite2D" parent="True_Notebook" unique_id=621199988]
+position = Vector2(678, 361)
+scale = Vector2(11.875001, 7.28125)
+texture = SubResource("GradientTexture2D_n8bdy")
+
+[node name="Back_Notebook" type="Node2D" parent="True_Notebook" unique_id=1280637972]
+position = Vector2(1040, 147)
+script = ExtResource("2_i8w2w")
+
+[node name="Sprite2D" type="Sprite2D" parent="True_Notebook/Back_Notebook" unique_id=1823144187]
+texture = SubResource("GradientTexture2D_2wy0l")
+
+[node name="Area2D" type="Area2D" parent="True_Notebook/Back_Notebook/Sprite2D" unique_id=1678786793]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="True_Notebook/Back_Notebook/Sprite2D/Area2D" unique_id=43010724]
+shape = SubResource("RectangleShape2D_x3ymf")
+
+[connection signal="mouse_entered" from="Mini_Notebook/Sprite2D/Area2D" to="Mini_Notebook" method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Mini_Notebook/Sprite2D/Area2D" to="Mini_Notebook" method="_on_area_2d_mouse_exited"]
+[connection signal="mouse_entered" from="True_Notebook/Back_Notebook/Sprite2D/Area2D" to="True_Notebook/Back_Notebook" method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="True_Notebook/Back_Notebook/Sprite2D/Area2D" to="True_Notebook/Back_Notebook" method="_on_area_2d_mouse_exited"]

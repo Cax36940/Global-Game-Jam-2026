@@ -17,6 +17,7 @@ extends Node
 signal test_signal(value : int)
 signal checklist_show(value : int)
 signal ID_show(value : int)
+signal Notebook_show(value : int)
 
 
 # Guests signals
