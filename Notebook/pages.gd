@@ -2,6 +2,8 @@ extends Node2D
 class_name Pages
 
 @export var page_scene : PackedScene
+@export var color_point_scene : PackedScene
+
 var page_count : int = 0
 
 func _ready():
@@ -18,11 +20,16 @@ func write_constrain():
 	for eye_index in Global.invalid_eye:
 		var eye : Eye = Global.eye_list[eye_index].instantiate()
 		page2.add_constrain(eye)
-
+		
 	var page3 : Page = add_page()
 	for color_index in Global.invalid_color:
 		var color : Color = Global.color_list[color_index]
-		#page3.add_constrain(color)
+		var color_point : ColorPoint = color_point_scene.instantiate()
+		color_point.set_color.call_deferred(color)
+
+		page3.add_constrain(color_point)
+		
+	add_page()
 	SignalBus.update_notebook.emit()
 
 func add_page() -> Page:

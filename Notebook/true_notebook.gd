@@ -8,7 +8,7 @@ var sprites: Array
 func _ready() -> void:
 	visible = false
 	SignalBus.Notebook_show.connect(signal_handler)
-
+	
 	$Previous.pressed.connect(previous)
 	$Next.pressed.connect(next)
 	SignalBus.update_notebook.connect(update_page_position)
