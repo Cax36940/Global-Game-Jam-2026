@@ -4,6 +4,7 @@ var is_guest_valid : bool = true
 var Triple_show : bool = false
 var Total_count : int = 0
 var Mistakes_count : int = 0
+var Score : int = 0
 
 var mask_list : Array[PackedScene] = []
 var eye_list : Array[PackedScene] = []
