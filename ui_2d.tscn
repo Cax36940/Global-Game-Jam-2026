@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://c4bq1dfaf7t7b" path="res://refuse.gd" id="4_nngme"]
 [ext_resource type="Script" uid="uid://cnn004a8iu2e0" path="res://mini_checklist.gd" id="5_y6d2w"]
 [ext_resource type="Script" uid="uid://8pnn8yjswavy" path="res://true_checklist.gd" id="6_k61qh"]
+[ext_resource type="Script" uid="uid://bmiv170yiaq54" path="res://chechbox.gd" id="7_yplp6"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_dwbse"]
 radius = 163.56357
@@ -33,6 +34,18 @@ colors = PackedColorArray(1, 1, 0.8156863, 1)
 gradient = SubResource("Gradient_036b0")
 width = 420
 height = 594
+
+[sub_resource type="Gradient" id="Gradient_aoyq8"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_nngme"]
+gradient = SubResource("Gradient_aoyq8")
+width = 100
+height = 100
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_y6d2w"]
+radius = 69.065186
 
 [node name="UI2D" type="Node2D" unique_id=423729008]
 
@@ -107,6 +120,17 @@ script = ExtResource("6_k61qh")
 [node name="Checklist" type="Sprite2D" parent="Checklist/True_Checklist" unique_id=583154463]
 position = Vector2(600, 360)
 texture = SubResource("GradientTexture2D_dwbse")
+
+[node name="Chechbox" type="Node2D" parent="Checklist/True_Checklist" unique_id=1798900733]
+script = ExtResource("7_yplp6")
+
+[node name="Sprite2D" type="Sprite2D" parent="Checklist/True_Checklist/Chechbox" unique_id=1433244065]
+texture = SubResource("GradientTexture2D_nngme")
+
+[node name="Area2D" type="Area2D" parent="Checklist/True_Checklist/Chechbox/Sprite2D" unique_id=1432700252]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Checklist/True_Checklist/Chechbox/Sprite2D/Area2D" unique_id=2054907149]
+shape = SubResource("CircleShape2D_y6d2w")
 
 [node name="Notebook" type="Node2D" parent="." unique_id=728666171]
 
