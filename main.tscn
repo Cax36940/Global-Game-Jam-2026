@@ -6,7 +6,7 @@
 [ext_resource type="Script" uid="uid://cdoua2lnxoabv" path="res://Menu/menu.gd" id="4_7mycd"]
 [ext_resource type="Script" uid="uid://cutt0ecko4vrq" path="res://Menu/main_menu.gd" id="5_7mycd"]
 [ext_resource type="Script" uid="uid://dhhd5aeh3y0lc" path="res://Menu/pause_menu.gd" id="5_lquwl"]
-[ext_resource type="Script" uid="uid://cdut5tv23yujj" path="res://Menu/controls.gd" id="6_272bh"]
+[ext_resource type="Script" path="res://Menu/controls.gd" id="6_272bh"]
 
 [node name="Main" type="Node" unique_id=76370498]
 

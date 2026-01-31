@@ -12,8 +12,7 @@ func Mistake_handler(value : bool) -> void :
 		Global.Mistakes_count += 1
 	print("Correct: ", Global.Total_count - Global.Mistakes_count, " out of ", Global.Total_count)
 
-func End_handler(_value : bool) -> void :	
-	print(Global.Total_count)
-	print(Global.Mistakes_count)
-	Global.Score = round(30-8*log(Global.Mistakes_count*50/(Global.Total_count+5)-1))
+func End_handler() -> void :	
+	Global.Score = max(0,round(30-8*log(Global.Mistakes_count*50/(Global.Total_count+5)-1)))
+	print(Global.Score)
  
