@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://cat7bh3g2lwh0"]
+
+[ext_resource type="Script" uid="uid://bmiv170yiaq54" path="res://chechbox.gd" id="1_u5uen"]
+
+[sub_resource type="Gradient" id="Gradient_aoyq8"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_nngme"]
+gradient = SubResource("Gradient_aoyq8")
+width = 30
+height = 30
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yplp6"]
+size = Vector2(30, 30)
+
+[node name="Checkbox" type="Node2D" unique_id=2123857673]
+script = ExtResource("1_u5uen")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=446846885]
+texture = SubResource("GradientTexture2D_nngme")
+
+[node name="Area2D" type="Area2D" parent="Sprite2D" unique_id=742768788]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/Area2D" unique_id=2026153729]
+shape = SubResource("RectangleShape2D_yplp6")
+
+[connection signal="mouse_entered" from="Sprite2D/Area2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Sprite2D/Area2D" to="." method="_on_area_2d_mouse_exited"]

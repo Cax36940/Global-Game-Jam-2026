@@ -40,7 +40,6 @@ func _input(event):
 		else:
 			if is_in:
 				if is_pressed_in:
-					print("Checklist")
 					if is_shown:
 						is_shown = false
 						SignalBus.checklist_show.emit(1)
