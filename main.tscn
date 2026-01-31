@@ -16,4 +16,3 @@ z_index = -4096
 script = ExtResource("4_1bvp3")
 
 [node name="MainMenu" parent="." unique_id=2067887264 instance=ExtResource("4_lquwl")]
-visible = false
