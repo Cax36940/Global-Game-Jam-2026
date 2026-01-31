@@ -6,12 +6,15 @@
 [ext_resource type="Script" uid="uid://cdoua2lnxoabv" path="res://Menu/menu.gd" id="4_7mycd"]
 [ext_resource type="Script" uid="uid://cutt0ecko4vrq" path="res://Menu/main_menu.gd" id="5_7mycd"]
 [ext_resource type="Script" uid="uid://dhhd5aeh3y0lc" path="res://Menu/pause_menu.gd" id="5_lquwl"]
+[ext_resource type="Script" uid="uid://dnjxo1dkpgwht" path="res://Menu/help.gd" id="6_272bh"]
 
 [node name="Main" type="Node" unique_id=76370498]
 
 [node name="World" parent="." unique_id=1128306412 instance=ExtResource("3_1bvp3")]
+visible = false
 
 [node name="Sketch" parent="." unique_id=1484833825 instance=ExtResource("3_h2yge")]
+visible = false
 z_index = -4096
 
 [node name="Node" type="Node" parent="." unique_id=291516609]
@@ -43,22 +46,32 @@ grow_vertical = 2
 alignment = 1
 script = ExtResource("5_7mycd")
 
-[node name="Title" type="Button" parent="Menu/MainMenu" unique_id=1457761427]
+[node name="Label" type="Label" parent="Menu/MainMenu" unique_id=518528668]
 layout_mode = 2
-disabled = true
 text = "Vigilance Maskimum"
 
 [node name="Start" type="Button" parent="Menu/MainMenu" unique_id=1518564439]
 layout_mode = 2
-focus_neighbor_bottom = NodePath("../Exit")
+focus_neighbor_bottom = NodePath("../Controls/Button")
 text = "Start Game"
+
+[node name="Controls" type="VBoxContainer" parent="Menu/MainMenu" unique_id=1946298209]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="Menu/MainMenu/Controls" unique_id=426468012]
+layout_mode = 2
+focus_neighbor_top = NodePath("../../Start")
+focus_neighbor_bottom = NodePath("../../Exit")
+text = "Controls"
+script = ExtResource("6_272bh")
 
 [node name="Exit" type="Button" parent="Menu/MainMenu" unique_id=217473286]
 layout_mode = 2
-focus_neighbor_top = NodePath("../Start")
+focus_neighbor_top = NodePath("../Controls/Button")
 text = "Exit"
 
 [node name="PauseMenu" type="VBoxContainer" parent="Menu" unique_id=1068046758]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
