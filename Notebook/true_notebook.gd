@@ -50,7 +50,6 @@ func put_right(sprite):
 func pages_update():
 	var left = sprites[2*cur]
 	var right = sprites[2*cur+1]
-	$Textbox.text = str(left) + " " + str(right)
 	pages_reset()
 	put_left(left)
 	put_right(right)

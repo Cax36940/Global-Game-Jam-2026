@@ -125,14 +125,6 @@ position = Vector2(14.499996, -2.0000076)
 scale = Vector2(4.3906264, 7.046875)
 texture = SubResource("GradientTexture2D_5cm84")
 
-[node name="Textbox" type="Button" parent="True_Notebook" unique_id=1972768909]
-offset_left = -182.0
-offset_top = -169.0
-offset_right = 173.0
-offset_bottom = -134.0
-disabled = true
-metadata/_edit_use_anchors_ = true
-
 [node name="Previous" type="Button" parent="True_Notebook" unique_id=1335210770]
 offset_left = -349.0
 offset_top = 95.0
