@@ -1,7 +1,8 @@
 extends Node2D
 
 var cur = 0
-var pages = ["page0", "page1", "page2", "page3", "page4"]
+
+var pages = [0,1,2,3,4,5,6]
 
 func _ready() -> void:
 	visible = false
@@ -9,7 +10,7 @@ func _ready() -> void:
 
 	$Previous.pressed.connect(previous)
 	$Next.pressed.connect(next)
-	textbox_update()
+	pages_update()
 
 
 func signal_handler(value : int) -> void :
@@ -22,19 +23,21 @@ func signal_handler(value : int) -> void :
 		$"../Mini_Notebook".visible = true
 
 func next():
-	if cur + 2 < len(pages):
+	if cur < len(pages):
 		cur += 1
-		textbox_update()
+		pages_update()
 	# TODO: else: deactivate button
 
 func previous():
-	if cur > 1:
+	if cur > 0:
 		cur -= 1
-		textbox_update()
+		pages_update()
 	# TODO: else: deactivate button
 
-func textbox_update():
-	$Textbox.text = pages[cur] + "+" + pages[cur+1]
+func pages_update():
+	$Textbox.text = "cur = {cur}".format($".")
+	$LeftPage.text = "page" + str(2*cur + 1)
+	$RightPage.text = "page" + str(2*cur + 2)
 
 func _process(delta: float) -> void:
 	pass
