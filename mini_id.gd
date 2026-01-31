@@ -58,5 +58,5 @@ func _process(_delta: float) -> void:
 		if Input.is_action_just_pressed("ui_down"):
 			if not Global.Triple_show:
 				hide_mini.call_deferred()
-	elif Input.is_action_just_pressed("any"):
+	elif Input.is_action_just_pressed("any") or Input.is_action_just_pressed("left click"):
 		show_mini.call_deferred()
