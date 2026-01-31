@@ -19,6 +19,6 @@ func _process(nope) -> void:
 	$Face/Minutes.look_at($Face/Minutes.offset + 10000*Vector2(cos(d),sin(d)))
 	$Face/Seconds.look_at($Face/Seconds.offset + 10000*Vector2(cos(12*d),sin(12*d)))
 	print(d)
-	if d > 0.1:
+	if d > 2*PI:# mettre 0.1 pour tests (10s) ------------------------------------------------------------------------------------------------------------------------------------------------------------------
 		SignalBus.End_game.emit()
 	
