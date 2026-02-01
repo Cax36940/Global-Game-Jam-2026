@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cwgvi8whj4wkt" path="res://menu_screen.gd" id="1_tuusc"]
 
-[node name="MenuScreen" type="VBoxContainer" unique_id=121610079]
+[node name="MenuScreen" type="VBoxContainer" unique_id=1551399305]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
