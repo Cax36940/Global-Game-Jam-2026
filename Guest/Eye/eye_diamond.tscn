@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://blvxow7rtllcq"]
+
+[ext_resource type="Script" uid="uid://cgth1im4o36yw" path="res://Guest/Eye/eye.gd" id="1_0wyaw"]
+[ext_resource type="Shader" uid="uid://3c8hk3kfjrpw" path="res://Guest/Eye/eye_diamond.gdshader" id="2_0wyaw"]
+[ext_resource type="Texture2D" uid="uid://vh18g1m163l5" path="res://Assets/icon.svg" id="3_o5202"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_k135u"]
+shader = ExtResource("2_0wyaw")
+shader_parameter/a = 0.75
+shader_parameter/b = 0.4
+
+[node name="EyeDiamond" type="Node2D" unique_id=1328330833]
+script = ExtResource("1_0wyaw")
+
+[node name="Icon" type="Sprite2D" parent="." unique_id=675967797]
+material = SubResource("ShaderMaterial_k135u")
+texture = ExtResource("3_o5202")

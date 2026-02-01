@@ -1,0 +1,156 @@
+[gd_scene format=3 uid="uid://c55m1oiwe6a2h"]
+
+[ext_resource type="PackedScene" uid="uid://pgrsngrh70eb" path="res://game.tscn" id="1_7mycd"]
+[ext_resource type="Script" uid="uid://jx48rftv4dv8" path="res://main.gd" id="1_272bh"]
+[ext_resource type="Script" uid="uid://cuewil535to8a" path="res://GUI/gui.gd" id="3_5vw27"]
+[ext_resource type="Script" uid="uid://dq77syx52rqa1" path="res://Menu/pause_button.gd" id="3_272bh"]
+[ext_resource type="Script" uid="uid://cutt0ecko4vrq" path="res://Menu/main_menu.gd" id="5_7mycd"]
+[ext_resource type="Script" uid="uid://dhhd5aeh3y0lc" path="res://Menu/pause_menu.gd" id="5_lquwl"]
+[ext_resource type="Script" uid="uid://cdut5tv23yujj" path="res://Menu/controls.gd" id="6_272bh"]
+[ext_resource type="Script" uid="uid://dwy4s6pgcr1p7" path="res://Menu/game_over.gd" id="8_5vw27"]
+
+[node name="Main" type="Node" unique_id=76370498]
+script = ExtResource("1_272bh")
+
+[node name="Game" parent="." unique_id=1271029013 instance=ExtResource("1_7mycd")]
+
+[node name="GUI" type="Control" parent="." unique_id=1469880246]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("3_5vw27")
+
+[node name="Overlay" type="Control" parent="GUI" unique_id=288549748]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="PauseButton" type="Button" parent="GUI/Overlay" unique_id=1910178568]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1185.0
+offset_top = 649.0
+offset_right = 1240.0
+offset_bottom = 680.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "Pause"
+script = ExtResource("3_272bh")
+
+[node name="PauseMenu" type="VBoxContainer" parent="GUI" unique_id=1068046758]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -35.0
+offset_top = -33.0
+offset_right = 35.0
+offset_bottom = 33.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("5_lquwl")
+
+[node name="Label" type="Label" parent="GUI/PauseMenu" unique_id=942334447]
+layout_mode = 2
+text = "Pause"
+horizontal_alignment = 1
+
+[node name="Resume" type="Button" parent="GUI/PauseMenu" unique_id=1461862858]
+layout_mode = 2
+focus_neighbor_top = NodePath(".")
+focus_neighbor_bottom = NodePath("../Main Menu")
+text = "Resume"
+
+[node name="Main Menu" type="Button" parent="GUI/PauseMenu" unique_id=1716701454]
+layout_mode = 2
+text = "Main Menu"
+
+[node name="MainMenu" type="VBoxContainer" parent="GUI" unique_id=2067887264]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -84.0
+offset_top = -64.0
+offset_right = 84.0
+offset_bottom = 64.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+script = ExtResource("5_7mycd")
+
+[node name="Label" type="Label" parent="GUI/MainMenu" unique_id=518528668]
+layout_mode = 2
+text = "Vigilance Maskimum"
+horizontal_alignment = 1
+
+[node name="Start" type="Button" parent="GUI/MainMenu" unique_id=1518564439]
+layout_mode = 2
+focus_neighbor_bottom = NodePath("../Controls/Button")
+text = "Start Game"
+
+[node name="Controls" type="VBoxContainer" parent="GUI/MainMenu" unique_id=1946298209]
+layout_mode = 2
+script = ExtResource("6_272bh")
+
+[node name="Button" type="Button" parent="GUI/MainMenu/Controls" unique_id=426468012]
+layout_mode = 2
+focus_neighbor_top = NodePath("../../Start")
+focus_neighbor_bottom = NodePath("../../Exit")
+toggle_mode = true
+text = "Controls"
+
+[node name="Label" type="Label" parent="GUI/MainMenu/Controls" unique_id=1339610785]
+visible = false
+layout_mode = 2
+text = "Shift = Do A
+Space = Do B
+TODO: add controls"
+
+[node name="Exit" type="Button" parent="GUI/MainMenu" unique_id=217473286]
+layout_mode = 2
+focus_neighbor_top = NodePath("../Controls/Button")
+text = "Exit"
+
+[node name="GameOver" type="VBoxContainer" parent="GUI" unique_id=2091551017]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -43.5
+offset_top = -23.5
+offset_right = 43.5
+offset_bottom = 23.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("8_5vw27")
+
+[node name="Label" type="Label" parent="GUI/GameOver" unique_id=1948066001]
+layout_mode = 2
+text = "Game Over"
+horizontal_alignment = 1
+
+[node name="Try Again" type="Button" parent="GUI/GameOver" unique_id=913894922]
+layout_mode = 2
+text = "Try again"
+
+[node name="Main Menu" type="Button" parent="GUI/GameOver" unique_id=505699332]
+layout_mode = 2
+text = "Main Menu"
