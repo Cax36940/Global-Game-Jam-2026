@@ -1,7 +1,0 @@
-extends Button
-
-func _ready():
-	pressed.connect(_button_pressed)
-
-func _button_pressed():
-	SignalBus.Notebook_show.emit(1)
