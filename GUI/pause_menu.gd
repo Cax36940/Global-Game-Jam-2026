@@ -1,0 +1,16 @@
+extends "res://menu_screen.gd"
+
+
+func _ready() -> void:
+	$Resume.pressed.connect(_on_resume_button_pressed)
+	$"Main Menu".pressed.connect(_on_exit_button_pressed)
+
+func _input(event):
+	if event.is_action_pressed("ui_close_dialog"):
+		SignalBus.pause_game.emit(not get_tree().paused)
+
+func _on_exit_button_pressed() -> void:
+	get_tree().reload_current_scene()
+
+func _on_resume_button_pressed():
+	SignalBus.pause_game.emit(not get_tree().paused)
