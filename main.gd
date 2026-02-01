@@ -4,7 +4,8 @@ extends Node
 var ispaused
 
 @onready var menu_music : AudioStreamPlayer = $MenuMusic
-
+@onready var game_music : AudioStreamPlayer = $GameMusic
+@onready var game_music2 : AudioStreamPlayer = $GameMusic2
 func _ready() -> void:
 	SignalBus.start_game.connect(_on_start_game)
 	SignalBus.pause_game.connect(_on_pause_game)
@@ -35,14 +36,20 @@ func _on_start_game():
 	$GUI/PauseMenu.process_mode = Node.PROCESS_MODE_ALWAYS
 	$GUI.display("Overlay")
 	get_tree().paused = false
+	menu_music.stop()
+	game_music.play()
 
 func _on_pause_game(bpaused: bool):
 	if bpaused:
 		$GUI.display("PauseMenu")
 		get_tree().paused = true
+		game_music.stop()
+		game_music2.play()
 	else:
 		$GUI.display("Overlay")
 		get_tree().paused = false
+		game_music2.stop()
+		game_music.play()
 
 func _on_gameover():
 	get_tree().paused = true
