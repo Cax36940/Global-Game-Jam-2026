@@ -17,9 +17,6 @@ func _ready() -> void:
 func _on_area_checklist_mouse_entered() -> void:
 	is_in = true
 	($Sprite_Checklist.material as ShaderMaterial).set_shader_parameter("outline_thickness", 5)
-	if visible:
-		modulate = Color(0.478, 0.331, 0.0, 0.502)
-
 
 func _on_area_checklist_mouse_exited() -> void:
 	is_in = false
@@ -40,12 +37,9 @@ func _input(event):
 				else:
 					is_pressed_out = true
 		else:
-			if is_in:
-				if is_pressed_in:
-					if visible:
-						if not Global.Triple_show:
-							SignalBus.checklist_show.emit(0)
-							visible = false
+			if is_in and is_pressed_in and not Global.Triple_show:
+				SignalBus.checklist_show.emit(0)
+				visible = false
 			is_pressed_in = false
 			is_pressed_out = false
 
@@ -55,9 +49,12 @@ func show_mini():
 
 func _process(_delta: float) -> void:
 	if visible:
-		if Input.is_action_just_pressed("rshift"):
-			if not Global.Triple_show:
-				SignalBus.checklist_show.emit(0)
-				visible = false
+		if Input.is_action_just_pressed("rshift") and not Global.Triple_show:
+			SignalBus.checklist_show.emit(0)
+			visible = false
+		if is_in:
+			modulate = Color(0.478, 0.331, 0.0, 0.5)
+		else:
+			modulate = Color(1, 1, 1, 1)
 	elif Input.is_action_just_pressed("any"):
 		show_mini.call_deferred()

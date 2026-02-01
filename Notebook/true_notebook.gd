@@ -2,8 +2,12 @@ extends Node2D
 
 var cur = 0
 var pages = [0,1]
-
 var sprites: Array
+
+var is_in = false
+var is_pressed_in = false
+var is_pressed_out = false
+
 
 func _ready() -> void:
 	visible = false
@@ -12,12 +16,6 @@ func _ready() -> void:
 	$Previous.pressed.connect(previous)
 	$Next.pressed.connect(next)
 	SignalBus.update_notebook.connect(update_page_position)
-
-func update_page_position():
-	cur = 0
-	sprites = $Pages.get_children()
-	pages_update()
-
 
 
 func signal_handler(value : int) -> void :
@@ -30,6 +28,10 @@ func signal_handler(value : int) -> void :
 		$"../Mini_Notebook".visible = true
 
 
+func update_page_position():
+	cur = 0
+	sprites = $Pages.get_children()
+	pages_update()
 
 func next():
 	if cur < len(pages) - 1:
@@ -47,7 +49,6 @@ func pages_reset():
 	for sprite in sprites:
 		sprite.visible = false
 		sprite.position = Vector2(0,0)
-
 
 func put_left(sprite):
 	sprite.position = Vector2(-200, 0)
@@ -73,11 +74,37 @@ func pages_update():
 		$Next.visible = true
 
 
-
-
 func _process(_delta: float) -> void:
 	if visible:
 		if Input.is_action_just_pressed("ui_right"):
 			next()
 		elif Input.is_action_just_pressed("ui_right"):
 			previous()
+
+
+func _on_area_2d_mouse_entered() -> void:
+	is_in = true
+
+func _on_area_2d_mouse_exited() -> void:
+	is_in = false
+
+func _input(event):
+	if event is InputEventMouseButton:
+		if event.pressed:
+			if is_in:
+				if is_pressed_out:
+					is_pressed_in = false
+				else:
+					is_pressed_in = true
+			else:
+				if is_pressed_in:
+					is_pressed_out = false
+				else:
+					is_pressed_out = true
+		else:
+			if not is_in:
+				if is_pressed_out:
+					SignalBus.Notebook_show.emit(1)
+					$"../Mini_Notebook".visible = true
+			is_pressed_in = false
+			is_pressed_out = false
