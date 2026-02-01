@@ -57,6 +57,9 @@ signal write_constrain()
 
 @warning_ignore('unused_signal')
 signal update_notebook()
+
+@warning_ignore('unused_signal')
+signal End_game()
 #player
 #_ready
 #epee.signal_name.connect(signal_handler)
