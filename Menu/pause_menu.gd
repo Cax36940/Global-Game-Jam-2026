@@ -1,30 +1,21 @@
-extends Control
-
-var paused = false
+extends VBoxContainer
 
 func _ready() -> void:
 	process_mode = Node.PROCESS_MODE_ALWAYS
 	$Resume.pressed.connect(_on_resume_button_pressed)
-	$Exit.pressed.connect(_on_exit_button_pressed)
-	hide()
+	$"Main Menu".pressed.connect(_on_exit_button_pressed)
 
-func _on_game_start():
-	pass
-
-
-func toggle_pause():
-	paused = !paused
-	visible = paused
-	get_tree().paused = paused
-	if paused:
-		$Resume.grab_focus.call_deferred()
+func display():
+	show()
+	# https://docs.godotengine.org/en/stable/tutorials/ui/gui_navigation.html
+	$Resume.grab_focus.call_deferred()
 
 func _input(event):
 	if event.is_action_pressed("ui_close_dialog"):
-		toggle_pause()
+		SignalBus.pause_game.emit(not get_tree().paused)
 
 func _on_exit_button_pressed() -> void:
-	get_tree().quit()
+	get_tree().reload_current_scene()
 
 func _on_resume_button_pressed():
-	toggle_pause()
+	SignalBus.pause_game.emit(not get_tree().paused)
