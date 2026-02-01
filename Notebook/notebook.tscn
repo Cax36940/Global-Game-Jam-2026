@@ -8,9 +8,9 @@
 [ext_resource type="AudioStream" uid="uid://c535ljjkx24mr" path="res://Assets/Sounds/SoundBook4.mp3" id="4_lbn8f"]
 [ext_resource type="AudioStream" uid="uid://dxlim41iw21ir" path="res://Assets/Sounds/SoundBook3.mp3" id="5_qtrjj"]
 [ext_resource type="PackedScene" uid="uid://c01xneve2v2sv" path="res://Buttons/button.tscn" id="9_lbn8f"]
-[ext_resource type="Script" uid="uid://dcixwlpvif4ud" path="res://Buttons/Next_notebook.gd" id="10_jrije"]
-[ext_resource type="Script" uid="uid://cfu3misyey8vw" path="res://Notebook/back_notebook.gd" id="10_qtrjj"]
-[ext_resource type="Script" uid="uid://diypkv5o38frl" path="res://Buttons/Previous_notebook.gd" id="11_hu0nd"]
+[ext_resource type="Script" path="res://Buttons/Next_notebook.gd" id="10_jrije"]
+[ext_resource type="Script" uid="uid://doiby4paeodpo" path="res://Notebook/back_notebook.gd" id="10_qtrjj"]
+[ext_resource type="Script" path="res://Buttons/Previous_notebook.gd" id="11_hu0nd"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_78epq"]
 shader = ExtResource("2_mvqau")
