@@ -11,7 +11,7 @@ func _ready() -> void:
 	SignalBus.gameover.connect(_on_gameover)
 	SignalBus.mainmenu.connect(_on_main_menu)
 
-	$GUI/MainMenu.process_mode = Node.PROCESS_MODE_WHEN_PAUSED
+	$GUI/MainMenu.process_mode = Node.PROCESS_MODE_ALWAYS
 	$GUI/GameOver.process_mode = Node.PROCESS_MODE_WHEN_PAUSED
 	$GUI/PauseMenu.process_mode = Node.PROCESS_MODE_DISABLED
 
@@ -25,7 +25,7 @@ func _on_main_menu() -> void:
 	get_tree().reload_current_scene()
 
 func _on_start_game():
-	$GUI/MainMenu.process_mode = Node.PROCESS_MODE_DISABLED
+	#$GUI/MainMenu.process_mode = Node.PROCESS_MODE_DISABLED
 	$GUI/PauseMenu.process_mode = Node.PROCESS_MODE_ALWAYS
 	$GUI.display("Overlay")
 	get_tree().paused = false

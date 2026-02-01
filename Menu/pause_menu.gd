@@ -1,11 +1,11 @@
 extends VBoxContainer
 
 func _ready() -> void:
-	process_mode = Node.PROCESS_MODE_ALWAYS
+	process_mode = Node.PROCESS_MODE_WHEN_PAUSED
 	$Resume.pressed.connect(_on_resume_button_pressed)
 	$"Main Menu".pressed.connect(_on_exit_button_pressed)
 
-func display():
+func appear():
 	show()
 	# https://docs.godotengine.org/en/stable/tutorials/ui/gui_navigation.html
 	$Resume.grab_focus.call_deferred()
