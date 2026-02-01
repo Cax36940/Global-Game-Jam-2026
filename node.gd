@@ -1,7 +1,6 @@
 extends Node
 
 
-
 func _ready() -> void:
 	SignalBus.Mistake_test.connect(Mistake_handler)
 	SignalBus.gameover.connect(End_handler)
