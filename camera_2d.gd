@@ -12,16 +12,17 @@ func zoom_in():
 	position = Vector2(640, 360)
 	zoom = Vector2(2.0, 2.0)
 	is_zoom_in = true
+	Global.Triple_show = true
 	
 func zoom_out():
 	position = Vector2(640, 360)
 	zoom = Vector2(1.0, 1.0)
 	is_zoom_in = false
+	Global.Triple_show = false
 	
 func zoom_toggle():
 	if is_zoom_in :
-		is_zoom_in = false
 		zoom_out()
 	else:
-		is_zoom_in = true
-		zoom_in()
+		if not Global.Triple_show:
+			zoom_in()
