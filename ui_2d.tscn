@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://cqr3vlbkgwvfw" path="res://Notebook/notebook.tscn" id="5_y6d2w"]
 [ext_resource type="PackedScene" uid="uid://cai23abja2vk2" path="res://id_card.tscn" id="6_k61qh"]
 [ext_resource type="PackedScene" uid="uid://bql8avy4llevf" path="res://look_closer.tscn" id="7_yplp6"]
+[ext_resource type="Script" uid="uid://25uv8hlb8bag" path="res://camera_2d.gd" id="8_aoyq8"]
 
 [sub_resource type="Gradient" id="Gradient_036b0"]
 colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 1)
@@ -57,3 +58,7 @@ skew = -0.26179945
 texture = SubResource("GradientTexture2D_yplp6")
 
 [node name="Notebook" parent="." unique_id=226718852 instance=ExtResource("5_y6d2w")]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=2111017374]
+position = Vector2(640, 360)
+script = ExtResource("8_aoyq8")

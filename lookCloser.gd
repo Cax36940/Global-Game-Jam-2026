@@ -5,9 +5,9 @@ func on_mouse_overing():
 	
 func on_button_pressed():
 	if not Global.Triple_show:
-		print("Look closer !")
+		SignalBus.zoom_toggle.emit()
 
 func _process(_delta: float) -> void:
-	if Input.is_action_pressed("ui_up"):
+	if Input.is_action_just_pressed("ui_up"):
 		if not Global.Triple_show:
-			print("Look closer !")
+			SignalBus.zoom_toggle.emit()
