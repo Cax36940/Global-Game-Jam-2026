@@ -1,5 +1,11 @@
 extends MenuScreen
 
+func set_score():
+	$Score.text = "Score : " + str(Global.Score)
+
+func _ready():
+	SignalBus.gameover.connect(set_score)
+
 func _on_exit_button_pressed():
 	SignalBus.exit_game.emit()
 
