@@ -40,6 +40,8 @@ signal pause_game(ispaused: bool)
 @warning_ignore('unused_signal')
 signal gameover()
 
+@warning_ignore('unused_signal')
+signal delta_pause(delta : int)
 
 # Guests signals
 @warning_ignore('unused_signal')

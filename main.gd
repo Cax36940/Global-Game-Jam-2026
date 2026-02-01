@@ -2,6 +2,7 @@ extends Node
 
 
 var ispaused
+var d = 0
 
 func _ready() -> void:
 	SignalBus.start_game.connect(_on_start_game)
@@ -27,11 +28,13 @@ func _on_start_game():
 
 func _on_pause_game(bpaused: bool):
 	if bpaused:
+		d = Time.get_ticks_msec()
 		$GUI.display("PauseMenu")
 		get_tree().paused = true
 	else:
 		$GUI.display("Overlay")
 		get_tree().paused = false
+		SignalBus.delta_pause.emit(Time.get_ticks_msec()-d)
 
 func _on_gameover():
 	get_tree().paused = true

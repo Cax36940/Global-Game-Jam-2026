@@ -9,10 +9,14 @@ var delta = Time.get_ticks_msec()
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	SignalBus.start_game.connect(signal_handler)
+	SignalBus.delta_pause.connect(pause_handler)
 	delta = Time.get_ticks_msec()
 
 func signal_handler() -> void :
 	delta = Time.get_ticks_msec()
+
+func pause_handler(dp):
+	delta -= dp
 
 func _process(_nope) -> void:
 	var d = PI*(Time.get_ticks_msec()-delta)/360000
