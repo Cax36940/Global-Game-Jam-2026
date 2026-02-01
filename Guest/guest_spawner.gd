@@ -29,7 +29,6 @@ func _ready():
 	
 	spawn_guest()
 	Global.mask_list = current_guest.masks_list
-	Global.eye_list = current_guest.eyes_list
 	Global.color_list = current_guest.colors_list
 	Global.setup_invalid()
 

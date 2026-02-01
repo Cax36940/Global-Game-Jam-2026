@@ -53,7 +53,6 @@ skew = -0.28797936
 shape = SubResource("RectangleShape2D_n8bdy")
 
 [node name="True_Notebook" type="Node2D" parent="." unique_id=503205974]
-visible = false
 z_index = 50
 position = Vector2(606, 354)
 script = ExtResource("2_gvrn8")

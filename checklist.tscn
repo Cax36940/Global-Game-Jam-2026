@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cat7bh3g2lwh0" path="res://checkbox.tscn" id="3_jppvq"]
 [ext_resource type="Texture2D" uid="uid://cm67pwwh2sr1v" path="res://Assets/Checklist.png" id="3_wwp3p"]
 [ext_resource type="PackedScene" uid="uid://c01xneve2v2sv" path="res://Buttons/button.tscn" id="4_wwp3p"]
+[ext_resource type="Texture2D" uid="uid://bp28d2nj6glut" path="res://Assets/TrueChecklist.png" id="5_wwp3p"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_wwp3p"]
 shader = ExtResource("2_jppvq")
@@ -15,15 +16,6 @@ shader_parameter/outline_color = Color(1, 0.7200002, 0, 1)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pkg7o"]
 size = Vector2(108.695595, 134)
-
-[sub_resource type="Gradient" id="Gradient_036b0"]
-offsets = PackedFloat32Array(1)
-colors = PackedColorArray(1, 1, 0.8156863, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_dwbse"]
-gradient = SubResource("Gradient_036b0")
-width = 420
-height = 594
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sgols"]
 size = Vector2(420, 594)
@@ -52,36 +44,12 @@ script = ExtResource("2_sgols")
 
 [node name="Checklist" type="Sprite2D" parent="True_Checklist" unique_id=173666421]
 position = Vector2(600, 360)
-texture = SubResource("GradientTexture2D_dwbse")
+texture = ExtResource("5_wwp3p")
 
 [node name="Area2D" type="Area2D" parent="True_Checklist/Checklist" unique_id=551689020]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="True_Checklist/Checklist/Area2D" unique_id=584239631]
 shape = SubResource("RectangleShape2D_sgols")
-
-[node name="Checkbox1" parent="True_Checklist" unique_id=2123857673 instance=ExtResource("3_jppvq")]
-position = Vector2(752, 615)
-scale = Vector2(1.7, 1.7)
-
-[node name="Checkbox2" parent="True_Checklist" unique_id=548258273 instance=ExtResource("3_jppvq")]
-position = Vector2(682, 615)
-scale = Vector2(1.7, 1.7)
-
-[node name="Checkbox3" parent="True_Checklist" unique_id=1635790512 instance=ExtResource("3_jppvq")]
-position = Vector2(752, 545)
-scale = Vector2(1.7, 1.7)
-
-[node name="Checkbox4" parent="True_Checklist" unique_id=1746886143 instance=ExtResource("3_jppvq")]
-position = Vector2(682, 545)
-scale = Vector2(1.7, 1.7)
-
-[node name="Checkbox5" parent="True_Checklist" unique_id=1476505437 instance=ExtResource("3_jppvq")]
-position = Vector2(752, 475)
-scale = Vector2(1.7, 1.7)
-
-[node name="Checkbox6" parent="True_Checklist" unique_id=1282286409 instance=ExtResource("3_jppvq")]
-position = Vector2(682, 475)
-scale = Vector2(1.7, 1.7)
 
 [node name="Checkbox7" parent="True_Checklist" unique_id=1338197841 instance=ExtResource("3_jppvq")]
 position = Vector2(752, 405)
@@ -108,7 +76,7 @@ position = Vector2(682, 265)
 scale = Vector2(1.7, 1.7)
 
 [node name="Back" parent="True_Checklist" unique_id=1448350442 instance=ExtResource("4_wwp3p")]
-position = Vector2(750, 115)
+position = Vector2(778, 93)
 
 [connection signal="mouse_entered" from="Mini_Checklist/Sprite_Checklist/Area_Checklist" to="Mini_Checklist" method="_on_area_checklist_mouse_entered"]
 [connection signal="mouse_exited" from="Mini_Checklist/Sprite_Checklist/Area_Checklist" to="Mini_Checklist" method="_on_area_checklist_mouse_exited"]

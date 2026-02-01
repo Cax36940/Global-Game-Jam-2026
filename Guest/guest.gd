@@ -2,7 +2,6 @@ extends Node2D
 class_name Guest
 
 @export var masks_list : Array[PackedScene]
-@export var eyes_list : Array[PackedScene]
 @export var colors_list : Array[Color]
 
 @onready var shape : AnimatedSprite2D = $Shape
@@ -27,12 +26,5 @@ func _ready():
 	else :
 		push_error("There is no mask in the masks_list of the guest scene")
 		
-	if eyes_list.size() > 0:
-		eye_index = randi_range(0, eyes_list.size()-1)
-		var eye_scene : PackedScene = eyes_list[eye_index]
-		var eye_l : Eye = eye_scene.instantiate()
-		$EyeL.add_child(eye_l)
-		var eye_r : Eye = eye_scene.instantiate()
-		$EyeR.add_child(eye_r)
-	else :
-		push_error("There is no shape in the shape_list of the guest scene")
+	eye_index = randi_range(0, 6)
+	($Eyes as Eyes).set_eyes(eye_index)
