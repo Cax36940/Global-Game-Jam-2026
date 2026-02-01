@@ -20,9 +20,6 @@ height = 100
 
 [node name="Accept" parent="." unique_id=2047118973 instance=ExtResource("2_yplp6")]
 position = Vector2(381, 659)
-rotation = 0.17453292
-scale = Vector2(0.6, 0.6)
-skew = 0.17453292
 
 [node name="Refuse" parent="." unique_id=466592476 instance=ExtResource("3_aoyq8")]
 position = Vector2(405.99994, 568.00006)

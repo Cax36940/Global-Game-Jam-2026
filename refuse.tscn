@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://bdjk536uwqjq1"]
 
 [ext_resource type="Script" uid="uid://c4bq1dfaf7t7b" path="res://refuse.gd" id="1_q48qp"]
-[ext_resource type="Texture2D" uid="uid://vh18g1m163l5" path="res://Assets/icon.svg" id="2_itbhv"]
 [ext_resource type="Shader" uid="uid://2usd68as7g2r" path="res://outline.gdshader" id="2_rqw4d"]
+[ext_resource type="Texture2D" uid="uid://bdr1r4m74cob0" path="res://Assets/RejectButton.png" id="3_itbhv"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_flyx4"]
 shader = ExtResource("2_rqw4d")
@@ -11,31 +11,19 @@ shader_parameter/outline_thickness = 0.0
 shader_parameter/outline_color = Color(1, 0, 0, 1)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_036b0"]
-radius = 135.41643
+radius = 36.013885
 
 [node name="Refuse" type="Node2D" unique_id=466592476]
-rotation = 0.08726646
-scale = Vector2(0.7, 0.7)
-skew = 0.08726646
 script = ExtResource("1_q48qp")
 
 [node name="Sprite_Refuse" type="Sprite2D" parent="." unique_id=1672954010]
-modulate = Color(1, 0.5882353, 0.5882353, 1)
 material = SubResource("ShaderMaterial_flyx4")
-rotation = 0.08726646
-scale = Vector2(0.7, 0.7)
-skew = 0.08726646
-texture = ExtResource("2_itbhv")
+texture = ExtResource("3_itbhv")
 
 [node name="Area_Refuse" type="Area2D" parent="Sprite_Refuse" unique_id=826081664]
-rotation = 0.08726646
-scale = Vector2(0.7, 0.7)
-skew = 0.08726646
 
 [node name="CollisionShape_Refuse" type="CollisionShape2D" parent="Sprite_Refuse/Area_Refuse" unique_id=1925604012]
-rotation = 0.08726646
-scale = Vector2(0.7, 0.7)
-skew = 0.08726646
+position = Vector2(2, -8)
 shape = SubResource("CircleShape2D_036b0")
 
 [connection signal="mouse_entered" from="Sprite_Refuse/Area_Refuse" to="." method="_on_area_2d_mouse_entered"]
