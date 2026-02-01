@@ -2,9 +2,10 @@
 
 [ext_resource type="Script" uid="uid://d26wtjwc2pi7t" path="res://Notebook/mini_notebook.gd" id="1_dxuyj"]
 [ext_resource type="Script" uid="uid://bubxrbaudghs" path="res://Notebook/true_notebook.gd" id="2_gvrn8"]
-[ext_resource type="Shader" path="res://outline.gdshader" id="2_mvqau"]
+[ext_resource type="Shader" uid="uid://2usd68as7g2r" path="res://outline.gdshader" id="2_mvqau"]
+[ext_resource type="Texture2D" uid="uid://qwcwrtrl4fba" path="res://Assets/Notebook.png" id="3_78epq"]
 [ext_resource type="PackedScene" uid="uid://c8nlyhs8063fj" path="res://Notebook/back_notebook.tscn" id="3_gvrn8"]
-[ext_resource type="Script" path="res://Notebook/close.gd" id="3_hf82m"]
+[ext_resource type="Script" uid="uid://b13y82tlw56gv" path="res://Notebook/close.gd" id="3_hf82m"]
 [ext_resource type="PackedScene" uid="uid://344bm1ddwxtr" path="res://Notebook/pages.tscn" id="3_vcsgt"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_78epq"]
@@ -13,17 +14,8 @@ shader_parameter/allow_out_of_bounds = true
 shader_parameter/outline_thickness = 0.0
 shader_parameter/outline_color = Color(1, 0.7287319, 0.1931151, 1)
 
-[sub_resource type="Gradient" id="Gradient_i8w2w"]
-offsets = PackedFloat32Array(1)
-colors = PackedColorArray(0.40216267, 0.09844365, 0.060333624, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_gvrn8"]
-gradient = SubResource("Gradient_i8w2w")
-width = 80
-height = 120
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n8bdy"]
-size = Vector2(80, 120)
+size = Vector2(113.1669, 130.36864)
 
 [sub_resource type="Gradient" id="Gradient_mvqau"]
 offsets = PackedFloat32Array(0.7701613)
@@ -50,14 +42,18 @@ script = ExtResource("1_dxuyj")
 [node name="Sprite2D" type="Sprite2D" parent="Mini_Notebook" unique_id=295973453]
 material = SubResource("ShaderMaterial_78epq")
 position = Vector2(785, 630)
-texture = SubResource("GradientTexture2D_gvrn8")
+texture = ExtResource("3_78epq")
 
 [node name="Area2D" type="Area2D" parent="Mini_Notebook/Sprite2D" unique_id=273665863]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Mini_Notebook/Sprite2D/Area2D" unique_id=840701309]
+position = Vector2(-3.5066528, 0.5)
+scale = Vector2(1, 0.9999999)
+skew = -0.28797936
 shape = SubResource("RectangleShape2D_n8bdy")
 
 [node name="True_Notebook" type="Node2D" parent="." unique_id=503205974]
+visible = false
 z_index = 50
 position = Vector2(606, 354)
 script = ExtResource("2_gvrn8")

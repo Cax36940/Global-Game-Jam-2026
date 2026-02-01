@@ -6,13 +6,13 @@ var is_in : bool = false
 var is_pressed_out : bool = false
 var is_pressed_in : bool = false
 
-var sprite : Sprite2D
+var sprite
 
 #Actions au démarrage------------------------------------------------------------------------------
 func _ready() -> void:
 	modulate = Color(1, 1, 1, 1)
 	for c in get_children():
-		if c is Sprite2D:
+		if c is Sprite2D or c is AnimatedSprite2D:
 			sprite = c
 
 
