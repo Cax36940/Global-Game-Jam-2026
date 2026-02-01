@@ -86,8 +86,8 @@ position = Vector2(682, 265)
 scale = Vector2(1.7, 1.7)
 
 [node name="Back" parent="True_Checklist" unique_id=1448350442 instance=ExtResource("4_wwp3p")]
-position = Vector2(778, 93)
-scale = Vector2(0.56, 0.56)
+position = Vector2(780, 93)
+scale = Vector2(0.8, 0.8)
 
 [connection signal="mouse_entered" from="Mini_Checklist/Sprite_Checklist/Area_Checklist" to="Mini_Checklist" method="_on_area_checklist_mouse_entered"]
 [connection signal="mouse_exited" from="Mini_Checklist/Sprite_Checklist/Area_Checklist" to="Mini_Checklist" method="_on_area_checklist_mouse_exited"]
