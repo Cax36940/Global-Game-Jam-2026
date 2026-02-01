@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://ceqfk3ipk2yqk"]
 
 [ext_resource type="Script" uid="uid://bl2p5irplb0jh" path="res://GUI/MainMenu/main_menu.gd" id="1_voh4k"]
-[ext_resource type="Texture2D" uid="uid://crbu471j1olmh" path="res://Assets/BeckgroundCurtain.png" id="2_ub0nq"]
+[ext_resource type="Texture2D" uid="uid://brdrb2sqp6upl" path="res://Assets/MainCurtain.png" id="2_voh4k"]
 [ext_resource type="Script" uid="uid://cdut5tv23yujj" path="res://Menu/controls.gd" id="4_ihi24"]
 
 [sub_resource type="Animation" id="Animation_efxa6"]
@@ -69,9 +69,9 @@ grow_vertical = 2
 script = ExtResource("1_voh4k")
 metadata/_custom_type_script = "uid://vb8um73ma312"
 
-[node name="Curtain" type="Sprite2D" parent="." unique_id=1755529257]
-scale = Vector2(3.1600986, 1.7955112)
-texture = ExtResource("2_ub0nq")
+[node name="Curtain" type="Sprite2D" parent="." unique_id=1704720285]
+scale = Vector2(1.0264634, 1.0055866)
+texture = ExtResource("2_voh4k")
 centered = false
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=832344933]

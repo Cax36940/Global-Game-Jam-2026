@@ -1,9 +1,10 @@
-[gd_scene format=3 uid="uid://c47b01usnlin1"]
+[gd_scene format=3 uid="uid://bc7kttcdf3fut"]
 
-[ext_resource type="Script" uid="uid://b8a7861eg0akk" path="res://GUI/PauseMenu/pause_menu.gd" id="1_mqpij"]
-[ext_resource type="Texture2D" uid="uid://brdrb2sqp6upl" path="res://Assets/MainCurtain.png" id="2_mqpij"]
+[ext_resource type="Script" uid="uid://byhhfh6lwyl8t" path="res://GUI/GameOver/game_over.gd" id="1_0aaa7"]
+[ext_resource type="Texture2D" uid="uid://brdrb2sqp6upl" path="res://Assets/MainCurtain.png" id="2_yyuv5"]
 
 [sub_resource type="Animation" id="Animation_efxa6"]
+length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -49,28 +50,29 @@ tracks/0/keys = {
 "values": [Vector2(0, 0), Vector2(0, -720)]
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_mqpij"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_yyuv5"]
 _data = {
 &"RESET": SubResource("Animation_efxa6"),
 &"curtain fall": SubResource("Animation_dg77c"),
 &"curtain rise": SubResource("Animation_ycdy4")
 }
 
-[node name="PauseMenu" type="Control" unique_id=369511700]
+[node name="GameOver" type="Control" unique_id=1784967709]
 layout_mode = 3
 anchors_preset = 0
 offset_top = -720.0
 offset_right = 40.0
 offset_bottom = -680.0
-script = ExtResource("1_mqpij")
+script = ExtResource("1_0aaa7")
 metadata/_custom_type_script = "uid://vb8um73ma312"
 
-[node name="Curtain" type="Sprite2D" parent="." unique_id=1067515957]
+[node name="Curtain" type="Sprite2D" parent="." unique_id=279801915]
+position = Vector2(0, 4)
 scale = Vector2(1.0264634, 1.0055866)
-texture = ExtResource("2_mqpij")
+texture = ExtResource("2_yyuv5")
 centered = false
 
-[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1219893980]
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=693707323]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -78,27 +80,25 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = 572.0
-offset_top = 297.5
+offset_top = 293.5
 offset_right = 668.0
-offset_bottom = 390.5
+offset_bottom = 386.5
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Label" type="Label" parent="VBoxContainer" unique_id=1147633000]
+[node name="Label" type="Label" parent="VBoxContainer" unique_id=295506871]
 layout_mode = 2
-text = "Pause"
+text = "Game Over"
 horizontal_alignment = 1
 
-[node name="Resume" type="Button" parent="VBoxContainer" unique_id=676341323]
+[node name="Try Again" type="Button" parent="VBoxContainer" unique_id=1120026418]
 layout_mode = 2
-focus_neighbor_top = NodePath(".")
-focus_neighbor_bottom = NodePath("../Main Menu")
-text = "Resume"
+text = "Try again"
 
-[node name="Main Menu" type="Button" parent="VBoxContainer" unique_id=805161257]
+[node name="Main Menu" type="Button" parent="VBoxContainer" unique_id=593216671]
 layout_mode = 2
 text = "Main Menu"
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1671070749]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2022772653]
 deterministic = true
-libraries/ = SubResource("AnimationLibrary_mqpij")
+libraries/ = SubResource("AnimationLibrary_yyuv5")

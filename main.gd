@@ -20,7 +20,12 @@ func _ready() -> void:
 	get_tree().paused = true
 	ispaused = true
 	menu_music.play()
-	$GUI.display("MainMenu")
+
+	# The first time, we want to menu to appear instantly
+	$GUI/MainMenu.show()
+	$GUI/MainMenu.reset_position()
+	$GUI/MainMenu/VBoxContainer.get_child(1).grab_focus.call_deferred()
+	$GUI.current_component = "MainMenu"
 
 func _on_main_menu() -> void:
 	get_tree().reload_current_scene()
