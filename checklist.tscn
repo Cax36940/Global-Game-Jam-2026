@@ -1,10 +1,17 @@
 [gd_scene format=3 uid="uid://b035td654d8fn"]
 
 [ext_resource type="Script" uid="uid://cnn004a8iu2e0" path="res://mini_checklist.gd" id="1_t10jc"]
+[ext_resource type="Shader" uid="uid://2usd68as7g2r" path="res://outline.gdshader" id="2_jppvq"]
 [ext_resource type="Script" uid="uid://8pnn8yjswavy" path="res://true_checklist.gd" id="2_sgols"]
 [ext_resource type="PackedScene" uid="uid://cat7bh3g2lwh0" path="res://checkbox.tscn" id="3_jppvq"]
 [ext_resource type="PackedScene" uid="uid://c01xneve2v2sv" path="res://Buttons/button.tscn" id="4_wwp3p"]
 [ext_resource type="Script" uid="uid://bu7q0mtovaebe" path="res://Buttons/back.gd" id="5_sgols"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wwp3p"]
+shader = ExtResource("2_jppvq")
+shader_parameter/allow_out_of_bounds = true
+shader_parameter/outline_thickness = 0.0
+shader_parameter/outline_color = Color(1, 0.7200002, 0, 1)
 
 [sub_resource type="Gradient" id="Gradient_aqk2v"]
 offsets = PackedFloat32Array(0)
@@ -33,6 +40,7 @@ height = 594
 script = ExtResource("1_t10jc")
 
 [node name="Sprite_Checklist" type="Sprite2D" parent="Mini_Checklist" unique_id=1618002132]
+material = SubResource("ShaderMaterial_wwp3p")
 position = Vector2(892, 371)
 scale = Vector2(0.9200004, 1)
 texture = SubResource("GradientTexture2D_036b0")

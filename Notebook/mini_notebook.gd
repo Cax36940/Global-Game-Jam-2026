@@ -22,11 +22,13 @@ func signal_handler(value : int) -> void :
 
 func _on_area_2d_mouse_entered() -> void:
 	is_in = true
+	(($Sprite2D as Sprite2D).material as ShaderMaterial).set_shader_parameter("outline_thickness", 5)
 	modulate = Color(0.499, 0.129, 0.085, 1.0)
 
 
 func _on_area_2d_mouse_exited() -> void:
 	is_in = false
+	(($Sprite2D as Sprite2D).material as ShaderMaterial).set_shader_parameter("outline_thickness", 0)
 	modulate = Color(1, 1, 1, 1)
 
 

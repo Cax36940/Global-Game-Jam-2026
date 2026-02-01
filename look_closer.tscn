@@ -1,6 +1,13 @@
 [gd_scene format=3 uid="uid://bql8avy4llevf"]
 
 [ext_resource type="Script" uid="uid://bb4ergaa2farx" path="res://lookCloser.gd" id="1_r2qds"]
+[ext_resource type="Shader" uid="uid://2usd68as7g2r" path="res://outline.gdshader" id="2_weln1"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_cyo4a"]
+shader = ExtResource("2_weln1")
+shader_parameter/allow_out_of_bounds = true
+shader_parameter/outline_thickness = 0.0
+shader_parameter/outline_color = Color(1, 1, 1, 1)
 
 [sub_resource type="Gradient" id="Gradient_weln1"]
 offsets = PackedFloat32Array(1)
@@ -18,6 +25,7 @@ size = Vector2(100, 20)
 script = ExtResource("1_r2qds")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1781722164]
+material = SubResource("ShaderMaterial_cyo4a")
 texture = SubResource("GradientTexture2D_cyo4a")
 
 [node name="Area2D" type="Area2D" parent="Sprite2D" unique_id=1095477477]

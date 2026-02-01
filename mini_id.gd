@@ -15,11 +15,13 @@ func _ready() -> void:
 #Déclencheurs--------------------------------------------------------------------------------------
 func _on_area_2d_mouse_entered() -> void:
 	is_in = true
+	($Sprite_MiniID.material as ShaderMaterial).set_shader_parameter("outline_thickness", 5)
 	modulate = Color(0.0, 0.0, 0.705, 0.502)
 
 
 func _on_area_2d_mouse_exited() -> void:
 	is_in = false
+	($Sprite_MiniID.material as ShaderMaterial).set_shader_parameter("outline_thickness", 0)
 	modulate = Color(1, 1, 1, 1)
 
 

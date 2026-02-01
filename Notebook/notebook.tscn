@@ -2,9 +2,16 @@
 
 [ext_resource type="Script" uid="uid://d26wtjwc2pi7t" path="res://Notebook/mini_notebook.gd" id="1_dxuyj"]
 [ext_resource type="Script" uid="uid://bubxrbaudghs" path="res://Notebook/true_notebook.gd" id="2_gvrn8"]
+[ext_resource type="Shader" uid="uid://2usd68as7g2r" path="res://outline.gdshader" id="2_mvqau"]
 [ext_resource type="PackedScene" uid="uid://c8nlyhs8063fj" path="res://Notebook/back_notebook.tscn" id="3_gvrn8"]
 [ext_resource type="Script" path="res://Notebook/close.gd" id="3_hf82m"]
 [ext_resource type="PackedScene" uid="uid://344bm1ddwxtr" path="res://Notebook/pages.tscn" id="3_vcsgt"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_78epq"]
+shader = ExtResource("2_mvqau")
+shader_parameter/allow_out_of_bounds = true
+shader_parameter/outline_thickness = 0.0
+shader_parameter/outline_color = Color(1, 0.7287319, 0.1931151, 1)
 
 [sub_resource type="Gradient" id="Gradient_i8w2w"]
 offsets = PackedFloat32Array(1)
@@ -38,6 +45,7 @@ gradient = SubResource("Gradient_gvrn8")
 script = ExtResource("1_dxuyj")
 
 [node name="Sprite2D" type="Sprite2D" parent="Mini_Notebook" unique_id=295973453]
+material = SubResource("ShaderMaterial_78epq")
 position = Vector2(785, 630)
 texture = SubResource("GradientTexture2D_gvrn8")
 
@@ -47,6 +55,7 @@ texture = SubResource("GradientTexture2D_gvrn8")
 shape = SubResource("RectangleShape2D_n8bdy")
 
 [node name="True_Notebook" type="Node2D" parent="." unique_id=503205974]
+visible = false
 z_index = 50
 position = Vector2(606, 354)
 script = ExtResource("2_gvrn8")

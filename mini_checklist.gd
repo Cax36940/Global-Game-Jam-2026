@@ -17,12 +17,14 @@ func _ready() -> void:
 
 func _on_area_checklist_mouse_entered() -> void:
 	is_in = true
+	($Sprite_Checklist.material as ShaderMaterial).set_shader_parameter("outline_thickness", 5)
 	if not is_shown:
 		modulate = Color(0.478, 0.331, 0.0, 0.502)
 
 
 func _on_area_checklist_mouse_exited() -> void:
 	is_in = false
+	($Sprite_Checklist.material as ShaderMaterial).set_shader_parameter("outline_thickness", 0)
 	modulate = Actual_Color
 
 
