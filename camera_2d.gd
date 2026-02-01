@@ -23,6 +23,8 @@ func zoom_out():
 func zoom_toggle():
 	if is_zoom_in :
 		zoom_out()
+		($Glasses1 as AudioStreamPlayer).play(0.03)
 	else:
 		if not Global.Triple_show:
 			zoom_in()
+			($Glasses2 as AudioStreamPlayer).play(0.03)
