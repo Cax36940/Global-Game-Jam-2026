@@ -20,6 +20,6 @@ func End_handler() -> void :
 		m = Global.Mistakes_count3
 	@warning_ignore('integer_division')
 	Global.Score = min(max(0,round(30-8*log(m*50/(Global.Total_count+5)-1))), 100)
-	print(Global.Total_count)
-	print(Global.Score)
+	print("Correct: ", Global.Total_count - Global.Mistakes_count, " out of ", Global.Total_count)
+	print("Score : ", Global.Score)
  

@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://b035td654d8fn"]
 
 [ext_resource type="Script" uid="uid://cnn004a8iu2e0" path="res://mini_checklist.gd" id="1_t10jc"]
-[ext_resource type="Shader" uid="uid://2usd68as7g2r" path="res://outline.gdshader" id="2_jppvq"]
+[ext_resource type="Shader" path="res://outline.gdshader" id="2_jppvq"]
 [ext_resource type="Script" uid="uid://8pnn8yjswavy" path="res://true_checklist.gd" id="2_sgols"]
 [ext_resource type="PackedScene" uid="uid://cat7bh3g2lwh0" path="res://checkbox.tscn" id="3_jppvq"]
 [ext_resource type="PackedScene" uid="uid://c01xneve2v2sv" path="res://Buttons/button.tscn" id="4_wwp3p"]
@@ -34,6 +34,9 @@ gradient = SubResource("Gradient_036b0")
 width = 420
 height = 594
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sgols"]
+size = Vector2(420, 594)
+
 [node name="Checklist" type="Node2D" unique_id=560789416]
 
 [node name="Mini_Checklist" type="Node2D" parent="." unique_id=102571448]
@@ -52,13 +55,17 @@ scale = Vector2(0.9999999, 0.9999999)
 shape = SubResource("RectangleShape2D_pkg7o")
 
 [node name="True_Checklist" type="Node2D" parent="." unique_id=1283458076]
-visible = false
 z_index = 50
 script = ExtResource("2_sgols")
 
 [node name="Checklist" type="Sprite2D" parent="True_Checklist" unique_id=173666421]
 position = Vector2(600, 360)
 texture = SubResource("GradientTexture2D_dwbse")
+
+[node name="Area2D" type="Area2D" parent="True_Checklist/Checklist" unique_id=551689020]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="True_Checklist/Checklist/Area2D" unique_id=584239631]
+shape = SubResource("RectangleShape2D_sgols")
 
 [node name="Checkbox1" parent="True_Checklist" unique_id=2123857673 instance=ExtResource("3_jppvq")]
 position = Vector2(752, 615)
@@ -115,3 +122,5 @@ script = ExtResource("5_sgols")
 
 [connection signal="mouse_entered" from="Mini_Checklist/Sprite_Checklist/Area_Checklist" to="Mini_Checklist" method="_on_area_checklist_mouse_entered"]
 [connection signal="mouse_exited" from="Mini_Checklist/Sprite_Checklist/Area_Checklist" to="Mini_Checklist" method="_on_area_checklist_mouse_exited"]
+[connection signal="mouse_entered" from="True_Checklist/Checklist/Area2D" to="True_Checklist" method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="True_Checklist/Checklist/Area2D" to="True_Checklist" method="_on_area_2d_mouse_exited"]
