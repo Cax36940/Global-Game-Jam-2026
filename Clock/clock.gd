@@ -1,7 +1,7 @@
 extends Node2D
 
 
-const GAME_DURATION : int = 3
+const GAME_DURATION : int = 60
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

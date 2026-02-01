@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://c47b01usnlin1" path="res://GUI/PauseMenu/pause_menu.tscn" id="6_5vw27"]
 [ext_resource type="Script" uid="uid://dwy4s6pgcr1p7" path="res://Menu/game_over.gd" id="8_5vw27"]
 [ext_resource type="AudioStream" uid="uid://bqd5j6ceclnsb" path="res://Assets/Music/music_loop_menu_track_v0.mp3" id="9_kek77"]
+[ext_resource type="PackedScene" uid="uid://bc7kttcdf3fut" path="res://GUI/GameOver/game_over.tscn" id="8_5vw27"]
 [ext_resource type="PackedScene" uid="uid://ceqfk3ipk2yqk" path="res://GUI/MainMenu/main_menu.tscn" id="10_4c57u"]
 
 [node name="Main" type="Node" unique_id=76370498]
