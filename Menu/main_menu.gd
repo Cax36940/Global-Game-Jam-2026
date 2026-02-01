@@ -6,9 +6,14 @@ func _ready() -> void:
 	$Start.pressed.connect(_on_start_button_pressed)
 	$Exit.pressed.connect(_on_exit_button_pressed)
 
-func display():
+
+func appear():
 	show()
 	$Start.grab_focus.call_deferred()
+
+func disappear():
+	# TODO: animation
+	hide()
 
 func _on_exit_button_pressed() -> void:
 	get_tree().quit()

@@ -8,6 +8,7 @@
 [ext_resource type="Script" uid="uid://cutt0ecko4vrq" path="res://Menu/main_menu.gd" id="5_7mycd"]
 [ext_resource type="Script" uid="uid://dhhd5aeh3y0lc" path="res://Menu/pause_menu.gd" id="5_lquwl"]
 [ext_resource type="Script" uid="uid://cdut5tv23yujj" path="res://Menu/controls.gd" id="6_272bh"]
+[ext_resource type="Script" uid="uid://qkcmg5rf0800" path="res://GUI/main_menu.gd" id="7_efxa6"]
 [ext_resource type="Script" uid="uid://dwy4s6pgcr1p7" path="res://Menu/game_over.gd" id="8_5vw27"]
 [ext_resource type="Texture2D" uid="uid://crbu471j1olmh" path="res://Assets/BeckgroundCurtain.png" id="9_kek77"]
 
@@ -28,6 +29,7 @@ mouse_filter = 2
 script = ExtResource("3_5vw27")
 
 [node name="Overlay" type="Control" parent="GUI" unique_id=288549748]
+visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -79,7 +81,21 @@ text = "Resume"
 layout_mode = 2
 text = "Main Menu"
 
-[node name="MainMenu" type="VBoxContainer" parent="GUI" unique_id=2067887264]
+[node name="MainMenu" type="Control" parent="GUI" unique_id=2068827441]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("7_efxa6")
+
+[node name="Curtain" type="Sprite2D" parent="GUI/MainMenu" unique_id=2117917725]
+scale = Vector2(3.1600986, 2.0473816)
+texture = ExtResource("9_kek77")
+centered = false
+
+[node name="VBoxContainer" type="VBoxContainer" parent="GUI/MainMenu" unique_id=2067887264]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -95,40 +111,41 @@ grow_vertical = 2
 alignment = 1
 script = ExtResource("5_7mycd")
 
-[node name="Label" type="Label" parent="GUI/MainMenu" unique_id=518528668]
+[node name="Label" type="Label" parent="GUI/MainMenu/VBoxContainer" unique_id=518528668]
 layout_mode = 2
 text = "Vigilance Maskimum"
 horizontal_alignment = 1
 
-[node name="Start" type="Button" parent="GUI/MainMenu" unique_id=1518564439]
+[node name="Start" type="Button" parent="GUI/MainMenu/VBoxContainer" unique_id=1518564439]
 layout_mode = 2
 focus_neighbor_bottom = NodePath("../Controls/Button")
 text = "Start Game"
 
-[node name="Controls" type="VBoxContainer" parent="GUI/MainMenu" unique_id=1946298209]
+[node name="Controls" type="VBoxContainer" parent="GUI/MainMenu/VBoxContainer" unique_id=1946298209]
 layout_mode = 2
 script = ExtResource("6_272bh")
 
-[node name="Button" type="Button" parent="GUI/MainMenu/Controls" unique_id=426468012]
+[node name="Button" type="Button" parent="GUI/MainMenu/VBoxContainer/Controls" unique_id=426468012]
 layout_mode = 2
 focus_neighbor_top = NodePath("../../Start")
 focus_neighbor_bottom = NodePath("../../Exit")
 toggle_mode = true
 text = "Controls"
 
-[node name="Label" type="Label" parent="GUI/MainMenu/Controls" unique_id=1339610785]
+[node name="Label" type="Label" parent="GUI/MainMenu/VBoxContainer/Controls" unique_id=1339610785]
 visible = false
 layout_mode = 2
 text = "Shift = Do A
 Space = Do B
 TODO: add controls"
 
-[node name="Exit" type="Button" parent="GUI/MainMenu" unique_id=217473286]
+[node name="Exit" type="Button" parent="GUI/MainMenu/VBoxContainer" unique_id=217473286]
 layout_mode = 2
 focus_neighbor_top = NodePath("../Controls/Button")
 text = "Exit"
 
 [node name="GameOver" type="VBoxContainer" parent="GUI" unique_id=2091551017]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -155,11 +172,6 @@ text = "Try again"
 [node name="Main Menu" type="Button" parent="GUI/GameOver" unique_id=505699332]
 layout_mode = 2
 text = "Main Menu"
-
-[node name="Curtain" type="Sprite2D" parent="GUI" unique_id=2117917725]
-scale = Vector2(3.2044885, 3.2044885)
-texture = ExtResource("9_kek77")
-centered = false
 
 [node name="MenuMusic" type="AudioStreamPlayer" parent="." unique_id=2067528553]
 autoplay = true
