@@ -8,9 +8,10 @@ func _ready() -> void:
 
 func signal_handler(value : int) -> void :
 	if value == 0:
-		visible = true
 		Global.Triple_show = true
+		visible = true
+		$"../MiniID".visible = false
 	else:
-		visible = false
 		Global.Triple_show = false
+		visible = false
 		$"../MiniID".visible = true

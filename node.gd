@@ -23,3 +23,8 @@ func End_handler() -> void :
 	print("Correct: ", Global.Total_count - Global.Mistakes_count, " out of ", Global.Total_count)
 	print("Score : ", Global.Score)
  
+
+#for debugging
+func _process(delta: float) -> void:
+	if Input.is_action_pressed("ui_text_backspace"):
+		print(Global.Triple_show)

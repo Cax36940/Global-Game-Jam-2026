@@ -20,11 +20,12 @@ func _ready() -> void:
 
 func signal_handler(value : int) -> void :
 	if value == 0:
-		visible = true
 		Global.Triple_show = true
+		visible = true
+		$"../Mini_Notebook".visible = false
 	else:
-		visible = false
 		Global.Triple_show = false
+		visible = false
 		$"../Mini_Notebook".visible = true
 
 
@@ -102,9 +103,7 @@ func _input(event):
 				else:
 					is_pressed_out = true
 		else:
-			if not is_in:
-				if is_pressed_out:
+			if visible and not is_in and is_pressed_out:
 					SignalBus.Notebook_show.emit(1)
-					$"../Mini_Notebook".visible = true
 			is_pressed_in = false
 			is_pressed_out = false

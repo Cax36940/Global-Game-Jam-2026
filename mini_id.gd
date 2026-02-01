@@ -8,21 +8,19 @@ var is_pressed_in : bool = false
 
 #Actions au démarrage------------------------------------------------------------------------------
 func _ready() -> void:
-	modulate = Color(1, 1, 1, 1)
 	visible = true
 
 
 #Déclencheurs--------------------------------------------------------------------------------------
 func _on_area_2d_mouse_entered() -> void:
-	is_in = true
-	($Sprite_MiniID.material as ShaderMaterial).set_shader_parameter("outline_thickness", 5)
-	modulate = Color(0.0, 0.0, 0.705, 0.502)
+	if not Global.Triple_show:
+		is_in = true
+		($Sprite_MiniID.material as ShaderMaterial).set_shader_parameter("outline_thickness", 5)
 
 
 func _on_area_2d_mouse_exited() -> void:
 	is_in = false
 	($Sprite_MiniID.material as ShaderMaterial).set_shader_parameter("outline_thickness", 0)
-	modulate = Color(1, 1, 1, 1)
 
 
 func _input(event):
@@ -39,26 +37,18 @@ func _input(event):
 				else:
 					is_pressed_out = true
 		else:
-			if is_in:
-				if is_pressed_in:
-					if not Global.Triple_show:
-						SignalBus.ID_show.emit(0)
-						visible = false
+			if visible and is_in and is_pressed_in and not Global.Triple_show:
+				SignalBus.ID_show.emit(0)
 			is_pressed_in = false
 			is_pressed_out = false
 
-func hide_mini():
-	SignalBus.ID_show.emit(0)
-	visible = false
 
 func show_mini():
 	SignalBus.ID_show.emit(1)
-	visible = true
 
 func _process(_delta: float) -> void:
 	if visible:
-		if Input.is_action_just_pressed("ui_down"):
-			if not Global.Triple_show:
-				hide_mini.call_deferred()
+		if Input.is_action_just_pressed("ui_down") and not Global.Triple_show:
+				SignalBus.ID_show.emit(0)
 	elif Input.is_action_just_pressed("any") or Input.is_action_just_pressed("left click"):
 		show_mini.call_deferred()

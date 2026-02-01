@@ -6,20 +6,19 @@ var is_pressed_out = false
 
 func _ready() -> void:
 	visible = false
-	SignalBus.checklist_show.connect(signal_handler)
+	SignalBus.checklist_show.connect(check_handler)
 
 
-func signal_handler(value : int) -> void :
+func check_handler(value : int) -> void :
 	if value == 0:
-		visible = true
 		Global.Triple_show = true
+		visible = true
+		$"../Mini_Checklist".visible = false
 	else:
-		visible = false
 		Global.Triple_show = false
+		visible = false
+		$"../Mini_Checklist".visible = true
 
-
-func _process(_delta: float) -> void:
-	pass
 
 func _input(event):
 	if event is InputEventMouseButton:
@@ -35,16 +34,13 @@ func _input(event):
 				else:
 					is_pressed_out = true
 		else:
-			if not is_in:
-				if is_pressed_out:
+			if visible and not is_in and is_pressed_out:
 					SignalBus.checklist_show.emit(1)
-					$"../Mini_Checklist".visible = true
 			is_pressed_in = false
 			is_pressed_out = false
 
 func _on_area_2d_mouse_entered() -> void:
 	is_in = true
-
 
 func _on_area_2d_mouse_exited() -> void:
 	is_in = false

@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dmnklbijhhd7q" path="res://mini_id.gd" id="1_8peyj"]
 [ext_resource type="Script" uid="uid://bomhw3gjpgiou" path="res://true_id.gd" id="2_8yarp"]
-[ext_resource type="Shader" uid="uid://2usd68as7g2r" path="res://outline.gdshader" id="2_qfcvv"]
+[ext_resource type="Shader" path="res://outline.gdshader" id="2_qfcvv"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_0lckl"]
 shader = ExtResource("2_qfcvv")
