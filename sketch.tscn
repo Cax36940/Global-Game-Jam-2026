@@ -1,29 +1,17 @@
 [gd_scene format=3 uid="uid://bv0rv0q12dep3"]
 
-[ext_resource type="Texture2D" uid="uid://vh18g1m163l5" path="res://Assets/icon.svg" id="1_f3sb7"]
+[ext_resource type="Texture2D" uid="uid://crbu471j1olmh" path="res://Assets/BeckgroundCurtain.png" id="1_f2y7y"]
 [ext_resource type="PackedScene" uid="uid://c2d4df8lqlj2i" path="res://Guest/guest_spawner.tscn" id="2_kqinb"]
 [ext_resource type="Texture2D" uid="uid://d27cxtmpb8cnh" path="res://Assets/foreground.png" id="3_x4f2i"]
+[ext_resource type="PackedScene" uid="uid://bfhckh8llopeh" path="res://Clock/clock.tscn" id="4_f2y7y"]
 [ext_resource type="Texture2D" uid="uid://d4ggafssd1obi" path="res://Assets/curtain.png" id="4_i6m4m"]
 [ext_resource type="Texture2D" uid="uid://dbdugkq2v22rs" path="res://Assets/shadow.png" id="5_85kpm"]
 
-[sub_resource type="Gradient" id="Gradient_fj7yv"]
-offsets = PackedFloat32Array(0, 0.45424837, 1)
-colors = PackedColorArray(1, 0, 0, 1, 0.55455405, 0.554554, 0.5545539, 1, 0.87455684, 0, 0, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_fj7yv"]
-gradient = SubResource("Gradient_fj7yv")
-width = 400
-height = 400
-fill_from = Vector2(0.6030043, 0.0021459227)
-fill_to = Vector2(0.5772532, 1)
-
 [node name="Sketch" type="Node2D" unique_id=1484833825]
 
-[node name="Window" type="Sprite2D" parent="." unique_id=570471808]
-z_index = -1000
-position = Vector2(600, 265)
-rotation = 1.5707964
-texture = SubResource("GradientTexture2D_fj7yv")
+[node name="BeckgroundCurtain" type="Sprite2D" parent="." unique_id=123753778]
+position = Vector2(610, 287)
+texture = ExtResource("1_f2y7y")
 
 [node name="GuestSpawner" parent="." unique_id=468613996 node_paths=PackedStringArray("start_position_node", "middle_position_node", "end_position_node") instance=ExtResource("2_kqinb")]
 z_index = -500
@@ -45,10 +33,9 @@ z_index = 500
 position = Vector2(643, 362)
 texture = ExtResource("3_x4f2i")
 
-[node name="Clock" type="Sprite2D" parent="." unique_id=866045281]
+[node name="Clock" parent="." unique_id=485727779 instance=ExtResource("4_f2y7y")]
 z_index = 500
-position = Vector2(144, 144)
-texture = ExtResource("1_f3sb7")
+position = Vector2(194, 210)
 
 [node name="Curtain" type="Sprite2D" parent="." unique_id=513760793]
 z_index = 500

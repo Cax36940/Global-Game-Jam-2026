@@ -8,6 +8,7 @@
 [ext_resource type="Script" uid="uid://dhhd5aeh3y0lc" path="res://Menu/pause_menu.gd" id="5_lquwl"]
 [ext_resource type="Script" uid="uid://cdut5tv23yujj" path="res://Menu/controls.gd" id="6_272bh"]
 [ext_resource type="Script" uid="uid://dwy4s6pgcr1p7" path="res://Menu/game_over.gd" id="8_5vw27"]
+[ext_resource type="AudioStream" uid="uid://bqd5j6ceclnsb" path="res://Assets/Music/music_loop_menu_track_v0.mp3" id="9_kek77"]
 
 [node name="Main" type="Node" unique_id=76370498]
 script = ExtResource("1_272bh")
@@ -154,3 +155,7 @@ text = "Try again"
 [node name="Main Menu" type="Button" parent="GUI/GameOver" unique_id=505699332]
 layout_mode = 2
 text = "Main Menu"
+
+[node name="MenuMusic" type="AudioStreamPlayer" parent="." unique_id=2067528553]
+stream = ExtResource("9_kek77")
+autoplay = true
