@@ -24,6 +24,6 @@ func End_handler() -> void :
  
 
 #for debugging
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if Input.is_action_pressed("ui_text_backspace"):
 		print(Global.Triple_show)
