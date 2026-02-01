@@ -22,6 +22,7 @@ func _on_main_menu() -> void:
 	get_tree().reload_current_scene()
 
 func _on_start_game():
+	$GUI/GameOver.hide()
 	$GUI/MainMenu.hide()
 	$GUI/MainMenu.process_mode = Node.PROCESS_MODE_DISABLED
 	$GUI/PauseMenu.hide()
