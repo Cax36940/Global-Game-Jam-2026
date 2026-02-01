@@ -1,5 +1,6 @@
+# Common base class for all screen.covering menus
+class_name MenuScreen
 extends Control
-
 
 func _ready() -> void:
 	# TODO: scale nicer
