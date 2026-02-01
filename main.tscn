@@ -1,16 +1,14 @@
 [gd_scene format=3 uid="uid://c55m1oiwe6a2h"]
 
-[ext_resource type="PackedScene" uid="uid://c0cnjvy8xfx07" path="res://game.tscn" id="1_7mycd"]
+[ext_resource type="PackedScene" uid="uid://pgrsngrh70eb" path="res://game.tscn" id="1_7mycd"]
 [ext_resource type="Script" uid="uid://jx48rftv4dv8" path="res://main.gd" id="1_272bh"]
 [ext_resource type="Script" uid="uid://cuewil535to8a" path="res://GUI/gui.gd" id="3_5vw27"]
-[ext_resource type="Script" uid="uid://dq77syx52rqa1" path="res://GUI/pause_button.gd" id="3_272bh"]
-[ext_resource type="Script" uid="uid://sq4m15igr5gd" path="res://GUI/overlay.gd" id="4_4c57u"]
+[ext_resource type="Script" uid="uid://dq77syx52rqa1" path="res://Menu/pause_button.gd" id="3_272bh"]
+[ext_resource type="Script" uid="uid://cutt0ecko4vrq" path="res://Menu/main_menu.gd" id="5_7mycd"]
+[ext_resource type="Script" uid="uid://dhhd5aeh3y0lc" path="res://Menu/pause_menu.gd" id="5_lquwl"]
+[ext_resource type="Script" uid="uid://cdut5tv23yujj" path="res://Menu/controls.gd" id="6_272bh"]
+[ext_resource type="Script" uid="uid://dwy4s6pgcr1p7" path="res://Menu/game_over.gd" id="8_5vw27"]
 [ext_resource type="AudioStream" uid="uid://bqd5j6ceclnsb" path="res://Assets/Music/music_loop_menu_track_v0.mp3" id="9_kek77"]
-[ext_resource type="Script" uid="uid://cdut5tv23yujj" path="res://GUI/controls.gd" id="6_272bh"]
-[ext_resource type="Script" uid="uid://30xjd3kbqbo3" path="res://GUI/main_menu.gd" id="7_4c57u"]
-[ext_resource type="PackedScene" uid="uid://bg8dybnmvh8q3" path="res://menu_screen.tscn" id="9_kek77"]
-[ext_resource type="Script" uid="uid://bm1l6pnsh288m" path="res://GUI/pause_menu.gd" id="10_4c57u"]
-[ext_resource type="Script" uid="uid://1805fpi8mfos" path="res://GUI/game_over.gd" id="10_efxa6"]
 
 [node name="Main" type="Node" unique_id=76370498]
 script = ExtResource("1_272bh")
@@ -32,7 +30,6 @@ script = ExtResource("3_5vw27")
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
-script = ExtResource("4_4c57u")
 
 [node name="PauseButton" type="Button" parent="GUI/Overlay" unique_id=1910178568]
 layout_mode = 1
@@ -50,55 +47,21 @@ grow_vertical = 0
 text = "Pause"
 script = ExtResource("3_272bh")
 
-[node name="MainMenu" parent="GUI" unique_id=121610079 instance=ExtResource("9_kek77")]
-layout_mode = 1
-offset_left = -80.0
-offset_top = -64.0
-offset_right = 80.0
-offset_bottom = 64.0
-script = ExtResource("7_4c57u")
-
-[node name="Label" type="Label" parent="GUI/MainMenu" unique_id=1268205235]
-layout_mode = 2
-text = "Vigilance Maskimum"
-horizontal_alignment = 1
-
-[node name="Start" type="Button" parent="GUI/MainMenu" unique_id=759254942]
-layout_mode = 2
-focus_neighbor_bottom = NodePath("../Controls/Button")
-text = "Start Game"
-
-[node name="Controls" type="VBoxContainer" parent="GUI/MainMenu" unique_id=583389686]
-layout_mode = 2
-script = ExtResource("6_272bh")
-
-[node name="Button" type="Button" parent="GUI/MainMenu/Controls" unique_id=460744187]
-layout_mode = 2
-focus_neighbor_top = NodePath("../../Start")
-focus_neighbor_bottom = NodePath("../../Exit")
-toggle_mode = true
-text = "Controls"
-
-[node name="Label" type="Label" parent="GUI/MainMenu/Controls" unique_id=490691833]
-visible = false
-layout_mode = 2
-text = "Shift = Do A
-Space = Do B
-TODO: add controls"
-
-[node name="Exit" type="Button" parent="GUI/MainMenu" unique_id=98721545]
-layout_mode = 2
-focus_neighbor_top = NodePath("../Controls/Button")
-text = "Exit"
-
-[node name="PauseMenu" parent="GUI" unique_id=445933071 instance=ExtResource("9_kek77")]
+[node name="PauseMenu" type="VBoxContainer" parent="GUI" unique_id=1068046758]
 visible = false
 layout_mode = 1
-offset_left = -48.0
-offset_top = -46.5
-offset_right = 48.0
-offset_bottom = 46.5
-script = ExtResource("10_4c57u")
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -35.0
+offset_top = -33.0
+offset_right = 35.0
+offset_bottom = 33.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("5_lquwl")
 
 [node name="Label" type="Label" parent="GUI/PauseMenu" unique_id=942334447]
 layout_mode = 2
@@ -115,24 +78,82 @@ text = "Resume"
 layout_mode = 2
 text = "Main Menu"
 
-[node name="GameOver" parent="GUI" unique_id=920150302 instance=ExtResource("9_kek77")]
+[node name="MainMenu" type="VBoxContainer" parent="GUI" unique_id=2067887264]
+visible = false
 layout_mode = 1
-offset_left = -48.0
-offset_top = -46.5
-offset_right = 48.0
-offset_bottom = 46.5
-script = ExtResource("10_efxa6")
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -84.0
+offset_top = -64.0
+offset_right = 84.0
+offset_bottom = 64.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+script = ExtResource("5_7mycd")
 
-[node name="Label" type="Label" parent="GUI/GameOver" unique_id=1678823388]
+[node name="Label" type="Label" parent="GUI/MainMenu" unique_id=518528668]
+layout_mode = 2
+text = "Vigilance Maskimum"
+horizontal_alignment = 1
+
+[node name="Start" type="Button" parent="GUI/MainMenu" unique_id=1518564439]
+layout_mode = 2
+focus_neighbor_bottom = NodePath("../Controls/Button")
+text = "Start Game"
+
+[node name="Controls" type="VBoxContainer" parent="GUI/MainMenu" unique_id=1946298209]
+layout_mode = 2
+script = ExtResource("6_272bh")
+
+[node name="Button" type="Button" parent="GUI/MainMenu/Controls" unique_id=426468012]
+layout_mode = 2
+focus_neighbor_top = NodePath("../../Start")
+focus_neighbor_bottom = NodePath("../../Exit")
+toggle_mode = true
+text = "Controls"
+
+[node name="Label" type="Label" parent="GUI/MainMenu/Controls" unique_id=1339610785]
+visible = false
+layout_mode = 2
+text = "Shift = Do A
+Space = Do B
+TODO: add controls"
+
+[node name="Exit" type="Button" parent="GUI/MainMenu" unique_id=217473286]
+layout_mode = 2
+focus_neighbor_top = NodePath("../Controls/Button")
+text = "Exit"
+
+[node name="GameOver" type="VBoxContainer" parent="GUI" unique_id=2091551017]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -43.5
+offset_top = -23.5
+offset_right = 43.5
+offset_bottom = 23.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("8_5vw27")
+
+[node name="Label" type="Label" parent="GUI/GameOver" unique_id=1948066001]
 layout_mode = 2
 text = "Game Over"
 horizontal_alignment = 1
 
-[node name="Try Again" type="Button" parent="GUI/GameOver" unique_id=1688774358]
+[node name="Try Again" type="Button" parent="GUI/GameOver" unique_id=913894922]
 layout_mode = 2
 text = "Try again"
 
-[node name="Main Menu" type="Button" parent="GUI/GameOver" unique_id=599529417]
+[node name="Main Menu" type="Button" parent="GUI/GameOver" unique_id=505699332]
 layout_mode = 2
 text = "Main Menu"
 

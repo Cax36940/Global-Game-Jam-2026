@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://chire34trhjlu"]
+
+[ext_resource type="Script" uid="uid://cutt0ecko4vrq" path="res://Menu/main_menu.gd" id="1_3w4mj"]
+
+[node name="MainMenu" type="VBoxContainer" unique_id=1259921030]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+script = ExtResource("1_3w4mj")
+
+[node name="Title" type="Button" parent="." unique_id=1457761427]
+layout_mode = 2
+disabled = true
+text = "Vigilance Maskimum"
+
+[node name="Start" type="Button" parent="." unique_id=1518564439]
+layout_mode = 2
+focus_neighbor_bottom = NodePath("../Exit")
+text = "Start Game"
+
+[node name="Exit" type="Button" parent="." unique_id=217473286]
+layout_mode = 2
+focus_neighbor_top = NodePath("../Start")
+text = "Exit"

@@ -12,11 +12,10 @@ func _ready() -> void:
 	SignalBus.gameover.connect(_on_gameover)
 	SignalBus.mainmenu.connect(_on_main_menu)
 
-	$GUI/MainMenu.process_mode = Node.PROCESS_MODE_WHEN_PAUSED
-	$GUI/GameOver.process_mode = Node.PROCESS_MODE_WHEN_PAUSED
-
+	$GUI/PauseMenu.process_mode = Node.PROCESS_MODE_DISABLED
 	# Set up first screen
 	get_tree().paused = true
+	ispaused = true
 	menu_music.play()
 	$GUI.display("MainMenu")
 
