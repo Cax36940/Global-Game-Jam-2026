@@ -10,6 +10,9 @@ func appear():
 	# https://docs.godotengine.org/en/stable/tutorials/ui/gui_navigation.html
 	$Resume.grab_focus.call_deferred()
 
+func disappear():
+	hide()
+
 func _input(event):
 	if event.is_action_pressed("ui_close_dialog"):
 		SignalBus.pause_game.emit(not get_tree().paused)
