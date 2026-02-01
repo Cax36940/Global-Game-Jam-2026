@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://s717sd3dp78a" path="res://Assets/MenuButtons/MenuButton (11).png" id="7_sec8f"]
 [ext_resource type="Texture2D" uid="uid://dq2o20vtqv1gc" path="res://Assets/MenuButtons/MenuButton (7).png" id="8_5gd6s"]
 [ext_resource type="Texture2D" uid="uid://com6e5xq8oyv4" path="res://Assets/MenuButtons/MenuButton (9).png" id="9_iy0bd"]
+[ext_resource type="FontFile" uid="uid://bxhloq27kuauu" path="res://Assets/Starlight Romance.ttf" id="10_8dgp8"]
 
 [sub_resource type="Animation" id="Animation_efxa6"]
 length = 0.001
@@ -98,7 +99,7 @@ deterministic = true
 libraries/ = SubResource("AnimationLibrary_yyuv5")
 
 [node name="GameOver" type="Sprite2D" parent="." unique_id=73964007]
-position = Vector2(637, 231)
+position = Vector2(646, 145)
 scale = Vector2(1.445, 1.445)
 texture = ExtResource("3_hdmvo")
 
@@ -123,6 +124,17 @@ scale = Vector2(0.4, 0.4)
 texture_normal = ExtResource("7_sec8f")
 texture_pressed = ExtResource("8_5gd6s")
 texture_hover = ExtResource("9_iy0bd")
+
+[node name="Score" type="Label" parent="." unique_id=1435208489]
+layout_mode = 0
+offset_left = 431.0
+offset_top = 230.0
+offset_right = 837.0
+offset_bottom = 375.0
+theme_override_fonts/font = ExtResource("10_8dgp8")
+theme_override_font_sizes/font_size = 120
+text = "Score : "
+horizontal_alignment = 1
 
 [connection signal="pressed" from="Main Menu" to="." method="_on_main_menu_pressed"]
 [connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]

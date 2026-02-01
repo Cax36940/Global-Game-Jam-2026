@@ -77,6 +77,10 @@ signal zoom_toggle()
 
 @warning_ignore('unused_signal')
 signal start_guest()
+
+
+@warning_ignore('unused_signal')
+signal set_score(value : int)
 #player
 #_ready
 #epee.signal_name.connect(signal_handler)
