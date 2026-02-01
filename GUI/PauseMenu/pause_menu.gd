@@ -3,6 +3,7 @@ extends MenuScreen
 
 func _input(event):
 	if event.is_action_pressed("ui_close_dialog"):
+		SignalBus.zoom_out.emit()
 		SignalBus.pause_game.emit(not get_tree().paused)
 
 func _on_exit_button_pressed() -> void:
