@@ -13,7 +13,7 @@ func _ready():
 	SignalBus.write_constrain.connect(write_constrain)
 
 func write_constrain():
-	
+	add_page()
 	var page1 : Page = add_page()
 	for mask_index in Global.invalid_mask:
 		var masks : Masks = masks_scene.instantiate()
@@ -36,7 +36,6 @@ func write_constrain():
 
 		page3.add_constrain(color_point)
 		
-	add_page()
 	SignalBus.update_notebook.emit()
 
 func add_page() -> Page:

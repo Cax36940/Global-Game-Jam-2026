@@ -8,10 +8,13 @@ var is_pressed_in : bool = false
 var is_shown : bool = false
 var actual_color = Color(1, 1, 1, 1)
 
+@export var tex : Texture2D
 
+	
 #Actions au démarrage------------------------------------------------------------------------------
 func _ready() -> void:
 	modulate = actual_color
+	$NextPageButton.texture = tex
 
 
 #Déclencheurs--------------------------------------------------------------------------------------
