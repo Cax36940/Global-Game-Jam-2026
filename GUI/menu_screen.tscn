@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://csqdgps3vx30b"]
 
-[ext_resource type="Script" uid="uid://qkcmg5rf0800" path="res://GUI/main_menu.gd" id="1_exjve"]
+[ext_resource type="Script" uid="uid://vb8um73ma312" path="res://GUI/menu_screen.gd" id="1_loxpm"]
 [ext_resource type="Texture2D" uid="uid://crbu471j1olmh" path="res://Assets/BeckgroundCurtain.png" id="2_s7n8e"]
 [ext_resource type="Script" uid="uid://fd57ygx3ugyu" path="res://GUI/v_box_container.gd" id="3_exjve"]
 [ext_resource type="Script" uid="uid://cdut5tv23yujj" path="res://Menu/controls.gd" id="4_5hhdc"]
@@ -59,7 +59,7 @@ _data = {
 &"curtain rise": SubResource("Animation_ycdy4")
 }
 
-[node name="MainMenu" type="Control" unique_id=632732192]
+[node name="MenuScreen" type="Control" unique_id=632732192]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -68,7 +68,7 @@ offset_top = -720.0
 offset_bottom = -720.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_exjve")
+script = ExtResource("1_loxpm")
 
 [node name="Curtain" type="Sprite2D" parent="." unique_id=332807249]
 scale = Vector2(3.1600986, 1.7955112)

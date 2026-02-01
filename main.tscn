@@ -6,13 +6,14 @@
 [ext_resource type="Script" uid="uid://dq77syx52rqa1" path="res://Menu/pause_button.gd" id="3_272bh"]
 [ext_resource type="Script" uid="uid://sq4m15igr5gd" path="res://GUI/overlay.gd" id="4_4c57u"]
 [ext_resource type="Script" uid="uid://dhhd5aeh3y0lc" path="res://Menu/pause_menu.gd" id="5_lquwl"]
-[ext_resource type="PackedScene" uid="uid://csqdgps3vx30b" path="res://GUI/main_menu.tscn" id="7_5vw27"]
+[ext_resource type="PackedScene" uid="uid://csqdgps3vx30b" path="res://GUI/menu_screen.tscn" id="7_5vw27"]
 [ext_resource type="Script" uid="uid://dwy4s6pgcr1p7" path="res://Menu/game_over.gd" id="8_5vw27"]
 
 [node name="Main" type="Node" unique_id=76370498]
 script = ExtResource("1_272bh")
 
 [node name="Game" parent="." unique_id=1271029013 instance=ExtResource("1_7mycd")]
+script = null
 
 [node name="GUI" type="Control" parent="." unique_id=1469880246]
 z_index = 1000
@@ -49,6 +50,7 @@ text = "Pause"
 script = ExtResource("3_272bh")
 
 [node name="PauseMenu" type="VBoxContainer" parent="GUI" unique_id=1068046758]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -78,9 +80,6 @@ text = "Resume"
 layout_mode = 2
 text = "Main Menu"
 
-[node name="MainMenu" parent="GUI" unique_id=632732192 instance=ExtResource("7_5vw27")]
-layout_mode = 1
-
 [node name="GameOver" type="VBoxContainer" parent="GUI" unique_id=2091551017]
 visible = false
 layout_mode = 1
@@ -109,6 +108,9 @@ text = "Try again"
 [node name="Main Menu" type="Button" parent="GUI/GameOver" unique_id=505699332]
 layout_mode = 2
 text = "Main Menu"
+
+[node name="MainMenu" parent="GUI" unique_id=632732192 instance=ExtResource("7_5vw27")]
+layout_mode = 1
 
 [node name="MenuMusic" type="AudioStreamPlayer" parent="." unique_id=2067528553]
 autoplay = true
