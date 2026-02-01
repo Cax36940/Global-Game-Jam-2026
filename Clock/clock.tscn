@@ -23,12 +23,4 @@ scale = Vector2(0.063619375, 0.3118006)
 texture = ExtResource("2_kig64")
 offset = Vector2(0, -64.503944)
 
-[node name="TimerOfSeconds" type="Timer" parent="." unique_id=1706064722]
-autostart = true
-
-[node name="TimerOfMinutes" type="Timer" parent="." unique_id=290257690]
-wait_time = 60.0
-autostart = true
-
-[connection signal="timeout" from="TimerOfSeconds" to="." method="_on_timer_of_seconds_timeout"]
-[connection signal="timeout" from="TimerOfMinutes" to="." method="_on_timer_of_minutes_timeout"]
+[node name="Timer" type="Timer" parent="." unique_id=1003804565]

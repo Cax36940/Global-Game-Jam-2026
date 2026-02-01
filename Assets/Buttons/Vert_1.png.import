@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bdr1r4m74cob0"
-path="res://.godot/imported/RejectButton.png-074bdbbc54e3675502a2cb6330921498.ctex"
+uid="uid://bnxmov6cdgeq5"
+path="res://.godot/imported/Vert_1.png-31d22c0eaba8a5c6a2334049ed61b6f9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/RejectButton.png"
-dest_files=["res://.godot/imported/RejectButton.png-074bdbbc54e3675502a2cb6330921498.ctex"]
+source_file="res://Assets/Buttons/Vert_1.png"
+dest_files=["res://.godot/imported/Vert_1.png-31d22c0eaba8a5c6a2334049ed61b6f9.ctex"]
 
 [params]
 

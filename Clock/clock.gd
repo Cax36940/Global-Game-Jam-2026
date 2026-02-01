@@ -1,27 +1,20 @@
 extends Node2D
 
-## The amount of seconds that it takes for the hand of the clock to complete 
-## one revolution
-const GAME_DURATION_MINUTES : int = 12
-var timer = 0
-var delta = Time.get_ticks_msec()
+
+const GAME_DURATION : int = 60
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	SignalBus.start_game.connect(signal_handler)
-	SignalBus.delta_pause.connect(pause_handler)
-	delta = Time.get_ticks_msec()
+	$Timer.timeout.connect(_on_timeout)
+	$Timer.wait_time = GAME_DURATION
+	$Timer.start()
 
-func signal_handler() -> void :
-	delta = Time.get_ticks_msec()
+func _on_timeout():
+	SignalBus.gameover.emit()
 
-func pause_handler(dp):
-	delta += dp
+func _process(_unused) -> void:
+	var d = 2*PI*($Timer.wait_time - $Timer.time_left)/60
 
-func _process(_nope) -> void:
-	var d = PI*(Time.get_ticks_msec()-delta)/360000
-	$Face/Minutes.look_at($Face/Minutes.offset + 10000*Vector2(cos(d),sin(d)))
-	$Face/Seconds.look_at($Face/Seconds.offset + 10000*Vector2(cos(12*d),sin(12*d)))
-	if d > 0.6:# REMETTRE 2*PI !!! ------------------------------------------------------------------------------------------------------------------------------------------------------------------
-		SignalBus.End_game.emit()
-		set_process(false)
+	# That's not what a real clock would do
+	$Face/Minutes.look_at($Face/Minutes.offset + 10000*Vector2(cos(d/12),sin(d/12)))
+	$Face/Seconds.look_at($Face/Seconds.offset + 10000*Vector2(cos(d),sin(d)))

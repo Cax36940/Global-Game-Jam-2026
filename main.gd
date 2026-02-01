@@ -2,7 +2,6 @@ extends Node
 
 
 var ispaused
-var d = 0
 
 @onready var menu_music : AudioStreamPlayer = $MenuMusic
 
@@ -12,7 +11,10 @@ func _ready() -> void:
 	SignalBus.gameover.connect(_on_gameover)
 	SignalBus.mainmenu.connect(_on_main_menu)
 
+	$GUI/MainMenu.process_mode = Node.PROCESS_MODE_WHEN_PAUSED
+	$GUI/GameOver.process_mode = Node.PROCESS_MODE_WHEN_PAUSED
 	$GUI/PauseMenu.process_mode = Node.PROCESS_MODE_DISABLED
+
 	# Set up first screen
 	get_tree().paused = true
 	ispaused = true
@@ -30,14 +32,11 @@ func _on_start_game():
 
 func _on_pause_game(bpaused: bool):
 	if bpaused:
-		d = Time.get_ticks_msec()
 		$GUI.display("PauseMenu")
 		get_tree().paused = true
 	else:
 		$GUI.display("Overlay")
 		get_tree().paused = false
-		SignalBus.delta_pause.emit(Time.get_ticks_msec()-d)
-		print(Time.get_ticks_msec()-d)
 
 func _on_gameover():
 	get_tree().paused = true

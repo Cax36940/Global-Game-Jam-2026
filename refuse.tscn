@@ -2,13 +2,28 @@
 
 [ext_resource type="Script" uid="uid://c4bq1dfaf7t7b" path="res://refuse.gd" id="1_q48qp"]
 [ext_resource type="Shader" uid="uid://2usd68as7g2r" path="res://outline.gdshader" id="2_rqw4d"]
-[ext_resource type="Texture2D" uid="uid://bdr1r4m74cob0" path="res://Assets/RejectButton.png" id="3_itbhv"]
+[ext_resource type="Texture2D" uid="uid://15mg8cjvpwad" path="res://Assets/Buttons/Rouge_1.png" id="4_flyx4"]
+[ext_resource type="Texture2D" uid="uid://b6nvwrovy0faw" path="res://Assets/Buttons/Rouge_2.png" id="5_hk3li"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_flyx4"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_rqw4d"]
 shader = ExtResource("2_rqw4d")
 shader_parameter/allow_out_of_bounds = true
 shader_parameter/outline_thickness = 0.0
 shader_parameter/outline_color = Color(1, 0, 0, 1)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pyow2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_flyx4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_hk3li")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_036b0"]
 radius = 36.013885
@@ -16,15 +31,15 @@ radius = 36.013885
 [node name="Refuse" type="Node2D" unique_id=466592476]
 script = ExtResource("1_q48qp")
 
-[node name="Sprite_Refuse" type="Sprite2D" parent="." unique_id=1672954010]
-material = SubResource("ShaderMaterial_flyx4")
-texture = ExtResource("3_itbhv")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1444780805]
+material = SubResource("ShaderMaterial_rqw4d")
+sprite_frames = SubResource("SpriteFrames_pyow2")
 
-[node name="Area_Refuse" type="Area2D" parent="Sprite_Refuse" unique_id=826081664]
+[node name="Area_Refuse" type="Area2D" parent="." unique_id=826081664]
 
-[node name="CollisionShape_Refuse" type="CollisionShape2D" parent="Sprite_Refuse/Area_Refuse" unique_id=1925604012]
+[node name="CollisionShape_Refuse" type="CollisionShape2D" parent="Area_Refuse" unique_id=1925604012]
 position = Vector2(2, -8)
 shape = SubResource("CircleShape2D_036b0")
 
-[connection signal="mouse_entered" from="Sprite_Refuse/Area_Refuse" to="." method="_on_area_2d_mouse_entered"]
-[connection signal="mouse_exited" from="Sprite_Refuse/Area_Refuse" to="." method="_on_area_2d_mouse_exited"]
+[connection signal="mouse_entered" from="Area_Refuse" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Area_Refuse" to="." method="_on_area_2d_mouse_exited"]
