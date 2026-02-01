@@ -1,8 +1,7 @@
 [gd_scene format=3 uid="uid://ceqfk3ipk2yqk"]
 
-[ext_resource type="Script" uid="uid://vb8um73ma312" path="res://GUI/menu_screen.gd" id="1_5iymf"]
+[ext_resource type="Script" uid="uid://bl2p5irplb0jh" path="res://GUI/MainMenu/main_menu.gd" id="1_voh4k"]
 [ext_resource type="Texture2D" uid="uid://crbu471j1olmh" path="res://Assets/BeckgroundCurtain.png" id="2_ub0nq"]
-[ext_resource type="Script" uid="uid://fd57ygx3ugyu" path="res://GUI/v_box_container.gd" id="3_3shkw"]
 [ext_resource type="Script" uid="uid://cdut5tv23yujj" path="res://Menu/controls.gd" id="4_ihi24"]
 
 [sub_resource type="Animation" id="Animation_efxa6"]
@@ -67,7 +66,7 @@ offset_top = -720.0
 offset_bottom = -720.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_5iymf")
+script = ExtResource("1_voh4k")
 metadata/_custom_type_script = "uid://vb8um73ma312"
 
 [node name="Curtain" type="Sprite2D" parent="." unique_id=1755529257]
@@ -89,7 +88,6 @@ offset_bottom = 64.0
 grow_horizontal = 2
 grow_vertical = 2
 alignment = 1
-script = ExtResource("3_3shkw")
 
 [node name="Label" type="Label" parent="VBoxContainer" unique_id=444572534]
 layout_mode = 2

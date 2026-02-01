@@ -11,7 +11,6 @@ func _input(event):
 		SignalBus.pause_game.emit(not get_tree().paused)
 
 func _on_exit_button_pressed() -> void:
-	print("main menu pls")
 	SignalBus.mainmenu.emit()
 
 func _on_resume_button_pressed():

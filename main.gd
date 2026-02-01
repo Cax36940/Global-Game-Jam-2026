@@ -10,6 +10,7 @@ func _ready() -> void:
 	SignalBus.pause_game.connect(_on_pause_game)
 	SignalBus.gameover.connect(_on_gameover)
 	SignalBus.mainmenu.connect(_on_main_menu)
+	SignalBus.exit_game.connect(get_tree().quit)
 
 	$GUI/MainMenu.process_mode = Node.PROCESS_MODE_ALWAYS
 	$GUI/GameOver.process_mode = Node.PROCESS_MODE_WHEN_PAUSED

@@ -25,17 +25,11 @@ signal Notebook_show(value : int)
 @warning_ignore('unused_signal')
 signal Mistake_test(value : bool)
 
-@warning_ignore('unused_signal')
 signal mainmenu()
-
-@warning_ignore('unused_signal')
 signal start_game()
-
-@warning_ignore('unused_signal')
 signal pause_game(ispaused: bool)
-
-@warning_ignore('unused_signal')
 signal gameover()
+signal exit_game()
 
 # Guests signals
 @warning_ignore('unused_signal')

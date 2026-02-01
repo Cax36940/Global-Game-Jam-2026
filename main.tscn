@@ -6,7 +6,6 @@
 [ext_resource type="Script" uid="uid://dq77syx52rqa1" path="res://Menu/pause_button.gd" id="3_272bh"]
 [ext_resource type="Script" uid="uid://sq4m15igr5gd" path="res://GUI/overlay.gd" id="4_4c57u"]
 [ext_resource type="PackedScene" uid="uid://c47b01usnlin1" path="res://GUI/PauseMenu/pause_menu.tscn" id="6_5vw27"]
-[ext_resource type="Script" uid="uid://b8a7861eg0akk" path="res://GUI/PauseMenu/pause_menu.gd" id="7_kek77"]
 [ext_resource type="Script" uid="uid://dwy4s6pgcr1p7" path="res://Menu/game_over.gd" id="8_5vw27"]
 [ext_resource type="PackedScene" uid="uid://ceqfk3ipk2yqk" path="res://GUI/MainMenu/main_menu.tscn" id="10_4c57u"]
 
@@ -50,8 +49,8 @@ text = "Pause"
 script = ExtResource("3_272bh")
 
 [node name="PauseMenu" parent="GUI" unique_id=369511700 instance=ExtResource("6_5vw27")]
+visible = false
 layout_mode = 0
-script = ExtResource("7_kek77")
 
 [node name="GameOver" type="VBoxContainer" parent="GUI" unique_id=2091551017]
 visible = false
