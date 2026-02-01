@@ -85,7 +85,7 @@ func _process(_delta: float) -> void:
 	if visible:
 		if Input.is_action_just_pressed("ui_right"):
 			next()
-		elif Input.is_action_just_pressed("ui_right"):
+		elif Input.is_action_just_pressed("ui_left"):
 			previous()
 
 
