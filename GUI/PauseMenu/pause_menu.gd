@@ -1,14 +1,17 @@
-extends VBoxContainer
+extends MenuScreen
+
 
 func _ready() -> void:
-	$Resume.pressed.connect(_on_resume_button_pressed)
-	$"Main Menu".pressed.connect(_on_exit_button_pressed)
+	$VBoxContainer/Resume.pressed.connect(_on_resume_button_pressed)
+	$"VBoxContainer/Main Menu".pressed.connect(_on_exit_button_pressed)
+
 
 func _input(event):
 	if event.is_action_pressed("ui_close_dialog"):
 		SignalBus.pause_game.emit(not get_tree().paused)
 
 func _on_exit_button_pressed() -> void:
+	print("main menu pls")
 	SignalBus.mainmenu.emit()
 
 func _on_resume_button_pressed():

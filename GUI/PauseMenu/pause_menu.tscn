@@ -1,0 +1,104 @@
+[gd_scene format=3 uid="uid://c47b01usnlin1"]
+
+[ext_resource type="Script" uid="uid://b8a7861eg0akk" path="res://GUI/PauseMenu/pause_menu.gd" id="1_mqpij"]
+[ext_resource type="Texture2D" uid="uid://crbu471j1olmh" path="res://Assets/BeckgroundCurtain.png" id="2_cqli2"]
+
+[sub_resource type="Animation" id="Animation_efxa6"]
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -720)]
+}
+
+[sub_resource type="Animation" id="Animation_dg77c"]
+resource_name = "curtain fall"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, -720), Vector2(0, 4)]
+}
+
+[sub_resource type="Animation" id="Animation_ycdy4"]
+resource_name = "curtain rise"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -720)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mqpij"]
+_data = {
+&"RESET": SubResource("Animation_efxa6"),
+&"curtain fall": SubResource("Animation_dg77c"),
+&"curtain rise": SubResource("Animation_ycdy4")
+}
+
+[node name="PauseMenu" type="Control" unique_id=369511700]
+layout_mode = 3
+anchors_preset = 0
+offset_top = -720.0
+offset_right = 40.0
+offset_bottom = -680.0
+script = ExtResource("1_mqpij")
+metadata/_custom_type_script = "uid://vb8um73ma312"
+
+[node name="Curtain" type="Sprite2D" parent="." unique_id=505151122]
+scale = Vector2(3.1600986, 1.7955112)
+texture = ExtResource("2_cqli2")
+centered = false
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1219893980]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 572.0
+offset_top = 297.5
+offset_right = 668.0
+offset_bottom = 390.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="VBoxContainer" unique_id=1147633000]
+layout_mode = 2
+text = "Pause"
+horizontal_alignment = 1
+
+[node name="Resume" type="Button" parent="VBoxContainer" unique_id=676341323]
+layout_mode = 2
+focus_neighbor_top = NodePath(".")
+focus_neighbor_bottom = NodePath("../Main Menu")
+text = "Resume"
+
+[node name="Main Menu" type="Button" parent="VBoxContainer" unique_id=805161257]
+layout_mode = 2
+text = "Main Menu"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1671070749]
+deterministic = true
+libraries/ = SubResource("AnimationLibrary_mqpij")
