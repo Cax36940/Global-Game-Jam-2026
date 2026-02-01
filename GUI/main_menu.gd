@@ -4,6 +4,7 @@ const ANIMATION_DURATION = .7
 
 enum {IDLE, CURTAIN_FALL, CURTAIN_RISE}
 var state = IDLE
+var timer = 0
 
 func _ready() -> void:
 	# TODO: scale nicer
@@ -27,15 +28,19 @@ func appear() -> void:
 func disappear() -> void:
 	pass
 
+func curtain_fall(t) -> Vector2:
+	return Vector2(0, -get_viewport_rect().size[1]) * (1-t)**3 / ANIMATION_DURATION
+func idle():
+	pass
+
 func _process(delta: float) -> void:
 	if state == CURTAIN_FALL:
-		if position[1] <= 0:
-			position += Vector2(
-				0,
-				delta/ANIMATION_DURATION * get_viewport_rect().size[1]
-			)
+		if timer <= 1:
+			position = curtain_fall(timer)
+			timer += delta
 		else:
 			state = IDLE
+			timer = 0
 			# Makes sure the menu is in the correct position but might result
 			# in jagged animation
 			reset_position()
