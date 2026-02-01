@@ -28,7 +28,7 @@ func random_sublist(size : int, array_size : int) -> Array[int]:
 
 func setup_invalid():
 	invalid_color = random_sublist(3, color_list.size())
-	invalid_mask = random_sublist(1, mask_list.size())
+	invalid_mask = random_sublist(3, mask_list.size())
 	invalid_eye = random_sublist(3, 7)
 	SignalBus.write_constrain.emit()
 	

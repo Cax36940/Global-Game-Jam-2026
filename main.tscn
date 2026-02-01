@@ -13,7 +13,6 @@
 script = ExtResource("1_272bh")
 
 [node name="Game" parent="." unique_id=1271029013 instance=ExtResource("1_7mycd")]
-script = null
 
 [node name="GUI" type="Control" parent="." unique_id=1469880246]
 z_index = 1000
