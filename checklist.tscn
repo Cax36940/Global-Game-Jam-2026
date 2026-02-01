@@ -50,6 +50,7 @@ stream = ExtResource("5_f7sgc")
 volume_db = -9.0
 
 [node name="True_Checklist" type="Node2D" parent="." unique_id=1283458076]
+visible = false
 z_index = 50
 script = ExtResource("2_sgols")
 

@@ -11,7 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://big3n60rjkbsb" path="res://Assets/page2.png" id="8_axt57"]
 [ext_resource type="PackedScene" uid="uid://c01xneve2v2sv" path="res://Buttons/button.tscn" id="9_lbn8f"]
 [ext_resource type="Script" uid="uid://dcixwlpvif4ud" path="res://Buttons/Next_notebook.gd" id="10_jrije"]
-[ext_resource type="Script" uid="uid://doiby4paeodpo" path="res://Notebook/back_notebook.gd" id="10_qtrjj"]
+[ext_resource type="Script" uid="uid://doiby4paeodpo" path="res://Notebook/Back_notebook.gd" id="10_qtrjj"]
 [ext_resource type="Script" uid="uid://diypkv5o38frl" path="res://Buttons/Previous_notebook.gd" id="11_hu0nd"]
 [ext_resource type="Texture2D" uid="uid://b6ytpjx6qi61j" path="res://Assets/Close.png" id="12_5o82t"]
 [ext_resource type="Texture2D" uid="uid://lisew6ww1ln3" path="res://Assets/NextPageButton.png" id="13_axt57"]
@@ -109,6 +109,7 @@ volume_db = -9.0
 libraries/ = SubResource("AnimationLibrary_qtrjj")
 
 [node name="True_Notebook" type="Node2D" parent="." unique_id=503205974]
+visible = false
 z_index = 50
 position = Vector2(606, 354)
 script = ExtResource("2_gvrn8")

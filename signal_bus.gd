@@ -77,7 +77,6 @@ signal zoom_toggle()
 
 @warning_ignore('unused_signal')
 signal start_guest()
-
 #player
 #_ready
 #epee.signal_name.connect(signal_handler)
