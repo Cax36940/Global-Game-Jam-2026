@@ -4,6 +4,8 @@ class_name Pages
 @export var page_scene : PackedScene
 @export var color_point_scene : PackedScene
 
+@export var eyes_scene : PackedScene
+
 var page_count : int = 0
 
 func _ready():
@@ -18,8 +20,9 @@ func write_constrain():
 		
 	var page2 : Page = add_page()
 	for eye_index in Global.invalid_eye:
-		var eye : Eye = Global.eye_list[eye_index].instantiate()
-		page2.add_constrain(eye)
+		var eyes : Eyes = eyes_scene.instantiate()
+		eyes.set_eyes(eye_index)
+		page2.add_constrain(eyes)
 		
 	var page3 : Page = add_page()
 	for color_index in Global.invalid_color:

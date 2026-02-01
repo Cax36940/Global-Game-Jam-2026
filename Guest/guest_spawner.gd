@@ -29,7 +29,6 @@ func _ready():
 	
 	spawn_guest()
 	Global.mask_list = current_guest.masks_list
-	Global.eye_list = current_guest.eyes_list
 	Global.color_list = current_guest.colors_list
 	Global.setup_invalid()
 
@@ -38,7 +37,7 @@ func _process(delta):
 		move_node.position.x = move_toward(move_node.position.x, start_position_node.position.x, delta * SPEED)
 		move_node.position.y = move_toward(move_node.position.y, start_position_node.position.y, delta * SPEED)
 		if (move_node.position - start_position_node.position).length() < 10 :
-			SignalBus.Mistake_test.emit(!Global.check_guest(current_guest.mask_index, current_guest.eye_index, current_guest.color_index))
+			SignalBus.Mistake_test.emit(Global.check_guest(current_guest.mask_index, current_guest.eye_index, current_guest.color_index))
 			remove_guest()
 			spawn_guest()
 	if move_state == 1:
@@ -50,7 +49,7 @@ func _process(delta):
 		move_node.position.x = move_toward(move_node.position.x, end_position_node.position.x, delta * SPEED)
 		move_node.position.y = move_toward(move_node.position.y, end_position_node.position.y, delta * SPEED)
 		if (move_node.position - end_position_node.position).length() < 10 :
-			SignalBus.Mistake_test.emit(Global.check_guest(current_guest.mask_index, current_guest.eye_index, current_guest.color_index))
+			SignalBus.Mistake_test.emit(!Global.check_guest(current_guest.mask_index, current_guest.eye_index, current_guest.color_index))
 			remove_guest()
 			spawn_guest()
 			
