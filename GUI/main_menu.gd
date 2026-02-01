@@ -10,7 +10,7 @@ func reset_position() -> void:
 
 func disappear():
 	$AnimationPlayer.queue("curtain rise")
-	print("anim")
+	# TODO: hide after animation is done
 
 func appear() -> void:
 	show()

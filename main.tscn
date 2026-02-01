@@ -5,66 +5,9 @@
 [ext_resource type="Script" uid="uid://cuewil535to8a" path="res://GUI/gui.gd" id="3_5vw27"]
 [ext_resource type="Script" uid="uid://dq77syx52rqa1" path="res://Menu/pause_button.gd" id="3_272bh"]
 [ext_resource type="Script" uid="uid://sq4m15igr5gd" path="res://GUI/overlay.gd" id="4_4c57u"]
-[ext_resource type="Script" uid="uid://cutt0ecko4vrq" path="res://Menu/main_menu.gd" id="5_7mycd"]
 [ext_resource type="Script" uid="uid://dhhd5aeh3y0lc" path="res://Menu/pause_menu.gd" id="5_lquwl"]
-[ext_resource type="Script" uid="uid://cdut5tv23yujj" path="res://Menu/controls.gd" id="6_272bh"]
-[ext_resource type="Script" uid="uid://qkcmg5rf0800" path="res://GUI/main_menu.gd" id="7_efxa6"]
+[ext_resource type="PackedScene" uid="uid://csqdgps3vx30b" path="res://GUI/main_menu.tscn" id="7_5vw27"]
 [ext_resource type="Script" uid="uid://dwy4s6pgcr1p7" path="res://Menu/game_over.gd" id="8_5vw27"]
-[ext_resource type="Texture2D" uid="uid://crbu471j1olmh" path="res://Assets/BeckgroundCurtain.png" id="9_kek77"]
-
-[sub_resource type="Animation" id="Animation_efxa6"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, -720)]
-}
-
-[sub_resource type="Animation" id="Animation_dg77c"]
-resource_name = "curtain fall"
-length = 0.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(0, -720), Vector2(0, 4)]
-}
-
-[sub_resource type="Animation" id="Animation_ycdy4"]
-resource_name = "curtain rise"
-length = 0.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(0, 0), Vector2(0, -720)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_ycdy4"]
-_data = {
-&"RESET": SubResource("Animation_efxa6"),
-&"curtain fall": SubResource("Animation_dg77c"),
-&"curtain rise": SubResource("Animation_ycdy4")
-}
 
 [node name="Main" type="Node" unique_id=76370498]
 script = ExtResource("1_272bh")
@@ -135,74 +78,8 @@ text = "Resume"
 layout_mode = 2
 text = "Main Menu"
 
-[node name="MainMenu" type="Control" parent="GUI" unique_id=2068827441]
+[node name="MainMenu" parent="GUI" unique_id=632732192 instance=ExtResource("7_5vw27")]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = -720.0
-offset_bottom = -720.0
-grow_horizontal = 2
-grow_vertical = 2
-script = ExtResource("7_efxa6")
-
-[node name="Curtain" type="Sprite2D" parent="GUI/MainMenu" unique_id=2117917725]
-scale = Vector2(3.1600986, 1.7955112)
-texture = ExtResource("9_kek77")
-centered = false
-
-[node name="VBoxContainer" type="VBoxContainer" parent="GUI/MainMenu" unique_id=2067887264]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -84.0
-offset_top = -64.0
-offset_right = 84.0
-offset_bottom = 64.0
-grow_horizontal = 2
-grow_vertical = 2
-alignment = 1
-script = ExtResource("5_7mycd")
-
-[node name="Label" type="Label" parent="GUI/MainMenu/VBoxContainer" unique_id=518528668]
-layout_mode = 2
-text = "Vigilance Maskimum"
-horizontal_alignment = 1
-
-[node name="Start" type="Button" parent="GUI/MainMenu/VBoxContainer" unique_id=1518564439]
-layout_mode = 2
-focus_neighbor_bottom = NodePath("../Controls/Button")
-text = "Start Game"
-
-[node name="Controls" type="VBoxContainer" parent="GUI/MainMenu/VBoxContainer" unique_id=1946298209]
-layout_mode = 2
-script = ExtResource("6_272bh")
-
-[node name="Button" type="Button" parent="GUI/MainMenu/VBoxContainer/Controls" unique_id=426468012]
-layout_mode = 2
-focus_neighbor_top = NodePath("../../Start")
-focus_neighbor_bottom = NodePath("../../Exit")
-toggle_mode = true
-text = "Controls"
-
-[node name="Label" type="Label" parent="GUI/MainMenu/VBoxContainer/Controls" unique_id=1339610785]
-visible = false
-layout_mode = 2
-text = "Shift = Do A
-Space = Do B
-TODO: add controls"
-
-[node name="Exit" type="Button" parent="GUI/MainMenu/VBoxContainer" unique_id=217473286]
-layout_mode = 2
-focus_neighbor_top = NodePath("../Controls/Button")
-text = "Exit"
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="GUI/MainMenu" unique_id=1614200608]
-deterministic = true
-libraries/ = SubResource("AnimationLibrary_ycdy4")
 
 [node name="GameOver" type="VBoxContainer" parent="GUI" unique_id=2091551017]
 visible = false
