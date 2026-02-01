@@ -46,9 +46,11 @@ func _input(event):
 						is_shown = false
 						modulate = Color(1, 1, 1, 1)
 						actual_color = Color(1, 1, 1, 1)
+						$Check1.play()
 					else:
 						is_shown = true
 						modulate = Color(0, 0, 0, 1)
 						actual_color = Color(0, 0, 0, 1)
+						$Check2.play()
 			is_pressed_in = false
 			is_pressed_out = false
