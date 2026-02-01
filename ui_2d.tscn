@@ -4,7 +4,6 @@
 [ext_resource type="PackedScene" uid="uid://bdjk536uwqjq1" path="res://refuse.tscn" id="3_aoyq8"]
 [ext_resource type="PackedScene" uid="uid://b035td654d8fn" path="res://checklist.tscn" id="4_nngme"]
 [ext_resource type="PackedScene" uid="uid://cqr3vlbkgwvfw" path="res://Notebook/notebook.tscn" id="5_y6d2w"]
-[ext_resource type="PackedScene" uid="uid://cai23abja2vk2" path="res://id_card.tscn" id="6_k61qh"]
 [ext_resource type="Texture2D" uid="uid://bw3c5k7arpggx" path="res://Assets/checklist_holder.png" id="6_y6d2w"]
 [ext_resource type="PackedScene" uid="uid://bql8avy4llevf" path="res://look_closer.tscn" id="7_yplp6"]
 [ext_resource type="Script" uid="uid://25uv8hlb8bag" path="res://camera_2d.gd" id="8_aoyq8"]
@@ -23,8 +22,6 @@ position = Vector2(405.99994, 568.00006)
 
 [node name="LookCloser" parent="." unique_id=2000302642 instance=ExtResource("7_yplp6")]
 position = Vector2(754, 505)
-
-[node name="ID_Card" parent="." unique_id=31413314 instance=ExtResource("6_k61qh")]
 
 [node name="Overlays_Elements" type="Node2D" parent="." unique_id=2094237019]
 

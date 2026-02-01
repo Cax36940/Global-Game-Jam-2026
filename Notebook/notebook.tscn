@@ -19,6 +19,43 @@ shader_parameter/outline_color = Color(1, 0.7287319, 0.1931151, 1)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n8bdy"]
 size = Vector2(113.1669, 130.36864)
 
+[sub_resource type="Animation" id="Animation_lbn8f"]
+resource_name = "Idle"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:material:shader_parameter/outline_thickness")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 7.0, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_qtrjj"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:material:shader_parameter/outline_thickness")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qtrjj"]
+_data = {
+&"Idle": SubResource("Animation_lbn8f"),
+&"RESET": SubResource("Animation_qtrjj")
+}
+
 [sub_resource type="Gradient" id="Gradient_mvqau"]
 offsets = PackedFloat32Array(0.7701613)
 colors = PackedColorArray(0.45, 0.22305, 0.049500003, 1)
@@ -62,7 +99,11 @@ volume_db = -9.0
 stream = ExtResource("5_qtrjj")
 volume_db = -9.0
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Mini_Notebook" unique_id=275387001]
+libraries/ = SubResource("AnimationLibrary_qtrjj")
+
 [node name="True_Notebook" type="Node2D" parent="." unique_id=503205974]
+visible = false
 z_index = 50
 position = Vector2(606, 354)
 script = ExtResource("2_gvrn8")

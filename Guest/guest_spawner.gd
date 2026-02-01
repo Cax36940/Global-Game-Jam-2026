@@ -15,10 +15,18 @@ var is_entered : bool = false
 
 var move_state : int = 0
 const SPEED : float = 1000.0
+
+var started : bool = false
+
+func start():
+	started = true
+
 func _ready():
 	SignalBus.spawn_guest.connect(spawn_guest)
 	SignalBus.valid_guest.connect(valid_guest)
 	SignalBus.reject_guest.connect(reject_guest)
+
+	SignalBus.start_guest.connect(start)
 
 	if not start_position_node :
 		push_error("There is no start position node in the GuestSpawner")
@@ -40,10 +48,11 @@ func _process(delta):
 			remove_guest()
 			spawn_guest()
 	if move_state == 1:
-		move_node.position.x = move_toward(move_node.position.x, middle_position_node.position.x, delta * SPEED)
-		move_node.position.y = move_toward(move_node.position.y, middle_position_node.position.y, delta * SPEED)
-		if (move_node.position - middle_position_node.position).length() < 10 :
-			is_entered = true
+		if started :
+			move_node.position.x = move_toward(move_node.position.x, middle_position_node.position.x, delta * SPEED)
+			move_node.position.y = move_toward(move_node.position.y, middle_position_node.position.y, delta * SPEED)
+			if (move_node.position - middle_position_node.position).length() < 10 :
+				is_entered = true
 	if move_state == 2:
 		move_node.position.x = move_toward(move_node.position.x, end_position_node.position.x, delta * SPEED)
 		move_node.position.y = move_toward(move_node.position.y, end_position_node.position.y, delta * SPEED)

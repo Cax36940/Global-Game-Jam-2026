@@ -9,6 +9,8 @@ var is_pressed_in = false
 var is_pressed_out = false
 
 
+var started : bool = false
+
 func _ready() -> void:
 	visible = false
 	SignalBus.Notebook_show.connect(signal_handler)
@@ -23,6 +25,7 @@ func signal_handler(value : int) -> void :
 		if visible == false:
 			Global.Triple_show = true
 			visible = true
+			
 			$"../Mini_Notebook".visible = false
 			$"../Mini_Notebook/Checklist1".play(0.06)
 			
@@ -30,6 +33,10 @@ func signal_handler(value : int) -> void :
 		if visible == true:
 			Global.Triple_show = false
 			visible = false
+			if started == false:
+				started = true
+				SignalBus.start_guest.emit()
+				
 			$"../Mini_Notebook".visible = true
 			$"../Mini_Notebook/Checklist2".play(0.03)
 
