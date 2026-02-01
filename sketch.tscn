@@ -20,13 +20,13 @@ middle_position_node = NodePath("MiddlePosition")
 end_position_node = NodePath("EndPosition")
 
 [node name="StartPosition" type="Node2D" parent="GuestSpawner" unique_id=528695478]
-position = Vector2(150, 320)
+position = Vector2(150, 326)
 
 [node name="MiddlePosition" type="Node2D" parent="GuestSpawner" unique_id=356926868]
-position = Vector2(610, 320)
+position = Vector2(610, 326)
 
 [node name="EndPosition" type="Node2D" parent="GuestSpawner" unique_id=1393742207]
-position = Vector2(1070, 320)
+position = Vector2(1070, 326)
 
 [node name="Foreground" type="Sprite2D" parent="." unique_id=220635906]
 z_index = 500
