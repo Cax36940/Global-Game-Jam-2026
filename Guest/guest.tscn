@@ -1,14 +1,8 @@
 [gd_scene format=3 uid="uid://bakb3yc52brgt"]
 
 [ext_resource type="Script" uid="uid://dwyd1vo3gr4sm" path="res://Guest/guest.gd" id="1_q4ytt"]
-[ext_resource type="PackedScene" uid="uid://bqoakf0xhxdds" path="res://Guest/Masks/mask_s.tscn" id="5_7r8l5"]
-[ext_resource type="PackedScene" uid="uid://bv6l6jpjt71j6" path="res://Guest/Masks/mask_triangle.tscn" id="5_uhj5h"]
-[ext_resource type="PackedScene" uid="uid://b6q4ylrf3ukro" path="res://Guest/Masks/mask_square.tscn" id="6_e2wpb"]
-[ext_resource type="PackedScene" uid="uid://dqdob5jn1i1q0" path="res://Guest/Masks/mask_drop.tscn" id="7_7r8l5"]
-[ext_resource type="PackedScene" uid="uid://ccp4aonngf1vh" path="res://Guest/Masks/mask_semicircle.tscn" id="8_e2wpb"]
-[ext_resource type="PackedScene" uid="uid://3c4fad7speir" path="res://Guest/Masks/mask_octogone.tscn" id="12_dqge3"]
-[ext_resource type="PackedScene" uid="uid://cbccccwrxp2xn" path="res://Guest/Masks/mask_circle.tscn" id="13_7r8l5"]
 [ext_resource type="Texture2D" uid="uid://dby5yks4p80yb" path="res://Assets/Shapes/Shape (1).png" id="14_kcjmp"]
+[ext_resource type="PackedScene" uid="uid://bnckcqlrpkqss" path="res://Guest/Masks/masks.tscn" id="15_bb2pg"]
 [ext_resource type="Texture2D" uid="uid://bc1yqj1mpuuqj" path="res://Assets/Shapes/Shape (2).png" id="15_hkvva"]
 [ext_resource type="Texture2D" uid="uid://djwsr6apexfo" path="res://Assets/Shapes/Shape (3).png" id="16_4ftgm"]
 [ext_resource type="PackedScene" uid="uid://b56x3x8nmr2dv" path="res://Guest/Eye/eyes.tscn" id="17_71euk"]
@@ -40,7 +34,6 @@ animations = [{
 
 [node name="Guests" type="Node2D" unique_id=1750283726]
 script = ExtResource("1_q4ytt")
-masks_list = Array[PackedScene]([ExtResource("13_7r8l5"), ExtResource("5_7r8l5"), ExtResource("6_e2wpb"), ExtResource("5_uhj5h"), ExtResource("12_dqge3"), ExtResource("7_7r8l5"), ExtResource("8_e2wpb")])
 colors_list = Array[Color]([Color(0.9647059, 0, 0, 1), Color(1, 0.54901963, 0, 1), Color(1, 0.93333334, 0, 1), Color(0.3019608, 0.9137255, 0.29803923, 1), Color(0.21568628, 0.5137255, 1, 1), Color(0.6108052, 0.13755152, 0.8282306, 1), Color(1, 1, 1, 1)])
 
 [node name="Shape" type="AnimatedSprite2D" parent="." unique_id=1426695573]
@@ -50,3 +43,7 @@ frame = 4
 [node name="Eyes" parent="." unique_id=1871706493 instance=ExtResource("17_71euk")]
 z_index = 1
 position = Vector2(0, -13)
+
+[node name="Masks" parent="." unique_id=1075711732 instance=ExtResource("15_bb2pg")]
+position = Vector2(0, -15)
+scale = Vector2(0.35, 0.35)

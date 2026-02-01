@@ -4,9 +4,11 @@
 [ext_resource type="PackedScene" uid="uid://cd01q2tcml2dl" path="res://Notebook/page.tscn" id="2_a7bbj"]
 [ext_resource type="PackedScene" uid="uid://635dhmieched" path="res://Notebook/color_point.tscn" id="3_hjst1"]
 [ext_resource type="PackedScene" uid="uid://b56x3x8nmr2dv" path="res://Guest/Eye/eyes.tscn" id="4_qtjii"]
+[ext_resource type="PackedScene" uid="uid://bnckcqlrpkqss" path="res://Guest/Masks/masks.tscn" id="5_6fbse"]
 
 [node name="Pages" type="Node2D" unique_id=1602385378]
 script = ExtResource("1_h21ap")
 page_scene = ExtResource("2_a7bbj")
 color_point_scene = ExtResource("3_hjst1")
 eyes_scene = ExtResource("4_qtjii")
+masks_scene = ExtResource("5_6fbse")

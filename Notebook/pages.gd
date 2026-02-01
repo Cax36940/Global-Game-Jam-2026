@@ -5,6 +5,7 @@ class_name Pages
 @export var color_point_scene : PackedScene
 
 @export var eyes_scene : PackedScene
+@export var masks_scene : PackedScene
 
 var page_count : int = 0
 
@@ -15,8 +16,11 @@ func write_constrain():
 	
 	var page1 : Page = add_page()
 	for mask_index in Global.invalid_mask:
-		var mask : Mask = Global.mask_list[mask_index].instantiate()
-		page1.add_constrain(mask)
+		var masks : Masks = masks_scene.instantiate()
+		masks.set_mask(mask_index) 
+		masks.modulate = Color.BLACK
+		masks.scale = Vector2(0.5, 0.5)
+		page1.add_constrain(masks)
 		
 	var page2 : Page = add_page()
 	for eye_index in Global.invalid_eye:

@@ -1,9 +1,7 @@
 extends Node2D
 class_name Guest
 
-@export var masks_list : Array[PackedScene]
 @export var colors_list : Array[Color]
-
 @onready var shape : AnimatedSprite2D = $Shape
 
 var mask_index : int = -1
@@ -12,19 +10,13 @@ var color_index : int = -1
 
 func _ready():
 	shape.frame = randi_range(0, 4)
-	if masks_list.size() > 0:
-		mask_index = randi_range(0, masks_list.size()-1)
-		var mask_scene : PackedScene = masks_list[mask_index]
-		var mask : Mask = mask_scene.instantiate()
-		if colors_list.size() > 0:
-			color_index = randi_range(0, colors_list.size()-1)
-			mask.set_color.call_deferred(colors_list[color_index])
-		else :
-			push_error("There is no color in the colors_list of the guest scene")
-		add_child(mask)
-		mask.z_index = -1
+	mask_index = randi_range(0, 6)
+	($Masks as Masks).set_mask(mask_index)
+	if colors_list.size() > 0:
+		color_index = randi_range(0, colors_list.size()-1)
+		$Masks.modulate = colors_list[color_index]
 	else :
-		push_error("There is no mask in the masks_list of the guest scene")
-		
+		push_error("There is no color in the colors_list of the guest scene")
+
 	eye_index = randi_range(0, 6)
 	($Eyes as Eyes).set_eyes(eye_index)

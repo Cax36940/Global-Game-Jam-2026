@@ -28,7 +28,6 @@ func _ready():
 		push_error("There is no end position node in the GuestSpawner")
 	
 	spawn_guest()
-	Global.mask_list = current_guest.masks_list
 	Global.color_list = current_guest.colors_list
 	Global.setup_invalid()
 

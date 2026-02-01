@@ -6,14 +6,11 @@ var Total_count : int = 0
 var Mistakes_count : int = 0
 var Score : int = 0
 
-var mask_list : Array[PackedScene] = []
 var color_list : Array[Color] = []
 
 var invalid_mask : Array[int] = []
 var invalid_eye : Array[int] = []
 var invalid_color : Array[int] = []
-
-
 
 
 func random_sublist(size : int, array_size : int) -> Array[int]:
@@ -28,7 +25,7 @@ func random_sublist(size : int, array_size : int) -> Array[int]:
 
 func setup_invalid():
 	invalid_color = random_sublist(3, color_list.size())
-	invalid_mask = random_sublist(3, mask_list.size())
+	invalid_mask = random_sublist(3, 7)
 	invalid_eye = random_sublist(3, 7)
 	SignalBus.write_constrain.emit()
 	

@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://bnckcqlrpkqss"]
+
+[ext_resource type="Script" uid="uid://dm0en1wt72b5j" path="res://Guest/Masks/masks.gd" id="1_50k7n"]
+[ext_resource type="Texture2D" uid="uid://d0gdxv7fvscif" path="res://Assets/Mask/circle.png" id="2_trqjd"]
+[ext_resource type="Texture2D" uid="uid://c3co3nus1ekjg" path="res://Assets/Mask/drop.png" id="3_y4bsj"]
+[ext_resource type="Texture2D" uid="uid://b4meygtomeyog" path="res://Assets/Mask/octogon.png" id="4_rt0cw"]
+[ext_resource type="Texture2D" uid="uid://bqrhwf2y6hhli" path="res://Assets/Mask/rectangle.png" id="5_0y7j7"]
+[ext_resource type="Texture2D" uid="uid://cssu0h223p84q" path="res://Assets/Mask/s.png" id="6_h60qm"]
+[ext_resource type="Texture2D" uid="uid://cnayb6bhkr5ul" path="res://Assets/Mask/semicircle.png" id="7_1irsy"]
+[ext_resource type="Texture2D" uid="uid://ba5hhwyikofla" path="res://Assets/Mask/triangle.png" id="8_xiffg"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6rj2u"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_trqjd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_y4bsj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_rt0cw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_0y7j7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_h60qm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_1irsy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_xiffg")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Masks" type="Node2D" unique_id=1075711732]
+script = ExtResource("1_50k7n")
+
+[node name="Mask" type="AnimatedSprite2D" parent="." unique_id=1261054729]
+sprite_frames = SubResource("SpriteFrames_6rj2u")
