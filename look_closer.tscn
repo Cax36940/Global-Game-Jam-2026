@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bql8avy4llevf"]
 
 [ext_resource type="Script" uid="uid://bb4ergaa2farx" path="res://lookCloser.gd" id="1_r2qds"]
-[ext_resource type="Shader" uid="uid://2usd68as7g2r" path="res://outline.gdshader" id="2_weln1"]
+[ext_resource type="Shader" path="res://outline.gdshader" id="2_weln1"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_cyo4a"]
 shader = ExtResource("2_weln1")
