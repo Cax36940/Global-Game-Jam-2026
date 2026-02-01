@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://c2d4df8lqlj2i" path="res://Guest/guest_spawner.tscn" id="2_kqinb"]
 [ext_resource type="Texture2D" uid="uid://d27cxtmpb8cnh" path="res://Assets/foreground.png" id="3_x4f2i"]
 [ext_resource type="Texture2D" uid="uid://d4ggafssd1obi" path="res://Assets/curtain.png" id="4_i6m4m"]
+[ext_resource type="Texture2D" uid="uid://dbdugkq2v22rs" path="res://Assets/shadow.png" id="5_85kpm"]
 
 [sub_resource type="Gradient" id="Gradient_fj7yv"]
 offsets = PackedFloat32Array(0, 0.45424837, 1)
@@ -53,3 +54,9 @@ texture = ExtResource("1_f3sb7")
 z_index = 500
 position = Vector2(643, 361)
 texture = ExtResource("4_i6m4m")
+
+[node name="Shadow" type="Sprite2D" parent="." unique_id=1948676830]
+z_index = 500
+position = Vector2(643, 362)
+scale = Vector2(1.0046875, 1.0055555)
+texture = ExtResource("5_85kpm")
