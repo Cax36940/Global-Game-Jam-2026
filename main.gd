@@ -3,37 +3,42 @@ extends Node
 
 var ispaused
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	$GUI/MainMenu.connect("start_game", _on_start_game)
-	$GUI/PauseMenu.process_mode = Node.PROCESS_MODE_DISABLED
-	$GUI/PauseMenu.connect("pause_game", pause_game)
-	$GUI/Overlay/PauseButton.pressed.connect(pause_game)
-	
-	SignalBus.End_game.connect(_on_end_game)
+	SignalBus.start_game.connect(_on_start_game)
+	SignalBus.pause_game.connect(_on_pause_game)
+	SignalBus.gameover.connect(_on_gameover)
+	SignalBus.mainmenu.connect(_on_main_menu)
 
 	$GUI/Overlay.hide()
 	$GUI/PauseMenu.hide()
+	$GUI/PauseMenu.process_mode = Node.PROCESS_MODE_DISABLED
 
 	# Set up first screen
 	get_tree().paused = true
 	ispaused = true
-	$GUI/MainMenu.show()
+	$GUI/MainMenu.display()
+
+func _on_main_menu() -> void:
+	get_tree().reload_current_scene()
 
 func _on_start_game():
 	$GUI/MainMenu.hide()
 	$GUI/MainMenu.process_mode = Node.PROCESS_MODE_DISABLED
+	$GUI/PauseMenu.hide()
 	$GUI/PauseMenu.process_mode = Node.PROCESS_MODE_ALWAYS
 	$GUI/Overlay.show()
 	get_tree().paused = false
 
-	# Fixes issue with ingame clock
-	SignalBus.start_game.emit()
+func _on_pause_game(ispaused: bool):
+	if ispaused:
+		$GUI/PauseMenu.display()
+		$GUI/Overlay.hide()
+		get_tree().paused = true
+	else:
+		$GUI/PauseMenu.hide()
+		$GUI/Overlay.show()
+		get_tree().paused = false
 
-func pause_game():
-	pass
-
-func _on_end_game():
-	# TODO: Pause game
-	$GUI/GameOver.show()
-	# Stop game and goto Gameover screen
+func _on_gameover():
+	get_tree().paused = true
+	$GUI/GameOver.display()
