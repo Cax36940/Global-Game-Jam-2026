@@ -91,13 +91,13 @@ layout_mode = 2
 text = "Game Over"
 horizontal_alignment = 1
 
-[node name="Try Again" type="Button" parent="VBoxContainer" unique_id=1120026418]
-layout_mode = 2
-text = "Try again"
-
 [node name="Main Menu" type="Button" parent="VBoxContainer" unique_id=593216671]
 layout_mode = 2
 text = "Main Menu"
+
+[node name="Exit" type="Button" parent="VBoxContainer" unique_id=1120026418]
+layout_mode = 2
+text = "Exit"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2022772653]
 deterministic = true
