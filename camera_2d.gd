@@ -1,7 +1,5 @@
 extends Camera2D
 
-var is_zoom_in : bool = false
-
 func _ready():
 	zoom_out()
 	SignalBus.zoom_in.connect(zoom_in)
@@ -11,17 +9,17 @@ func _ready():
 func zoom_in():
 	position = Vector2(640, 360)
 	zoom = Vector2(2.0, 2.0)
-	is_zoom_in = true
+	Global.is_zoomed = true
 	Global.Triple_show = true
 	
 func zoom_out():
 	position = Vector2(640, 360)
 	zoom = Vector2(1.0, 1.0)
-	is_zoom_in = false
+	Global.is_zoomed = false
 	Global.Triple_show = false
 	
 func zoom_toggle():
-	if is_zoom_in :
+	if Global.is_zoomed:
 		zoom_out()
 		($Glasses1 as AudioStreamPlayer).play(0.03)
 	else:

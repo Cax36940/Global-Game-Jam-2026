@@ -3,8 +3,8 @@
 [ext_resource type="Script" uid="uid://cnn004a8iu2e0" path="res://mini_checklist.gd" id="1_t10jc"]
 [ext_resource type="Shader" uid="uid://2usd68as7g2r" path="res://outline.gdshader" id="2_jppvq"]
 [ext_resource type="Script" uid="uid://8pnn8yjswavy" path="res://true_checklist.gd" id="2_sgols"]
+[ext_resource type="Texture2D" uid="uid://duotyt460kjt4" path="res://Assets/notebook_trepied.webp" id="3_f7sgc"]
 [ext_resource type="PackedScene" uid="uid://cat7bh3g2lwh0" path="res://checkbox.tscn" id="3_jppvq"]
-[ext_resource type="Texture2D" uid="uid://cm67pwwh2sr1v" path="res://Assets/Checklist.png" id="3_wwp3p"]
 [ext_resource type="AudioStream" uid="uid://b1d722627tva1" path="res://Assets/Sounds/SoundDrop2.mp3" id="4_jrdr8"]
 [ext_resource type="PackedScene" uid="uid://c01xneve2v2sv" path="res://Buttons/button.tscn" id="4_wwp3p"]
 [ext_resource type="AudioStream" uid="uid://xr3humjihc4v" path="res://Assets/Sounds/SoundDrop3.mp3" id="5_f7sgc"]
@@ -18,7 +18,7 @@ shader_parameter/outline_thickness = 0.0
 shader_parameter/outline_color = Color(1, 0.7200002, 0, 1)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pkg7o"]
-size = Vector2(108.695595, 134)
+size = Vector2(147.82605, 215.00009)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sgols"]
 size = Vector2(420, 594)
@@ -30,15 +30,15 @@ script = ExtResource("1_t10jc")
 
 [node name="Sprite_Checklist" type="Sprite2D" parent="Mini_Checklist" unique_id=1618002132]
 material = SubResource("ShaderMaterial_wwp3p")
-position = Vector2(892, 350)
+position = Vector2(897, 373)
 scale = Vector2(0.9200004, 1)
-texture = ExtResource("3_wwp3p")
+texture = ExtResource("3_f7sgc")
 
 [node name="Area_Checklist" type="Area2D" parent="Mini_Checklist/Sprite_Checklist" unique_id=1036721997]
 
 [node name="CollisionShape_Checklist" type="CollisionShape2D" parent="Mini_Checklist/Sprite_Checklist/Area_Checklist" unique_id=934034891]
-position = Vector2(1.0869751, -1)
-scale = Vector2(0.99999976, 0.99999976)
+position = Vector2(2.1738892, -5.5)
+scale = Vector2(0.9999996, 0.99999934)
 shape = SubResource("RectangleShape2D_pkg7o")
 
 [node name="Checklist1" type="AudioStreamPlayer" parent="Mini_Checklist" unique_id=564679731]

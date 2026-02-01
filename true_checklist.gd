@@ -24,7 +24,8 @@ func check_handler(value : int) -> void :
 			$"../Mini_Checklist".visible = true
 			$"../Mini_Checklist/Checklist2".play(0.03)
 
-
+func hide_CL():
+	SignalBus.checklist_show.emit(1)
 func _input(event):
 	if event is InputEventMouseButton:
 		if event.pressed:
@@ -40,7 +41,7 @@ func _input(event):
 					is_pressed_out = true
 		else:
 			if visible and not is_in and is_pressed_out:
-					SignalBus.checklist_show.emit(1)
+					hide_CL.call_deferred()
 			is_pressed_in = false
 			is_pressed_out = false
 
