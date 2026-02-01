@@ -25,8 +25,8 @@ func _on_start_game():
 	$GUI.display("Overlay")
 	get_tree().paused = false
 
-func _on_pause_game(ispaused: bool):
-	if ispaused:
+func _on_pause_game(bpaused: bool):
+	if bpaused:
 		$GUI.display("PauseMenu")
 		get_tree().paused = true
 	else:

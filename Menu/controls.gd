@@ -7,7 +7,3 @@ func _ready() -> void:
 
 func _on_button_toggled(toggled_on: bool) -> void:
 	$Label.visible = toggled_on
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass

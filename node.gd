@@ -17,7 +17,8 @@ func End_handler() -> void :
 	if Global.Mistakes_count < 2:
 		m = 1
 	else:
-		m = Global.Mistakes_count
+		m = Global.Mistakes_count3
+	@warning_ignore('integer_division')
 	Global.Score = min(max(0,round(30-8*log(m*50/(Global.Total_count+5)-1))), 100)
 	print(Global.Total_count)
 	print(Global.Score)
