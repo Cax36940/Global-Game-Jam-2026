@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://pgrsngrh70eb"]
+
+[ext_resource type="PackedScene" uid="uid://bt3dfl76eeddb" path="res://world.tscn" id="1_feb5d"]
+[ext_resource type="PackedScene" uid="uid://bv0rv0q12dep3" path="res://sketch.tscn" id="2_fc0e3"]
+[ext_resource type="Script" uid="uid://dbxpr14o8226f" path="res://node.gd" id="3_7jktm"]
+
+[node name="Game" type="Node" unique_id=1271029013]
+
+[node name="World" parent="." unique_id=1128306412 instance=ExtResource("1_feb5d")]
+
+[node name="Sketch" parent="." unique_id=1484833825 instance=ExtResource("2_fc0e3")]
+z_index = -4096
+
+[node name="Node" type="Node" parent="." unique_id=868800635]
+script = ExtResource("3_7jktm")

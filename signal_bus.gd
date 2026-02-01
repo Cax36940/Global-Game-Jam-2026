@@ -28,10 +28,10 @@ signal Notebook_show(value : int)
 @warning_ignore('unused_signal')
 signal Mistake_test(value : bool)
 
-@warning_ignore('unused_signal')
-signal End_game()
-
+signal mainmenu()
 signal start_game()
+signal pause_game(ispaused: bool)
+signal gameover()
 
 
 # Guests signals
