@@ -6,19 +6,28 @@ var is_in : bool = false
 var is_pressed_out : bool = false
 var is_pressed_in : bool = false
 
+var sprite : Sprite2D
+
 #Actions au démarrage------------------------------------------------------------------------------
 func _ready() -> void:
 	modulate = Color(1, 1, 1, 1)
+	for c in get_children():
+		if c is Sprite2D:
+			sprite = c
 
 
 #Déclencheurs--------------------------------------------------------------------------------------
 func _on_area_2d_mouse_entered() -> void:
 	is_in = true
+	if sprite :
+		(sprite.material as ShaderMaterial).set_shader_parameter("outline_thickness", 5)
 	on_mouse_overing()
 
 
 func _on_area_2d_mouse_exited() -> void:
 	is_in = false
+	if sprite :
+		(sprite.material as ShaderMaterial).set_shader_parameter("outline_thickness", 0)
 	modulate = Color(1, 1, 1, 1)
 
 

@@ -62,6 +62,15 @@ signal update_notebook()
 
 @warning_ignore('unused_signal')
 signal End_game()
+
+
+# Camera
+@warning_ignore('unused_signal')
+signal zoom_in()
+@warning_ignore('unused_signal')
+signal zoom_out()
+@warning_ignore('unused_signal')
+signal zoom_toggle()
 #player
 #_ready
 #epee.signal_name.connect(signal_handler)
