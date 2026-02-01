@@ -20,13 +20,19 @@ func _ready() -> void:
 
 func signal_handler(value : int) -> void :
 	if value == 0:
-		Global.Triple_show = true
-		visible = true
-		$"../Mini_Notebook".visible = false
+		if visible == false:
+			Global.Triple_show = true
+			visible = true
+			$"../Mini_Notebook".visible = false
+			$"../Mini_Notebook/Checklist1".play(0.06)
+			
 	else:
-		Global.Triple_show = false
-		visible = false
-		$"../Mini_Notebook".visible = true
+		if visible == true:
+			Global.Triple_show = false
+			visible = false
+			$"../Mini_Notebook".visible = true
+			$"../Mini_Notebook/Checklist2".play(0.03)
+
 
 
 func update_page_position():

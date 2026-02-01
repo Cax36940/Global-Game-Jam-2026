@@ -2,11 +2,13 @@
 
 [ext_resource type="Script" uid="uid://d26wtjwc2pi7t" path="res://Notebook/mini_notebook.gd" id="1_dxuyj"]
 [ext_resource type="Script" uid="uid://bubxrbaudghs" path="res://Notebook/true_notebook.gd" id="2_gvrn8"]
-[ext_resource type="Shader" path="res://outline.gdshader" id="2_mvqau"]
+[ext_resource type="Shader" uid="uid://2usd68as7g2r" path="res://outline.gdshader" id="2_mvqau"]
 [ext_resource type="Texture2D" uid="uid://qwcwrtrl4fba" path="res://Assets/Notebook.png" id="3_78epq"]
 [ext_resource type="PackedScene" uid="uid://c8nlyhs8063fj" path="res://Notebook/back_notebook.tscn" id="3_gvrn8"]
-[ext_resource type="Script" path="res://Notebook/close.gd" id="3_hf82m"]
+[ext_resource type="Script" uid="uid://b13y82tlw56gv" path="res://Notebook/close.gd" id="3_hf82m"]
 [ext_resource type="PackedScene" uid="uid://344bm1ddwxtr" path="res://Notebook/pages.tscn" id="3_vcsgt"]
+[ext_resource type="AudioStream" uid="uid://c535ljjkx24mr" path="res://Assets/Sounds/SoundBook4.mp3" id="4_lbn8f"]
+[ext_resource type="AudioStream" uid="uid://dxlim41iw21ir" path="res://Assets/Sounds/SoundBook3.mp3" id="5_qtrjj"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_78epq"]
 shader = ExtResource("2_mvqau")
@@ -51,6 +53,14 @@ position = Vector2(-3.5066528, 0.5)
 scale = Vector2(1, 0.9999999)
 skew = -0.28797936
 shape = SubResource("RectangleShape2D_n8bdy")
+
+[node name="Checklist1" type="AudioStreamPlayer" parent="Mini_Notebook" unique_id=1973300115]
+stream = ExtResource("4_lbn8f")
+volume_db = -9.0
+
+[node name="Checklist2" type="AudioStreamPlayer" parent="Mini_Notebook" unique_id=1754693390]
+stream = ExtResource("5_qtrjj")
+volume_db = -9.0
 
 [node name="True_Notebook" type="Node2D" parent="." unique_id=503205974]
 z_index = 50
