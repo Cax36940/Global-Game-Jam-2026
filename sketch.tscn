@@ -10,6 +10,14 @@
 [node name="Sketch" type="Node2D" unique_id=1484833825]
 
 [node name="BeckgroundCurtain" type="Sprite2D" parent="." unique_id=123753778]
+position = Vector2(473.555, 287)
+texture = ExtResource("1_f2y7y")
+
+[node name="BeckgroundCurtain2" type="Sprite2D" parent="." unique_id=513142671]
+position = Vector2(898, 285)
+texture = ExtResource("1_f2y7y")
+
+[node name="BeckgroundCurtain3" type="Sprite2D" parent="." unique_id=1482262789]
 position = Vector2(610, 287)
 texture = ExtResource("1_f2y7y")
 
