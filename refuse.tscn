@@ -4,6 +4,8 @@
 [ext_resource type="Shader" uid="uid://2usd68as7g2r" path="res://outline.gdshader" id="2_rqw4d"]
 [ext_resource type="Texture2D" uid="uid://15mg8cjvpwad" path="res://Assets/Buttons/Rouge_1.png" id="4_flyx4"]
 [ext_resource type="Texture2D" uid="uid://b6nvwrovy0faw" path="res://Assets/Buttons/Rouge_2.png" id="5_hk3li"]
+[ext_resource type="AudioStream" uid="uid://bguuiq56m2tvv" path="res://Assets/Sounds/Sound_Button1.mp3" id="5_pyow2"]
+[ext_resource type="AudioStream" uid="uid://d3pyodt8ohk03" path="res://Assets/Sounds/Sound_Button2.mp3" id="6_gujxi"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_rqw4d"]
 shader = ExtResource("2_rqw4d")
@@ -40,6 +42,14 @@ sprite_frames = SubResource("SpriteFrames_pyow2")
 [node name="CollisionShape_Refuse" type="CollisionShape2D" parent="Area_Refuse" unique_id=1925604012]
 position = Vector2(2, -8)
 shape = SubResource("CircleShape2D_036b0")
+
+[node name="Click1" type="AudioStreamPlayer" parent="." unique_id=1252150418]
+stream = ExtResource("5_pyow2")
+volume_db = -5.0
+
+[node name="Click2" type="AudioStreamPlayer" parent="." unique_id=1120918564]
+stream = ExtResource("6_gujxi")
+volume_db = -5.0
 
 [connection signal="mouse_entered" from="Area_Refuse" to="." method="_on_area_2d_mouse_entered"]
 [connection signal="mouse_exited" from="Area_Refuse" to="." method="_on_area_2d_mouse_exited"]

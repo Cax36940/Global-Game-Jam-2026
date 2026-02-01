@@ -1,9 +1,11 @@
 [gd_scene format=3 uid="uid://ch3lo0f11rnu7"]
 
 [ext_resource type="Script" uid="uid://dsl3i5b2pmox7" path="res://accept.gd" id="1_gms83"]
-[ext_resource type="Shader" path="res://outline.gdshader" id="2_jjpe7"]
+[ext_resource type="Shader" uid="uid://2usd68as7g2r" path="res://outline.gdshader" id="2_jjpe7"]
 [ext_resource type="Texture2D" uid="uid://bnxmov6cdgeq5" path="res://Assets/Buttons/Vert_1.png" id="3_pd1wq"]
 [ext_resource type="Texture2D" uid="uid://ct2q0j5oc1ej4" path="res://Assets/Buttons/Vert_2.png" id="4_jjpe7"]
+[ext_resource type="AudioStream" uid="uid://bguuiq56m2tvv" path="res://Assets/Sounds/Sound_Button1.mp3" id="5_nguog"]
+[ext_resource type="AudioStream" uid="uid://d3pyodt8ohk03" path="res://Assets/Sounds/Sound_Button2.mp3" id="6_tqs5g"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_pd1wq"]
 shader = ExtResource("2_jjpe7")
@@ -40,6 +42,14 @@ sprite_frames = SubResource("SpriteFrames_yhhp3")
 [node name="CollisionShape_Accept" type="CollisionShape2D" parent="Area_Accept" unique_id=1751806674]
 position = Vector2(2, -9)
 shape = SubResource("CircleShape2D_dwbse")
+
+[node name="Click1" type="AudioStreamPlayer" parent="." unique_id=1440922646]
+stream = ExtResource("5_nguog")
+volume_db = -5.0
+
+[node name="Click2" type="AudioStreamPlayer" parent="." unique_id=1607294534]
+stream = ExtResource("6_tqs5g")
+volume_db = -5.0
 
 [connection signal="mouse_entered" from="Area_Accept" to="." method="_on_area_2d_mouse_entered"]
 [connection signal="mouse_exited" from="Area_Accept" to="." method="_on_area_2d_mouse_exited"]

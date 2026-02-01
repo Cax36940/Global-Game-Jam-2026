@@ -69,14 +69,15 @@ func spawn_guest():
 func valid_guest():
 	if !is_entered :
 		return
-	move_state = 2
-	pass
+	if move_state != 2:
+		move_state = 2
+
 
 func reject_guest():
 	if !is_entered :
 		return
-	move_state = 0
-	pass
+	if move_state != 0:
+		move_state = 0
 
 func remove_guest():
 	if !current_guest :
