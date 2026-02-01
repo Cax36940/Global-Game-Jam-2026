@@ -16,12 +16,11 @@ func signal_handler() -> void :
 	delta = Time.get_ticks_msec()
 
 func pause_handler(dp):
-	delta -= dp
+	delta += dp
 
 func _process(_nope) -> void:
 	var d = PI*(Time.get_ticks_msec()-delta)/360000
 	$Face/Minutes.look_at($Face/Minutes.offset + 10000*Vector2(cos(d),sin(d)))
 	$Face/Seconds.look_at($Face/Seconds.offset + 10000*Vector2(cos(12*d),sin(12*d)))
-	print(d)
 	if d > 0.1:# REMETTRE 2*PI !!! ------------------------------------------------------------------------------------------------------------------------------------------------------------------
 		SignalBus.End_game.emit()

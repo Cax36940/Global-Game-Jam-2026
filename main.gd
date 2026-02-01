@@ -35,6 +35,7 @@ func _on_pause_game(bpaused: bool):
 		$GUI.display("Overlay")
 		get_tree().paused = false
 		SignalBus.delta_pause.emit(Time.get_ticks_msec()-d)
+		print(Time.get_ticks_msec()-d)
 
 func _on_gameover():
 	get_tree().paused = true
