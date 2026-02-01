@@ -31,6 +31,9 @@ signal pause_game(ispaused: bool)
 signal gameover()
 signal exit_game()
 
+@warning_ignore('unused_signal')
+signal End_game()
+
 # Guests signals
 @warning_ignore('unused_signal')
 signal spawn_guest()
@@ -49,7 +52,10 @@ signal write_constrain()
 signal update_notebook()
 
 @warning_ignore('unused_signal')
-signal End_game()
+signal Next_page()
+
+@warning_ignore('unused_signal')
+signal Previous_page()
 
 
 # Camera

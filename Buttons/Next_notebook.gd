@@ -41,6 +41,6 @@ func _input(event):
 		else:
 			if is_in:
 				if is_pressed_in:
-					SignalBus.Notebook_show.emit(1)
+					SignalBus.Next_page.emit()
 			is_pressed_in = false
 			is_pressed_out = false
