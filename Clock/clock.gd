@@ -18,11 +18,8 @@ func _on_timeout():
 
 func update():
 	var d = 2*PI*($Timer.wait_time - $Timer.time_left)/60
-
-	# That's not what a real clock would do
 	$Face/Minutes.look_at($Face/Minutes.offset + 10000*Vector2(cos(d/12),sin(d/12)))
 	$Face/Seconds.look_at($Face/Seconds.offset + 10000*Vector2(cos(d),sin(d)))
-
 
 func _process(_unused) -> void:
 	update()
