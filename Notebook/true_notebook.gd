@@ -12,27 +12,20 @@ var is_pressed_out = false
 func _ready() -> void:
 	visible = false
 	SignalBus.Notebook_show.connect(signal_handler)
-	
-	$Previous.pressed.connect(previous)
-	$Next.pressed.connect(next)
+	SignalBus.Next_page.connect(next)
+	SignalBus.Previous_page.connect(previous)	
 	SignalBus.update_notebook.connect(update_page_position)
 
 
 func signal_handler(value : int) -> void :
 	if value == 0:
-		if visible == false:
-			Global.Triple_show = true
-			visible = true
-			$"../Mini_Notebook".visible = false
-			$"../Mini_Notebook/Checklist1".play(0.06)
-			
+		Global.Triple_show = true
+		visible = true
+		$"../Mini_Notebook".visible = false
 	else:
-		if visible == true:
-			Global.Triple_show = false
-			visible = false
-			$"../Mini_Notebook".visible = true
-			$"../Mini_Notebook/Checklist2".play(0.03)
-
+		Global.Triple_show = false
+		visible = false
+		$"../Mini_Notebook".visible = true
 
 
 func update_page_position():
@@ -44,13 +37,11 @@ func next():
 	if cur < len(pages) - 1:
 		cur += 1
 		pages_update()
-	# TODO: else: deactivate button
 
 func previous():
 	if cur > 0:
 		cur -= 1
 		pages_update()
-	# TODO: else: deactivate button
 
 func pages_reset():
 	for sprite in sprites:
@@ -67,19 +58,17 @@ func put_right(sprite):
 func pages_update():
 	var left = sprites[2*cur]
 	var right = sprites[2*cur+1]
+	# (De)Activate buttons if at beginning/end
+	# XXX: this is very ugly
+	$Previous_notebook.visible = true
+	$Next_notebook.visible = true
+	if cur + 1 >= len(pages):
+		$Next_notebook.visible = false
+	elif cur == 0:
+		$Previous_notebook.visible = false
 	pages_reset()
 	put_left(left)
 	put_right(right)
-	# (De)Activate buttons if at beginning/end
-	# XXX: this is very ugly
-	if cur + 1 == len(pages):
-		$Next.visible = false
-	elif cur == 0:
-		$Previous.visible = false
-	else:
-		$Previous.visible = true
-		$Next.visible = true
-
 
 func _process(_delta: float) -> void:
 	if visible:
