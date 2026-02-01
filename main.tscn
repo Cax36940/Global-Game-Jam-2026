@@ -4,10 +4,12 @@
 [ext_resource type="Script" uid="uid://jx48rftv4dv8" path="res://main.gd" id="1_272bh"]
 [ext_resource type="Script" uid="uid://cuewil535to8a" path="res://GUI/gui.gd" id="3_5vw27"]
 [ext_resource type="Script" uid="uid://dq77syx52rqa1" path="res://Menu/pause_button.gd" id="3_272bh"]
+[ext_resource type="Script" uid="uid://sq4m15igr5gd" path="res://GUI/overlay.gd" id="4_4c57u"]
 [ext_resource type="Script" uid="uid://cutt0ecko4vrq" path="res://Menu/main_menu.gd" id="5_7mycd"]
 [ext_resource type="Script" uid="uid://dhhd5aeh3y0lc" path="res://Menu/pause_menu.gd" id="5_lquwl"]
 [ext_resource type="Script" uid="uid://cdut5tv23yujj" path="res://Menu/controls.gd" id="6_272bh"]
 [ext_resource type="Script" uid="uid://dwy4s6pgcr1p7" path="res://Menu/game_over.gd" id="8_5vw27"]
+[ext_resource type="Texture2D" uid="uid://crbu471j1olmh" path="res://Assets/BeckgroundCurtain.png" id="9_kek77"]
 
 [node name="Main" type="Node" unique_id=76370498]
 script = ExtResource("1_272bh")
@@ -29,6 +31,7 @@ script = ExtResource("3_5vw27")
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+script = ExtResource("4_4c57u")
 
 [node name="PauseButton" type="Button" parent="GUI/Overlay" unique_id=1910178568]
 layout_mode = 1
@@ -47,7 +50,6 @@ text = "Pause"
 script = ExtResource("3_272bh")
 
 [node name="PauseMenu" type="VBoxContainer" parent="GUI" unique_id=1068046758]
-visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -78,7 +80,6 @@ layout_mode = 2
 text = "Main Menu"
 
 [node name="MainMenu" type="VBoxContainer" parent="GUI" unique_id=2067887264]
-visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -128,7 +129,6 @@ focus_neighbor_top = NodePath("../Controls/Button")
 text = "Exit"
 
 [node name="GameOver" type="VBoxContainer" parent="GUI" unique_id=2091551017]
-visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -156,10 +156,10 @@ text = "Try again"
 layout_mode = 2
 text = "Main Menu"
 
-[node name="TextureRect" type="TextureRect" parent="GUI" unique_id=1867251222]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="Curtain" type="Sprite2D" parent="GUI" unique_id=2117917725]
+scale = Vector2(3.2044885, 3.2044885)
+texture = ExtResource("9_kek77")
+centered = false
 
 [node name="MenuMusic" type="AudioStreamPlayer" parent="." unique_id=2067528553]
 autoplay = true
