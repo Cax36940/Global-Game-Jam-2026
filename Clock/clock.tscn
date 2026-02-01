@@ -11,15 +11,15 @@ script = ExtResource("1_venu5")
 texture = ExtResource("2_a0rv4")
 
 [node name="Seconds" type="Sprite2D" parent="Face" unique_id=1295007026]
-self_modulate = Color(1, 0, 0.02745098, 1)
-rotation = -0.0059301085
-scale = Vector2(0.025, 0.492)
+self_modulate = Color(0, 0, 0.02745098, 1)
+scale = Vector2(0.017335692, 0.492)
 texture = ExtResource("2_kig64")
 offset = Vector2(0, -64.503944)
 
 [node name="Minutes" type="Sprite2D" parent="Face" unique_id=1108947882]
 self_modulate = Color(0, 0, 0, 1)
-scale = Vector2(0.063619375, 0.3118006)
+position = Vector2(1.1920929e-07, 0)
+scale = Vector2(0.031250004, 0.23314744)
 texture = ExtResource("2_kig64")
 offset = Vector2(0, -64.503944)
 

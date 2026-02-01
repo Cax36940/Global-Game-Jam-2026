@@ -23,7 +23,7 @@ func _ready() -> void:
 func _on_area_2d_mouse_entered() -> void:
 	if sprite and (eternal_border or not Global.Triple_show):
 		is_in = true
-		(sprite.material as ShaderMaterial).set_shader_parameter("outline_thickness", 5)
+		(sprite.material as ShaderMaterial).set_shader_parameter("outline_thickness", outline_thickness)
 
 
 func _on_area_2d_mouse_exited() -> void:
