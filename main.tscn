@@ -5,10 +5,10 @@
 [ext_resource type="Script" uid="uid://cuewil535to8a" path="res://GUI/gui.gd" id="3_5vw27"]
 [ext_resource type="Script" uid="uid://dq77syx52rqa1" path="res://Menu/pause_button.gd" id="3_272bh"]
 [ext_resource type="Script" uid="uid://sq4m15igr5gd" path="res://GUI/overlay.gd" id="4_4c57u"]
-[ext_resource type="Script" uid="uid://dhhd5aeh3y0lc" path="res://Menu/pause_menu.gd" id="5_lquwl"]
-[ext_resource type="PackedScene" uid="uid://csqdgps3vx30b" path="res://GUI/menu_screen.tscn" id="7_5vw27"]
+[ext_resource type="PackedScene" uid="uid://c47b01usnlin1" path="res://GUI/PauseMenu/pause_menu.tscn" id="6_5vw27"]
 [ext_resource type="Script" uid="uid://dwy4s6pgcr1p7" path="res://Menu/game_over.gd" id="8_5vw27"]
 [ext_resource type="AudioStream" uid="uid://bqd5j6ceclnsb" path="res://Assets/Music/music_loop_menu_track_v0.mp3" id="9_kek77"]
+[ext_resource type="PackedScene" uid="uid://ceqfk3ipk2yqk" path="res://GUI/MainMenu/main_menu.tscn" id="10_4c57u"]
 
 [node name="Main" type="Node" unique_id=76370498]
 script = ExtResource("1_272bh")
@@ -49,36 +49,9 @@ grow_vertical = 0
 text = "Pause"
 script = ExtResource("3_272bh")
 
-[node name="PauseMenu" type="VBoxContainer" parent="GUI" unique_id=1068046758]
+[node name="PauseMenu" parent="GUI" unique_id=369511700 instance=ExtResource("6_5vw27")]
 visible = false
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -48.0
-offset_top = -42.5
-offset_right = 48.0
-offset_bottom = 50.5
-grow_horizontal = 2
-grow_vertical = 2
-script = ExtResource("5_lquwl")
-
-[node name="Label" type="Label" parent="GUI/PauseMenu" unique_id=942334447]
-layout_mode = 2
-text = "Pause"
-horizontal_alignment = 1
-
-[node name="Resume" type="Button" parent="GUI/PauseMenu" unique_id=1461862858]
-layout_mode = 2
-focus_neighbor_top = NodePath(".")
-focus_neighbor_bottom = NodePath("../Main Menu")
-text = "Resume"
-
-[node name="Main Menu" type="Button" parent="GUI/PauseMenu" unique_id=1716701454]
-layout_mode = 2
-text = "Main Menu"
+layout_mode = 0
 
 [node name="GameOver" type="VBoxContainer" parent="GUI" unique_id=2091551017]
 visible = false
@@ -109,7 +82,7 @@ text = "Try again"
 layout_mode = 2
 text = "Main Menu"
 
-[node name="MainMenu" parent="GUI" unique_id=632732192 instance=ExtResource("7_5vw27")]
+[node name="MainMenu" parent="GUI" unique_id=1019709323 instance=ExtResource("10_4c57u")]
 layout_mode = 1
 
 [node name="MenuMusic" type="AudioStreamPlayer" parent="." unique_id=2067528553]

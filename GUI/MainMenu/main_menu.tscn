@@ -1,12 +1,10 @@
-[gd_scene format=3 uid="uid://csqdgps3vx30b"]
+[gd_scene format=3 uid="uid://ceqfk3ipk2yqk"]
 
-[ext_resource type="Script" uid="uid://vb8um73ma312" path="res://GUI/menu_screen.gd" id="1_loxpm"]
-[ext_resource type="Texture2D" uid="uid://crbu471j1olmh" path="res://Assets/BeckgroundCurtain.png" id="2_s7n8e"]
-[ext_resource type="Script" uid="uid://fd57ygx3ugyu" path="res://GUI/v_box_container.gd" id="3_exjve"]
-[ext_resource type="Script" uid="uid://cdut5tv23yujj" path="res://Menu/controls.gd" id="4_5hhdc"]
+[ext_resource type="Script" uid="uid://bl2p5irplb0jh" path="res://GUI/MainMenu/main_menu.gd" id="1_voh4k"]
+[ext_resource type="Texture2D" uid="uid://crbu471j1olmh" path="res://Assets/BeckgroundCurtain.png" id="2_ub0nq"]
+[ext_resource type="Script" uid="uid://cdut5tv23yujj" path="res://Menu/controls.gd" id="4_ihi24"]
 
 [sub_resource type="Animation" id="Animation_efxa6"]
-length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -59,7 +57,7 @@ _data = {
 &"curtain rise": SubResource("Animation_ycdy4")
 }
 
-[node name="MenuScreen" type="Control" unique_id=632732192]
+[node name="MainMenu" type="Control" unique_id=1019709323]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -68,14 +66,15 @@ offset_top = -720.0
 offset_bottom = -720.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_loxpm")
+script = ExtResource("1_voh4k")
+metadata/_custom_type_script = "uid://vb8um73ma312"
 
-[node name="Curtain" type="Sprite2D" parent="." unique_id=332807249]
+[node name="Curtain" type="Sprite2D" parent="." unique_id=1755529257]
 scale = Vector2(3.1600986, 1.7955112)
-texture = ExtResource("2_s7n8e")
+texture = ExtResource("2_ub0nq")
 centered = false
 
-[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1932043556]
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=832344933]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -89,41 +88,41 @@ offset_bottom = 64.0
 grow_horizontal = 2
 grow_vertical = 2
 alignment = 1
-script = ExtResource("3_exjve")
 
-[node name="Label" type="Label" parent="VBoxContainer" unique_id=1611310974]
+[node name="Label" type="Label" parent="VBoxContainer" unique_id=444572534]
 layout_mode = 2
 text = "Vigilance Maskimum"
 horizontal_alignment = 1
 
-[node name="Start" type="Button" parent="VBoxContainer" unique_id=456902719]
+[node name="Start" type="Button" parent="VBoxContainer" unique_id=209269847]
 layout_mode = 2
 focus_neighbor_bottom = NodePath("../Controls/Button")
 text = "Start Game"
 
-[node name="Controls" type="VBoxContainer" parent="VBoxContainer" unique_id=896442975]
+[node name="Controls" type="VBoxContainer" parent="VBoxContainer" unique_id=1878912470]
 layout_mode = 2
-script = ExtResource("4_5hhdc")
+script = ExtResource("4_ihi24")
 
-[node name="Button" type="Button" parent="VBoxContainer/Controls" unique_id=142146359]
+[node name="Button" type="Button" parent="VBoxContainer/Controls" unique_id=1055103716]
 layout_mode = 2
 focus_neighbor_top = NodePath("../../Start")
 focus_neighbor_bottom = NodePath("../../Exit")
 toggle_mode = true
 text = "Controls"
 
-[node name="Label" type="Label" parent="VBoxContainer/Controls" unique_id=855958077]
+[node name="Label" type="Label" parent="VBoxContainer/Controls" unique_id=1313697226]
 visible = false
 layout_mode = 2
 text = "Shift = Do A
 Space = Do B
 TODO: add controls"
 
-[node name="Exit" type="Button" parent="VBoxContainer" unique_id=1333101269]
+[node name="Exit" type="Button" parent="VBoxContainer" unique_id=1705405052]
 layout_mode = 2
 focus_neighbor_top = NodePath("../Controls/Button")
 text = "Exit"
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=651878839]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=649619238]
 deterministic = true
+root_node = NodePath("../../MainMenu")
 libraries/ = SubResource("AnimationLibrary_ycdy4")

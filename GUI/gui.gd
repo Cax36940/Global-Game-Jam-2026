@@ -18,4 +18,4 @@ func display(component: String) -> void:
 
 	current_component = component
 	var child = get_node_or_null(component)
-	child.appear() # todo: change to appear
+	child.appear()
