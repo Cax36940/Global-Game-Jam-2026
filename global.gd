@@ -33,9 +33,9 @@ func setup_invalid():
 	invalid_eye = random_sublist(3, eye_list)
 	SignalBus.write_constrain.emit()
 	
-
+# return true if valid
 func check_guest(mask_index : int, eye_index : int, color_index : int):
-	var is_color_invalid : bool = invalid_color.find(color_index) == -1
-	var is_eye_invalid : bool = invalid_eye.find(eye_index) == -1
-	var is_mask_invalid : bool = invalid_mask.find(mask_index) == -1
-	return !(is_color_invalid || is_eye_invalid || is_mask_invalid)
+	var is_color_valid : bool = invalid_color.find(color_index) == -1
+	var is_eye_valid : bool = invalid_eye.find(eye_index) == -1
+	var is_mask_valid : bool = invalid_mask.find(mask_index) == -1
+	return is_color_valid && is_eye_valid && is_mask_valid

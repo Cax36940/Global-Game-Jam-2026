@@ -8,9 +8,6 @@ class_name GuestSpawner
 @export var end_position_node : Node2D
 
 var current_guest : Guest = null
-var current_mask : int = -1
-var current_color : int = -1
-var current_eye : int = -1
 
 var is_entered : bool = false
 
@@ -41,8 +38,8 @@ func _process(delta):
 		move_node.position.x = move_toward(move_node.position.x, start_position_node.position.x, delta * SPEED)
 		move_node.position.y = move_toward(move_node.position.y, start_position_node.position.y, delta * SPEED)
 		if (move_node.position - start_position_node.position).length() < 10 :
+			SignalBus.Mistake_test.emit(!Global.check_guest(current_guest.mask_index, current_guest.eye_index, current_guest.color_index))
 			remove_guest()
-			SignalBus.Mistake_test.emit(!Global.check_guest(current_mask, current_eye, current_color))
 			spawn_guest()
 	if move_state == 1:
 		move_node.position.x = move_toward(move_node.position.x, middle_position_node.position.x, delta * SPEED)
@@ -53,8 +50,8 @@ func _process(delta):
 		move_node.position.x = move_toward(move_node.position.x, end_position_node.position.x, delta * SPEED)
 		move_node.position.y = move_toward(move_node.position.y, end_position_node.position.y, delta * SPEED)
 		if (move_node.position - end_position_node.position).length() < 10 :
+			SignalBus.Mistake_test.emit(Global.check_guest(current_guest.mask_index, current_guest.eye_index, current_guest.color_index))
 			remove_guest()
-			SignalBus.Mistake_test.emit(Global.check_guest(current_mask, current_eye, current_color))
 			spawn_guest()
 			
 func spawn_guest():
@@ -69,6 +66,7 @@ func spawn_guest():
 	move_state = 1
 	is_entered = false
 	move_node.add_child(guest)
+
 
 func valid_guest():
 	if !is_entered :

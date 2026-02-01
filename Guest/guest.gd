@@ -7,13 +7,19 @@ class_name Guest
 
 @onready var shape : AnimatedSprite2D = $Shape
 
+var mask_index : int = -1
+var eye_index : int = -1
+var color_index : int = -1
+
 func _ready():
 	shape.frame = randi_range(0, 4)
 	if masks_list.size() > 0:
-		var mask_scene : PackedScene = masks_list.pick_random()
+		mask_index = randi_range(0, masks_list.size()-1)
+		var mask_scene : PackedScene = masks_list[mask_index]
 		var mask : Mask = mask_scene.instantiate()
 		if colors_list.size() > 0:
-			mask.set_color.call_deferred(colors_list.pick_random())
+			color_index = randi_range(0, colors_list.size()-1)
+			mask.set_color.call_deferred(colors_list[color_index])
 		else :
 			push_error("There is no color in the colors_list of the guest scene")
 		add_child(mask)
@@ -22,7 +28,8 @@ func _ready():
 		push_error("There is no mask in the masks_list of the guest scene")
 		
 	if eyes_list.size() > 0:
-		var eye_scene : PackedScene = eyes_list.pick_random()
+		eye_index = randi_range(0, eyes_list.size()-1)
+		var eye_scene : PackedScene = eyes_list[eye_index]
 		var eye_l : Eye = eye_scene.instantiate()
 		$EyeL.add_child(eye_l)
 		var eye_r : Eye = eye_scene.instantiate()
