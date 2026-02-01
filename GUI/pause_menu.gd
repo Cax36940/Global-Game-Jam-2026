@@ -10,7 +10,7 @@ func _input(event):
 		SignalBus.pause_game.emit(not get_tree().paused)
 
 func _on_exit_button_pressed() -> void:
-	get_tree().reload_current_scene()
+	SignalBus.mainmenu.emit()
 
 func _on_resume_button_pressed():
 	SignalBus.pause_game.emit(not get_tree().paused)

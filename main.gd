@@ -14,9 +14,6 @@ func _ready() -> void:
 
 	$GUI/MainMenu.process_mode = Node.PROCESS_MODE_WHEN_PAUSED
 	$GUI/GameOver.process_mode = Node.PROCESS_MODE_WHEN_PAUSED
-	#$GUI/PauseMenu.process_mode = Node.PROCESS_MODE_
-	#	process_mode = Node.PROCESS_MODE_WHEN_PAUSED
-
 
 	# Set up first screen
 	get_tree().paused = true
