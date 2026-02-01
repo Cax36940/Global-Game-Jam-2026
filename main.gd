@@ -11,8 +11,9 @@ func _ready() -> void:
 	SignalBus.pause_game.connect(_on_pause_game)
 	SignalBus.gameover.connect(_on_gameover)
 	SignalBus.mainmenu.connect(_on_main_menu)
-	SignalBus.exit_game.connect(get_tree().quit)
-
+	
+	if !SignalBus.exit_game.is_connected(get_tree().quit):
+		SignalBus.exit_game.connect(get_tree().quit)
 	$GUI/MainMenu.process_mode = Node.PROCESS_MODE_ALWAYS
 	$GUI/GameOver.process_mode = Node.PROCESS_MODE_WHEN_PAUSED
 	$GUI/PauseMenu.process_mode = Node.PROCESS_MODE_DISABLED
@@ -25,7 +26,7 @@ func _ready() -> void:
 	# The first time, we want to menu to appear instantly
 	$GUI/MainMenu.show()
 	$GUI/MainMenu.reset_position()
-	$GUI/MainMenu/VBoxContainer.get_child(1).grab_focus.call_deferred()
+#	$GUI/MainMenu/VBoxContainer.get_child(1).grab_focus.call_deferred()
 	$GUI.current_component = "MainMenu"
 
 func _on_main_menu() -> void:

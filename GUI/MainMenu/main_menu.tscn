@@ -2,7 +2,13 @@
 
 [ext_resource type="Script" uid="uid://bl2p5irplb0jh" path="res://GUI/MainMenu/main_menu.gd" id="1_voh4k"]
 [ext_resource type="Texture2D" uid="uid://brdrb2sqp6upl" path="res://Assets/MainCurtain.png" id="2_voh4k"]
-[ext_resource type="Script" uid="uid://cdut5tv23yujj" path="res://Menu/controls.gd" id="4_ihi24"]
+[ext_resource type="Texture2D" uid="uid://dkcs4jvhoho32" path="res://Assets/MenuButtons/MenuButton (1).png" id="3_r8vqi"]
+[ext_resource type="Texture2D" uid="uid://d2lxoqy2om6ok" path="res://Assets/MenuButtons/MenuButton (12).png" id="4_suib6"]
+[ext_resource type="Texture2D" uid="uid://jkb22kdg0ws4" path="res://Assets/MenuButtons/MenuButton (3).png" id="5_7c6r0"]
+[ext_resource type="Texture2D" uid="uid://s717sd3dp78a" path="res://Assets/MenuButtons/MenuButton (11).png" id="6_i00tq"]
+[ext_resource type="Texture2D" uid="uid://dq2o20vtqv1gc" path="res://Assets/MenuButtons/MenuButton (7).png" id="7_s2en5"]
+[ext_resource type="Texture2D" uid="uid://com6e5xq8oyv4" path="res://Assets/MenuButtons/MenuButton (9).png" id="8_ulq50"]
+[ext_resource type="Texture2D" uid="uid://cw1fbklq0dt5u" path="res://Assets/Logo.png" id="9_rfr74"]
 
 [sub_resource type="Animation" id="Animation_efxa6"]
 tracks/0/type = "value"
@@ -74,55 +80,36 @@ scale = Vector2(1.0264634, 1.0055866)
 texture = ExtResource("2_voh4k")
 centered = false
 
-[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=832344933]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -84.0
-offset_top = -64.0
-offset_right = 84.0
-offset_bottom = 64.0
-grow_horizontal = 2
-grow_vertical = 2
-alignment = 1
+[node name="Start" type="TextureButton" parent="." unique_id=494110579]
+layout_mode = 0
+offset_left = 540.0
+offset_top = 400.0
+offset_right = 1040.0
+offset_bottom = 600.0
+scale = Vector2(0.4, 0.4)
+texture_normal = ExtResource("3_r8vqi")
+texture_pressed = ExtResource("4_suib6")
+texture_hover = ExtResource("5_7c6r0")
 
-[node name="Label" type="Label" parent="VBoxContainer" unique_id=444572534]
-layout_mode = 2
-text = "Vigilance Maskimum"
-horizontal_alignment = 1
-
-[node name="Start" type="Button" parent="VBoxContainer" unique_id=209269847]
-layout_mode = 2
-focus_neighbor_bottom = NodePath("../Controls/Button")
-text = "Start Game"
-
-[node name="Controls" type="VBoxContainer" parent="VBoxContainer" unique_id=1878912470]
-layout_mode = 2
-script = ExtResource("4_ihi24")
-
-[node name="Button" type="Button" parent="VBoxContainer/Controls" unique_id=1055103716]
-layout_mode = 2
-focus_neighbor_top = NodePath("../../Start")
-focus_neighbor_bottom = NodePath("../../Exit")
-toggle_mode = true
-text = "Controls"
-
-[node name="Label" type="Label" parent="VBoxContainer/Controls" unique_id=1313697226]
-visible = false
-layout_mode = 2
-text = "Shift = Do A
-Space = Do B
-TODO: add controls"
-
-[node name="Exit" type="Button" parent="VBoxContainer" unique_id=1705405052]
-layout_mode = 2
-focus_neighbor_top = NodePath("../Controls/Button")
-text = "Exit"
+[node name="Exit" type="TextureButton" parent="." unique_id=178601493]
+layout_mode = 0
+offset_left = 540.0
+offset_top = 540.0
+offset_right = 1040.0
+offset_bottom = 740.0
+scale = Vector2(0.4, 0.4)
+texture_normal = ExtResource("6_i00tq")
+texture_pressed = ExtResource("7_s2en5")
+texture_hover = ExtResource("8_ulq50")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=649619238]
 deterministic = true
 root_node = NodePath("../../MainMenu")
 libraries/ = SubResource("AnimationLibrary_ycdy4")
+
+[node name="Logo" type="Sprite2D" parent="." unique_id=470775153]
+position = Vector2(647, 205)
+texture = ExtResource("9_rfr74")
+
+[connection signal="pressed" from="Start" to="." method="_on_texture_button_pressed"]
+[connection signal="pressed" from="Exit" to="." method="_on_texture_button_2_pressed"]

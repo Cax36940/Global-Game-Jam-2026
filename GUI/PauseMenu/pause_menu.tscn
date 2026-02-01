@@ -2,6 +2,13 @@
 
 [ext_resource type="Script" uid="uid://b8a7861eg0akk" path="res://GUI/PauseMenu/pause_menu.gd" id="1_mqpij"]
 [ext_resource type="Texture2D" uid="uid://brdrb2sqp6upl" path="res://Assets/MainCurtain.png" id="2_mqpij"]
+[ext_resource type="Texture2D" uid="uid://bgfpky4xagsbq" path="res://Assets/Pause.png" id="3_edsw5"]
+[ext_resource type="Texture2D" uid="uid://cvp0wdd55nhrd" path="res://Assets/MenuButtons/MenuButton (6).png" id="4_uce2e"]
+[ext_resource type="Texture2D" uid="uid://cm0nr7raymuue" path="res://Assets/MenuButtons/MenuButton (10).png" id="5_i46ng"]
+[ext_resource type="Texture2D" uid="uid://4mi8twr6f1ll" path="res://Assets/MenuButtons/MenuButton (4).png" id="6_xn0xq"]
+[ext_resource type="Texture2D" uid="uid://cojd2i5568uc8" path="res://Assets/MenuButtons/MenuButton (8).png" id="7_5rich"]
+[ext_resource type="Texture2D" uid="uid://c6sbsuae58ail" path="res://Assets/MenuButtons/MenuButton (5).png" id="8_ukpr7"]
+[ext_resource type="Texture2D" uid="uid://dsppb58a4t3cr" path="res://Assets/MenuButtons/MenuButton (2).png" id="9_jhal3"]
 
 [sub_resource type="Animation" id="Animation_efxa6"]
 tracks/0/type = "value"
@@ -69,35 +76,35 @@ scale = Vector2(1.0264634, 1.0055866)
 texture = ExtResource("2_mqpij")
 centered = false
 
-[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1219893980]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 572.0
-offset_top = 297.5
-offset_right = 668.0
-offset_bottom = 390.5
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Label" type="Label" parent="VBoxContainer" unique_id=1147633000]
-layout_mode = 2
-text = "Pause"
-horizontal_alignment = 1
-
-[node name="Resume" type="Button" parent="VBoxContainer" unique_id=676341323]
-layout_mode = 2
-focus_neighbor_top = NodePath(".")
-focus_neighbor_bottom = NodePath("../Main Menu")
-text = "Resume"
-
-[node name="Main Menu" type="Button" parent="VBoxContainer" unique_id=805161257]
-layout_mode = 2
-text = "Main Menu"
-
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1671070749]
 deterministic = true
 libraries/ = SubResource("AnimationLibrary_mqpij")
+
+[node name="Pause" type="Sprite2D" parent="." unique_id=1492346976]
+position = Vector2(619, 231)
+texture = ExtResource("3_edsw5")
+
+[node name="Resume" type="TextureButton" parent="." unique_id=962052885]
+layout_mode = 0
+offset_left = 540.0
+offset_top = 400.0
+offset_right = 1040.0
+offset_bottom = 600.0
+scale = Vector2(0.4, 0.4)
+texture_normal = ExtResource("4_uce2e")
+texture_pressed = ExtResource("5_i46ng")
+texture_hover = ExtResource("6_xn0xq")
+
+[node name="Main Menu" type="TextureButton" parent="." unique_id=1228103830]
+layout_mode = 0
+offset_left = 540.0
+offset_top = 540.0
+offset_right = 1040.0
+offset_bottom = 740.0
+scale = Vector2(0.4, 0.4)
+texture_normal = ExtResource("7_5rich")
+texture_pressed = ExtResource("8_ukpr7")
+texture_hover = ExtResource("9_jhal3")
+
+[connection signal="pressed" from="Resume" to="." method="_on_texture_button_pressed"]
+[connection signal="pressed" from="Main Menu" to="." method="_on_texture_button_2_pressed"]
