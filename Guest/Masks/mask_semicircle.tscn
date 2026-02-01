@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://ccp4aonngf1vh"]
+
+[ext_resource type="Script" uid="uid://k3dilur23q5u" path="res://Guest/Masks/mask.gd" id="1_8kom3"]
+[ext_resource type="Shader" uid="uid://chlqffw35nj4o" path="res://Guest/Masks/mask_semicircle.gdshader" id="2_8kom3"]
+[ext_resource type="Texture2D" uid="uid://vh18g1m163l5" path="res://Assets/icon.svg" id="3_5e12m"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_r7eir"]
+shader = ExtResource("2_8kom3")
+shader_parameter/size = 0.15
+shader_parameter/aa = 0.435
+shader_parameter/bb = -0.11
+shader_parameter/achamfer = 0.1
+shader_parameter/offset = 0.2
+shader_parameter/radius = 0.1
+shader_parameter/color = Color(1, 1, 1, 1)
+
+[node name="MaskSemiCercle" type="Node2D" unique_id=897195489]
+script = ExtResource("1_8kom3")
+
+[node name="Icon" type="Sprite2D" parent="." unique_id=1863471058]
+material = SubResource("ShaderMaterial_r7eir")
+position = Vector2(0, -13)
+texture = ExtResource("3_5e12m")
