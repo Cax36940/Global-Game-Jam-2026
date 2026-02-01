@@ -1,8 +1,9 @@
 extends CustomButton
 
-func on_mouse_overing():
-	modulate = Color(0.5, 0.5, 0.5, 0.5)
-	
+func _ready() -> void:
+	super._ready()
+	outline_thickness = 4
+
 func on_button_pressed():
 	if not Global.Triple_show:
 		SignalBus.zoom_toggle.emit()

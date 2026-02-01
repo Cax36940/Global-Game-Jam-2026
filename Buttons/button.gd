@@ -6,6 +6,8 @@ var is_in : bool = false
 var is_pressed_out : bool = false
 var is_pressed_in : bool = false
 
+var outline_thickness : int = 5
+
 var sprite
 
 #Actions au démarrage------------------------------------------------------------------------------
@@ -20,7 +22,7 @@ func _ready() -> void:
 func _on_area_2d_mouse_entered() -> void:
 	is_in = true
 	if sprite :
-		(sprite.material as ShaderMaterial).set_shader_parameter("outline_thickness", 5)
+		(sprite.material as ShaderMaterial).set_shader_parameter("outline_thickness", outline_thickness)
 	on_mouse_overing()
 
 
@@ -56,3 +58,6 @@ func on_button_pressed():
 
 func on_mouse_overing():
 	pass
+
+func set_outline_thickness(value : int):
+	outline_thickness = value
