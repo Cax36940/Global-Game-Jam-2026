@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dsl3i5b2pmox7" path="res://accept.gd" id="1_gms83"]
 [ext_resource type="Shader" uid="uid://2usd68as7g2r" path="res://outline.gdshader" id="2_jjpe7"]
-[ext_resource type="Texture2D" uid="uid://vh18g1m163l5" path="res://Assets/icon.svg" id="2_pd1wq"]
+[ext_resource type="Texture2D" uid="uid://6kaprduuqc30" path="res://Assets/AcceptButton.png" id="3_pd1wq"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_yhhp3"]
 shader = ExtResource("2_jjpe7")
@@ -11,19 +11,19 @@ shader_parameter/outline_thickness = 0.0
 shader_parameter/outline_color = Color(0, 0.851594, 0, 1)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_dwbse"]
-radius = 63.0
+radius = 39.051247
 
 [node name="Accept" type="Node2D" unique_id=2047118973]
 script = ExtResource("1_gms83")
 
 [node name="Sprite_Accept" type="Sprite2D" parent="." unique_id=728891142]
-modulate = Color(0.5882353, 1, 0.5882353, 1)
 material = SubResource("ShaderMaterial_yhhp3")
-texture = ExtResource("2_pd1wq")
+texture = ExtResource("3_pd1wq")
 
 [node name="Area_Accept" type="Area2D" parent="." unique_id=1838939576]
 
 [node name="CollisionShape_Accept" type="CollisionShape2D" parent="Area_Accept" unique_id=1751806674]
+position = Vector2(2, -9)
 shape = SubResource("CircleShape2D_dwbse")
 
 [connection signal="mouse_entered" from="Area_Accept" to="." method="_on_area_2d_mouse_entered"]

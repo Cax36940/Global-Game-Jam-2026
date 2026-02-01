@@ -1,6 +1,5 @@
 [gd_scene format=3 uid="uid://dcmgdb1ncffg0"]
 
-[ext_resource type="PackedScene" uid="uid://bfhckh8llopeh" path="res://Clock/clock.tscn" id="1_3uucr"]
 [ext_resource type="PackedScene" uid="uid://ch3lo0f11rnu7" path="res://accept.tscn" id="2_yplp6"]
 [ext_resource type="PackedScene" uid="uid://bdjk536uwqjq1" path="res://refuse.tscn" id="3_aoyq8"]
 [ext_resource type="PackedScene" uid="uid://b035td654d8fn" path="res://checklist.tscn" id="4_nngme"]
@@ -19,14 +18,8 @@ height = 100
 
 [node name="UI2D" type="Node2D" unique_id=423729008]
 
-[node name="Clock" parent="." unique_id=485727779 instance=ExtResource("1_3uucr")]
-position = Vector2(144, 144)
-
 [node name="Accept" parent="." unique_id=2047118973 instance=ExtResource("2_yplp6")]
 position = Vector2(381, 659)
-rotation = 0.17453292
-scale = Vector2(0.6, 0.6)
-skew = 0.17453292
 
 [node name="Refuse" parent="." unique_id=466592476 instance=ExtResource("3_aoyq8")]
 position = Vector2(405.99994, 568.00006)

@@ -1,15 +1,14 @@
 [gd_scene format=3 uid="uid://bfhckh8llopeh"]
 
 [ext_resource type="Script" uid="uid://ccuaavxceujd6" path="res://Clock/clock.gd" id="1_venu5"]
+[ext_resource type="Texture2D" uid="uid://dl7keeqa5k3jn" path="res://Assets/Clock.png" id="2_a0rv4"]
 [ext_resource type="Texture2D" uid="uid://vh18g1m163l5" path="res://Assets/icon.svg" id="2_kig64"]
 
 [node name="Clock" type="Node2D" unique_id=485727779]
 script = ExtResource("1_venu5")
 
-[node name="Face" type="Sprite2D" parent="." unique_id=638863953]
-modulate = Color(18.892157, 18.892157, 18.892157, 1)
-self_modulate = Color(0.2901961, 0.21176471, 0.39607844, 1)
-texture = ExtResource("2_kig64")
+[node name="Face" type="Sprite2D" parent="." unique_id=530345041]
+texture = ExtResource("2_a0rv4")
 
 [node name="Seconds" type="Sprite2D" parent="Face" unique_id=1295007026]
 self_modulate = Color(1, 0, 0.02745098, 1)
