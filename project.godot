@@ -14,7 +14,7 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 
 [application]
 
-config/name="Global-Game-Jam-2026"
+config/name="Vigilance Maskimum"
 run/main_scene="uid://c55m1oiwe6a2h"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="uid://b5pg86ekdo3xb"
