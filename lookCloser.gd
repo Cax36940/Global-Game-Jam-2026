@@ -1,7 +1,8 @@
 extends CustomButton
 
-func _ready():
+func _ready() -> void:
 	super._ready()
+	outline_thickness = 4
 	eternal_border = true
 
 func on_button_pressed():

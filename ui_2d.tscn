@@ -28,7 +28,6 @@ position = Vector2(405.99994, 568.00006)
 
 [node name="LookCloser" parent="." unique_id=2000302642 instance=ExtResource("7_yplp6")]
 position = Vector2(754, 505)
-rotation = 0.52185345
 
 [node name="ID_Card" parent="." unique_id=31413314 instance=ExtResource("6_k61qh")]
 

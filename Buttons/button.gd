@@ -6,6 +6,7 @@ var is_in : bool = false
 var is_pressed_out : bool = false
 var is_pressed_in : bool = false
 
+var outline_thickness : int = 5
 var eternal_border : bool = false
 
 var sprite
@@ -53,3 +54,6 @@ func _input(event):
 
 func on_button_pressed():
 	pass
+
+func set_outline_thickness(value : int):
+	outline_thickness = value
