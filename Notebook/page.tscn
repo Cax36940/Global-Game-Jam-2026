@@ -19,9 +19,10 @@ texture = SubResource("GradientTexture2D_7tx1s")
 [node name="ItemPositions" type="Node2D" parent="." unique_id=1602276351]
 
 [node name="ItemPosition1" type="Node2D" parent="ItemPositions" unique_id=542250818]
-position = Vector2(0, -110)
+position = Vector2(0, -60)
 
 [node name="ItemPosition2" type="Node2D" parent="ItemPositions" unique_id=1769732662]
+position = Vector2(0, 50)
 
 [node name="ItemPosition3" type="Node2D" parent="ItemPositions" unique_id=898869702]
-position = Vector2(0, 110)
+position = Vector2(0, 160)

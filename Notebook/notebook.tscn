@@ -7,11 +7,14 @@
 [ext_resource type="PackedScene" uid="uid://344bm1ddwxtr" path="res://Notebook/pages.tscn" id="3_vcsgt"]
 [ext_resource type="AudioStream" uid="uid://c535ljjkx24mr" path="res://Assets/Sounds/SoundBook4.mp3" id="4_lbn8f"]
 [ext_resource type="AudioStream" uid="uid://dxlim41iw21ir" path="res://Assets/Sounds/SoundBook3.mp3" id="5_qtrjj"]
-[ext_resource type="Texture2D" uid="uid://0ysvbdot44a5" path="res://Assets/true_notebook.png" id="7_hu0nd"]
+[ext_resource type="Texture2D" uid="uid://daajoa3mqqi8e" path="res://Assets/page1.png" id="7_5cm84"]
+[ext_resource type="Texture2D" uid="uid://big3n60rjkbsb" path="res://Assets/page2.png" id="8_axt57"]
 [ext_resource type="PackedScene" uid="uid://c01xneve2v2sv" path="res://Buttons/button.tscn" id="9_lbn8f"]
 [ext_resource type="Script" uid="uid://dcixwlpvif4ud" path="res://Buttons/Next_notebook.gd" id="10_jrije"]
 [ext_resource type="Script" uid="uid://doiby4paeodpo" path="res://Notebook/Back_notebook.gd" id="10_qtrjj"]
 [ext_resource type="Script" uid="uid://diypkv5o38frl" path="res://Buttons/Previous_notebook.gd" id="11_hu0nd"]
+[ext_resource type="Texture2D" uid="uid://b6ytpjx6qi61j" path="res://Assets/Close.png" id="12_5o82t"]
+[ext_resource type="Texture2D" uid="uid://lisew6ww1ln3" path="res://Assets/NextPageButton.png" id="13_axt57"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_78epq"]
 shader = ExtResource("2_mvqau")
@@ -59,6 +62,20 @@ _data = {
 &"RESET": SubResource("Animation_qtrjj")
 }
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_5o82t"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_5cm84")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_axt57")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mvqau"]
 size = Vector2(64, 63.99999)
 
@@ -97,11 +114,11 @@ z_index = 50
 position = Vector2(606, 354)
 script = ExtResource("2_gvrn8")
 
-[node name="Notebook_Cover_Book" type="Sprite2D" parent="True_Notebook" unique_id=2042473880]
-position = Vector2(-3.0517578e-05, 0.5000229)
-texture = ExtResource("7_hu0nd")
+[node name="Notebook_Cover_Book" type="AnimatedSprite2D" parent="True_Notebook" unique_id=1226889226]
+sprite_frames = SubResource("SpriteFrames_5o82t")
 
 [node name="Area2D" type="Area2D" parent="True_Notebook/Notebook_Cover_Book" unique_id=1492481852]
+position = Vector2(0, 0.5000305)
 scale = Vector2(12.3125, 7.7031255)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="True_Notebook/Notebook_Cover_Book/Area2D" unique_id=225777246]
@@ -112,17 +129,20 @@ shape = SubResource("RectangleShape2D_mvqau")
 [node name="Pages" parent="True_Notebook" unique_id=1602385378 instance=ExtResource("3_vcsgt")]
 
 [node name="Back_notebook" parent="True_Notebook" unique_id=1448350442 instance=ExtResource("9_lbn8f")]
-position = Vector2(351, -205)
-scale = Vector2(0.7, 0.7)
+position = Vector2(377, -229)
 script = ExtResource("10_qtrjj")
+tex = ExtResource("12_5o82t")
 
 [node name="Next_notebook" parent="True_Notebook" unique_id=959355642 instance=ExtResource("9_lbn8f")]
 position = Vector2(345, 200)
+scale = Vector2(-1, 1)
 script = ExtResource("10_jrije")
+tex = ExtResource("13_axt57")
 
 [node name="Previous_notebook" parent="True_Notebook" unique_id=961428953 instance=ExtResource("9_lbn8f")]
 position = Vector2(-345, 200)
 script = ExtResource("11_hu0nd")
+tex = ExtResource("13_axt57")
 
 [connection signal="mouse_entered" from="Mini_Notebook/Sprite2D/Area2D" to="Mini_Notebook" method="_on_area_2d_mouse_entered"]
 [connection signal="mouse_exited" from="Mini_Notebook/Sprite2D/Area2D" to="Mini_Notebook" method="_on_area_2d_mouse_exited"]

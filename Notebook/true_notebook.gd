@@ -66,6 +66,7 @@ func put_right(sprite):
 	sprite.visible = true
 
 func pages_update():
+	$Notebook_Cover_Book.frame = cur
 	var left = sprites[2*cur]
 	var right = sprites[2*cur+1]
 	# (De)Activate buttons if at beginning/end
