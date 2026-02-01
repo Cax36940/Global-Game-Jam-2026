@@ -85,7 +85,7 @@ func _process(_delta: float) -> void:
 	if visible:
 		if Input.is_action_just_pressed("ui_right"):
 			next()
-		elif Input.is_action_just_pressed("ui_right"):
+		elif Input.is_action_just_pressed("ui_left"):
 			previous()
 
 
@@ -95,6 +95,9 @@ func _on_area_2d_mouse_entered() -> void:
 func _on_area_2d_mouse_exited() -> void:
 	is_in = false
 
+func hide_NB():
+	SignalBus.Notebook_show.emit(1)
+	
 func _input(event):
 	if event is InputEventMouseButton:
 		if event.pressed:
@@ -110,6 +113,6 @@ func _input(event):
 					is_pressed_out = true
 		else:
 			if visible and not is_in and is_pressed_out:
-					SignalBus.Notebook_show.emit(1)
+					hide_NB.call_deferred()
 			is_pressed_in = false
 			is_pressed_out = false

@@ -4,7 +4,6 @@
 [ext_resource type="PackedScene" uid="uid://bdjk536uwqjq1" path="res://refuse.tscn" id="3_aoyq8"]
 [ext_resource type="PackedScene" uid="uid://b035td654d8fn" path="res://checklist.tscn" id="4_nngme"]
 [ext_resource type="PackedScene" uid="uid://cqr3vlbkgwvfw" path="res://Notebook/notebook.tscn" id="5_y6d2w"]
-[ext_resource type="Texture2D" uid="uid://bw3c5k7arpggx" path="res://Assets/checklist_holder.png" id="6_y6d2w"]
 [ext_resource type="PackedScene" uid="uid://bql8avy4llevf" path="res://look_closer.tscn" id="7_yplp6"]
 [ext_resource type="Script" uid="uid://25uv8hlb8bag" path="res://camera_2d.gd" id="8_aoyq8"]
 [ext_resource type="AudioStream" uid="uid://cc7o3eheivqep" path="res://Assets/Sounds/SoundGlasses1.mp3" id="8_nngme"]
@@ -19,17 +18,13 @@ position = Vector2(381, 659)
 position = Vector2(405.99994, 568.00006)
 
 [node name="Checklist" parent="." unique_id=560789416 instance=ExtResource("4_nngme")]
+position = Vector2(-314, 205)
 
 [node name="LookCloser" parent="." unique_id=2000302642 instance=ExtResource("7_yplp6")]
 position = Vector2(754, 505)
 
-[node name="Overlays_Elements" type="Node2D" parent="." unique_id=2094237019]
-
-[node name="ChecklistHolder" type="Sprite2D" parent="Overlays_Elements" unique_id=1284202212]
-position = Vector2(892, 391)
-texture = ExtResource("6_y6d2w")
-
 [node name="Notebook" parent="." unique_id=226718852 instance=ExtResource("5_y6d2w")]
+position = Vector2(1, -5)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=2111017374]
 position = Vector2(640, 360)

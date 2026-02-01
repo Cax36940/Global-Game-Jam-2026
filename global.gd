@@ -12,6 +12,7 @@ var invalid_mask : Array[int] = []
 var invalid_eye : Array[int] = []
 var invalid_color : Array[int] = []
 
+var is_zoomed : bool = false
 
 func random_sublist(size : int, array_size : int) -> Array[int]:
 	var pool : Array = range(array_size)

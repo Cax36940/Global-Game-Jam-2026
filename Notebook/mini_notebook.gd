@@ -12,6 +12,10 @@ func _ready() -> void:
 	animation_player.current_animation = "Idle"
 	a.call_deferred()
 	visible = true
+	SignalBus.start_guest.connect(classic_handler)
+
+func classic_handler():
+	started = true
 
 func a():
 	Global.Triple_show = true
