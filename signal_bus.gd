@@ -81,6 +81,9 @@ signal start_guest()
 
 @warning_ignore('unused_signal')
 signal set_score(value : int)
+
+@warning_ignore('unused_signal')
+signal update_dislpayed_score()
 #player
 #_ready
 #epee.signal_name.connect(signal_handler)
