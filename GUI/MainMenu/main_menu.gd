@@ -9,10 +9,14 @@ func _on_start_button_pressed() -> void:
 
 
 func _on_texture_button_pressed():
+	if not visible:
+		return
 	SignalBus.start_game.emit()
 	pass # Replace with function body.
 
 
 func _on_texture_button_2_pressed():
+	if not visible:
+		return
 	SignalBus.exit_game.emit()
 	pass # Replace with function body.

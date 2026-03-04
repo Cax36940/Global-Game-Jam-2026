@@ -84,6 +84,10 @@ signal set_score(value : int)
 
 @warning_ignore('unused_signal')
 signal update_dislpayed_score()
+
+@warning_ignore('unused_signal')
+signal update_displayed_timer()
+
 #player
 #_ready
 #epee.signal_name.connect(signal_handler)

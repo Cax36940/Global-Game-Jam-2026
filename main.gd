@@ -37,21 +37,24 @@ func _on_start_game():
 	$GUI/PauseMenu.process_mode = Node.PROCESS_MODE_ALWAYS
 	$GUI.display("Overlay")
 	get_tree().paused = false
-	menu_music.stop()
-	game_music.play()
+	swap_music(menu_music, game_music)
+
 
 func _on_pause_game(bpaused: bool):
 	if bpaused:
 		$GUI.display("PauseMenu")
 		get_tree().paused = true
-		game_music.stop()
-		game_music2.play()
+		swap_music(game_music, game_music2)
 	else:
 		$GUI.display("Overlay")
 		get_tree().paused = false
-		game_music2.stop()
-		game_music.play()
+		swap_music(game_music2, game_music)
 
 func _on_gameover():
 	get_tree().paused = true
 	$GUI.display("GameOver")
+
+func swap_music(current : AudioStreamPlayer, next : AudioStreamPlayer):
+		var t : float = current.get_playback_position()
+		current.stop()
+		next.play(t)

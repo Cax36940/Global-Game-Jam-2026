@@ -5,6 +5,9 @@ var Triple_show : bool = false
 var Total_count : int = 0
 var Mistakes_count : int = 0
 var Score : int = 0
+var time : float = 0.0
+
+const GAME_TIME : float = 300
 
 var color_list : Array[Color] = []
 
@@ -22,14 +25,18 @@ func _ready():
 	update_score()
 
 func update_score():
-	var m = 0
-	if Global.Mistakes_count < 2:
-		m = 1
-	else:
-		m = Global.Mistakes_count
-	@warning_ignore('integer_division')
-	Score = min(max(0,round(30-8*log(m*50/(Global.Total_count+5)-1))), 100)
+	
+	#var m = 0
+	#if Global.Mistakes_count < 2:
+	#	m = 1
+	#else:
+	#	m = Global.Mistakes_count
+	#@warning_ignore('integer_division')
+	#Score = min(max(0,round(30-8*log(m*50/(Global.Total_count+5)-1))), 100)
+	Score = 100 - int(time / 3) - Global.Mistakes_count * 5 + 2 * (Global.Total_count - Global.Mistakes_count)
+	Score = max(Score, 0)
 	SignalBus.update_dislpayed_score.emit()
+	SignalBus.update_displayed_timer.emit()
 	
 func random_sublist(size : int, array_size : int) -> Array[int]:
 	var pool : Array = range(array_size)

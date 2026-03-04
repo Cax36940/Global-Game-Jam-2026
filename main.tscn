@@ -63,8 +63,16 @@ theme_override_fonts/font = ExtResource("6_dg77c")
 theme_override_font_sizes/font_size = 60
 text = "Score :"
 
+[node name="Timer" type="Label" parent="GUI/Overlay" unique_id=604688478]
+layout_mode = 0
+offset_left = 25.0
+offset_top = 6.0
+offset_right = 282.0
+offset_bottom = 67.0
+theme_override_fonts/font = ExtResource("6_dg77c")
+theme_override_font_sizes/font_size = 60
+
 [node name="MainMenu" parent="GUI" unique_id=1019709323 instance=ExtResource("10_4c57u")]
-visible = false
 layout_mode = 1
 
 [node name="PauseMenu" parent="GUI" unique_id=369511700 instance=ExtResource("6_5vw27")]

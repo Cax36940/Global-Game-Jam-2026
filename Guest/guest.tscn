@@ -36,8 +36,9 @@ animations = [{
 script = ExtResource("1_q4ytt")
 
 [node name="Shape" type="AnimatedSprite2D" parent="." unique_id=1426695573]
+position = Vector2(3, 0)
 sprite_frames = SubResource("SpriteFrames_ub8wi")
-frame = 4
+frame = 1
 
 [node name="Eyes" parent="." unique_id=1871706493 instance=ExtResource("17_71euk")]
 z_index = 1
