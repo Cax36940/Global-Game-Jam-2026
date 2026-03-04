@@ -3,6 +3,9 @@ class_name GuestSpawner
 
 @export var guest_scene : PackedScene
 
+@export var good_voice : Array[AudioStream]
+@export var bad_voice : Array[AudioStream]
+
 @export var start_position_node : Node2D
 @export var middle_position_node : Node2D
 @export var end_position_node : Node2D
@@ -79,6 +82,9 @@ func valid_guest():
 	if !is_entered :
 		return
 	if move_state != 2:
+		$Good.stream = good_voice.pick_random()
+		$Good.pitch_scale = randf_range(0.8, 1.2)
+		$Good.play()
 		move_state = 2
 
 
@@ -86,6 +92,9 @@ func reject_guest():
 	if !is_entered :
 		return
 	if move_state != 0:
+		$Bad.stream = bad_voice.pick_random()
+		$Bad.pitch_scale = randf_range(0.8, 1.2)
+		$Bad.play()
 		move_state = 0
 
 func remove_guest():

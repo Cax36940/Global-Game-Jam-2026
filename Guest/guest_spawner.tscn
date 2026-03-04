@@ -2,9 +2,25 @@
 
 [ext_resource type="Script" uid="uid://cp4u5kvqslk5x" path="res://Guest/guest_spawner.gd" id="1_08i48"]
 [ext_resource type="PackedScene" uid="uid://bakb3yc52brgt" path="res://Guest/guest.tscn" id="2_7i8y1"]
+[ext_resource type="AudioStream" uid="uid://cnfgwfk000heg" path="res://Assets/Sounds/SoundVoicePositive1.mp3" id="3_8m4p2"]
+[ext_resource type="AudioStream" uid="uid://ca2qtahtnhpes" path="res://Assets/Sounds/SoundVoicePositive3.mp3" id="3_txyu2"]
+[ext_resource type="AudioStream" uid="uid://bdnuwb3eja5yg" path="res://Assets/Sounds/SoundVoiceNegative3.mp3" id="4_483tv"]
+[ext_resource type="AudioStream" uid="uid://dqpgkc67nrh2w" path="res://Assets/Sounds/SoundVoicePositive2.mp3" id="4_jfo52"]
+[ext_resource type="AudioStream" uid="uid://ue3hpy10fjic" path="res://Assets/Sounds/SoundVoiceNegative2.mp3" id="8_6hec7"]
+[ext_resource type="AudioStream" uid="uid://c4s7ai1f65d1k" path="res://Assets/Sounds/SoundVoiceNegative4.mp3" id="10_xvvmm"]
 
 [node name="GuestSpawner" type="Node2D" unique_id=468613996]
 script = ExtResource("1_08i48")
 guest_scene = ExtResource("2_7i8y1")
+good_voice = Array[AudioStream]([ExtResource("3_8m4p2"), ExtResource("4_jfo52"), ExtResource("3_txyu2")])
+bad_voice = Array[AudioStream]([ExtResource("8_6hec7"), ExtResource("4_483tv"), ExtResource("10_xvvmm")])
 
 [node name="MoveNode" type="Node2D" parent="." unique_id=329846811]
+
+[node name="Good" type="AudioStreamPlayer" parent="." unique_id=283871347]
+stream = ExtResource("3_txyu2")
+volume_db = -10.0
+
+[node name="Bad" type="AudioStreamPlayer" parent="." unique_id=1830836540]
+stream = ExtResource("4_483tv")
+volume_db = -10.0
